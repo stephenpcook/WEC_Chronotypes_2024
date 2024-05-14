@@ -5,7 +5,7 @@ In this repository is hosted the first (in development) version of ChronoClustR:
 
 Citation:
 Viral chronotypes and their role in shaping seasonal viral dynamics in the Western English Channel
-Luis M. Bolaños, Michelle Michelsen1, Ben Temperton
+Luis M. Bolaños, Michelle Michelsen, Ben Temperton
 
 Figures:
 Additionally, you will find the Snakemake pipeline used to process the data, the processed data, and the R scripts to reproduce the figures found in the manuscript.  
