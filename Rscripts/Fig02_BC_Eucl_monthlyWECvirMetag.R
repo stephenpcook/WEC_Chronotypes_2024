@@ -1,0 +1,241 @@
+#FIGURE 02: Bray–Curtis dissimilarity time decay analysis of the virome composition in the surface Western English Channel and its relationship with environmental changes.
+
+#In the below analyses, environmental data were previously standardized to values between 0 and 1, 
+#based on the minimum and maximum values of each variable, using the formula: X'=x-min(x)/max(x)-min(x) -> [normalized = (x-min(x))/(max(x)-min(x))]
+
+#############
+#####WEC#####
+#############
+
+library("phyloseq")
+library("ggplot2")
+library("dplyr")
+library("tidyr")
+library("reshape")
+library("see")
+library("cowplot")
+library("grid")
+library("gridExtra")
+library("DESeq2")
+library("ggpubr")
+library("zoo")
+library("ggdendro")
+library("reshape2")
+
+#The environmental file was changed for wavelet analysis so we can have 7 day equidistant distances
+#NOTE: A method to reveal the periodic properties of a time series, such as wavelet transformation, 
+#will only yield valid results if observations are made at equidistant points in time. 
+#What can be accepted as “equidistant” depends on the particular application. For example, 
+#daily observations of a stock index are usually considered as being made at equidistant epochs, 
+#even though no observation is available at weekends when the stock exchange is closed.
+
+#To overcome the lack of periodicity between the sampling dates, we converted our irregularly distributed 
+#observations into a fixed interval dataset (following Carey et al., 2016) by reassigning sampling days to 
+#the closest regularly spaced day on a 3-days interval throughout the time-series, and linearly interpolating 
+#the missing data for the rare occasions on which sampling did not occur.
+
+#Generate a Phyloseq object
+env_sr_vir<-read.table("virome_sr_environm_data_EQ_time_nogaps.txt",header=T, row.names=1, check.names=F, sep ="\t")
+
+#Use as date
+env_sr_vir$Date_f <- as.Date(env_sr_vir$Date, "%d/%m/%Y")
+
+#Generate a Phyloseq Object
+countwec3090<-read.table("rpkms_populations_3090decent.txt", header=T, row.names=1, check.names=F)
+row.names(countwec3090) <- sub("^", "X", row.names(countwec3090))
+row.names(countwec3090) <- sub("[||]+", "..",row.names(countwec3090) )
+row.names(countwec3090)  <- gsub("-", ".", row.names(countwec3090) )
+
+OTU<-otu_table(countwec3090, taxa_are_rows=TRUE)
+SAM<-sample_data(env_sr_vir)
+PHYSEQ<-phyloseq(OTU,SAM)
+
+#Get the Bray Curtis dissimilarities
+bray_virMetaG <- phyloseq::distance(physeq = PHYSEQ, method = "bray")
+
+df_bray_virMetaG <- melt(as.matrix(bray_virMetaG), varnames = c("row_Wf", "col_Wf"))
+names(df_bray_virMetaG)[3] <- "Bray_Curtis"
+rownames(df_bray_virMetaG)<-paste(df_bray_virMetaG$row_Wf, df_bray_virMetaG$col_Wf, sep="_") #df_WECfvir has the BRAY-CURTIS distance
+df_bray_virMetaG$distname<-rownames(df_bray_virMetaG)
+
+#Generate the distance between the days of each sample
+metadata_PHYSEQ<-data.frame(sample_data(PHYSEQ))
+metadata_PHYSEQ$rnames<-rownames(metadata_PHYSEQ)
+metadata_PHYSEQ$Date_wavelet<-as.Date(metadata_PHYSEQ$Date_wavelet,"%d/%m/%Y") 
+
+#Sort by Date
+metadata_PHYSEQ_sorted<-(metadata_PHYSEQ[order(metadata_PHYSEQ$Date_wavelet),])
+
+#Create a two column of the consecutive rnames
+for(i in 1:nrow(metadata_PHYSEQ_sorted)) {
+  metadata_PHYSEQ_sorted$rnames2[i]<- metadata_PHYSEQ_sorted$rnames[i+1]}
+
+metadata_PHYSEQ_sorted$distname<-paste(metadata_PHYSEQ_sorted$rnames, metadata_PHYSEQ_sorted$rnames2, sep="_")
+
+#Create a Matrix of days between samples
+days_s2018 <- difftime(metadata_PHYSEQ$Date_wavelet,as.Date("06-11-2018","%d-%m-%Y"), units = "days")
+dist_daysWECvir <- as.matrix(dist(days_s2018,diag=TRUE,upper=TRUE))
+
+rownames(dist_daysWECvir) <- metadata_PHYSEQ$rnames; colnames(dist_daysWECvir) <- metadata_PHYSEQ$rnames
+
+dist_daysWECvir <- melt(as.matrix(dist_daysWECvir), varnames = c("row_day", "col_day"))
+names(dist_daysWECvir)[3] <- "days"
+rownames(dist_daysWECvir)<-paste(dist_daysWECvir$row, dist_daysWECvir$col, sep="_")
+
+#Merge BC and days data frames
+days_BCWECvir<-merge(dist_daysWECvir, df_bray_virMetaG, by=0, all=TRUE)
+days_BCWECvir_lowt<-na.omit(days_BCWECvir) #Remove NAs
+days_BCWECvir_lowt_final<-days_BCWECvir_lowt[,c(2:8)]
+days_BCWECvir_lowt_final_no0<-days_BCWECvir_lowt_final[days_BCWECvir_lowt_final$days != 0, ] #DIM! 34191,6
+
+#Extract the consecutive bray Curtis based on metadata_PHYSEQ_sorted$distname
+
+BC_consecutive<-days_BCWECvir_lowt_final_no0 %>% filter(distname %in% metadata_PHYSEQ_sorted$distname) 
+
+#write the BC_consecutive table, Inspect manually, arrange the missing values, and plot it. This is a quality checkpoint
+#write.table(BC_consecutive,"BC_consec.txt", quote=FALSE, sep = "\t")
+
+##################################
+####Read the equidistant table#### 
+##################################
+
+#read environmental metadata
+metadata_3090<-read.table("virome_sr_environm_data_EQ_time_nogaps.txt", header=T, row.names=1, check.names=F, sep="\t")
+
+#streamline df to the variables we want, interpolate, add a sorting column (X1,X2..), and add a column with the rwonames. 
+metadata_3090_short<-metadata_3090[,c(1:3,6:13)] #reduced 
+metadata_3090_short$rnames<-rownames(metadata_3090_short) #interpolate NA values (1 NH4, 1 SiO2, 5 PO4, 2 Chla)
+metadata_3090_short$order <- paste0("X", seq_len(nrow(metadata_3090_short))) #add a column of Xconseq values
+metadata_3090_short_interp <- data.frame(metadata_3090_short[1:2], na.approx(metadata_3090_short[3:11]),metadata_3090_short[12:13]) #I need to split the df in order to apply na.approx only to numeric columns
+
+############################
+#Generate the distance names
+############################
+
+###Generate the normalize measurements
+A <- function(x) (x - min(x,na.rm = TRUE))/(max(x,na.rm = TRUE) - min(x,na.rm = TRUE)) #Function to normalize all the environmental columns
+metadata_3090_short_interp_norm<-data.frame(metadata_3090_short_interp[1:2], lapply(metadata_3090_short_interp[3:11], A), metadata_3090_short_interp[12:13]) #normalize numeric measurements
+
+#####EUCLIDEAN_ALL####
+metadata_3090_short_interp_norm$EucDist.All<-sqrt(c(0,diff(metadata_3090_short_interp_norm$temp_C_2.5)^2) + c(0,diff(metadata_3090_short_interp_norm$salinity_PSU_2.5)^2)+ c(0,diff(metadata_3090_short_interp_norm$oxygen_uM_2.5)^2)+ c(0,diff(metadata_3090_short_interp_norm$NITRITE_0)^2)+ c(0,diff(metadata_3090_short_interp_norm$PHOSPHATE_0)^2)+ c(0,diff(metadata_3090_short_interp_norm$NITRATE.NIT_0)^2)+ c(0,diff(metadata_3090_short_interp_norm$chlorophyll.a_0)^2)+ c(0,diff(metadata_3090_short_interp_norm$AMMONIA_0)^2)+ c(0,diff(metadata_3090_short_interp_norm$SILICATE_0)^2))
+
+#names to match with Bray_Curtis distances
+metadata_3090_short_interp_norm$lag.value <- c(NA, metadata_3090_short_interp_norm$rnames[-nrow(metadata_3090_short_interp_norm)])
+
+metadata_3090_short_interp_norm$distnameR<-paste(metadata_3090_short_interp_norm$rnames, metadata_3090_short_interp_norm$lag.value, sep="_")
+metadata_3090_short_interp_norm$distnamebckwd<-paste(metadata_3090_short_interp_norm$lag.value, metadata_3090_short_interp_norm$rnames, sep="_")
+metadata_3090_short_interp_norm_clean <- metadata_3090_short_interp_norm[-1, ]#remove the first line NA-NOV-2018 (not informative and adds an NA)
+
+#Read the BC table
+BC_consecutive_interpol<-read.table("BC_consec_mean_interpol.txt", header=T, row.names=1, check.names=F)
+
+#Merge distances and Euclidean to Bray Curtis                            
+zz <- merge(metadata_3090_short_interp_norm_clean, BC_consecutive_interpol, by.x='distnamebckwd', by.y='distname', all = TRUE)    #359 y #186
+
+#write.table(zz,"WEC_mar_wavelet1.env.tab", quote=FALSE, sep = "\t")
+#After sorting the data by date. We have a period of time from 4/20/15 to 4/24/17. Therefore, we only needed to interpolate 15/105 weeks. So we have 90 real data points     
+
+#merge also the ecotype relative abundances per sample. These are already normalized
+zz$Date_wavelet<-as.Date(zz$Date_wavelet,"%d/%m/%Y") 
+wl_Euc_BC_sorted<-zz[order(zz$Date_wavelet),] #trial1_sorted
+
+#Heatmap of the normalized variables (use metadata_3090_short_interp_norm)
+wl_hm<-metadata_3090_short_interp_norm[,c(2:11)]
+wl_hm$Date_wavelet<-as.Date(wl_hm$Date_wavelet,"%d/%m/%Y") 
+wl_hm_melt<-melt(wl_hm, id.vars=c("Date_wavelet"))
+
+wl_hm_plot<-ggplot(data = wl_hm_melt, aes(x = Date_wavelet, y=variable,fill=value)) + geom_tile(colour="white",size=0.25)+
+scale_x_date( breaks = "1 month", date_labels = "%m/%y",limits = as.Date(c("2018-10-06","2021-07-08")))+scale_fill_gradient2(low = "white", mid = "khaki2", high = "brown", midpoint = .5)+theme(panel.background = element_blank(),axis.line = element_line(colour = "black"),axis.title.x =element_blank(),axis.title.y=element_blank(),axis.text.y=element_text(size=16,colour = "black"), axis.text.x=element_text(size=8,colour = "black"),legend.text=element_text(size=12))+geom_vline(xintercept=as.Date(c("2016-01-01","2017-01-01")),linetype=1, colour="black",size=.5)
+
+wl_hm_plot2<-ggplot(data = wl_hm_melt, aes(x = Date_wavelet, y=variable,fill=value)) + geom_tile(colour="white",size=0.25)+scale_fill_gradient2(low = "white", mid = "khaki2", high = "brown", midpoint = .5)+theme(panel.background = element_blank(),axis.line = element_line(colour = "black"),axis.title.x =element_blank(),axis.title.y=element_blank(),axis.text.y=element_text(size=16,colour = "black"), axis.text.x=element_text(size=8,colour = "black"),legend.text=element_text(size=12))+geom_vline(xintercept=as.Date(c("2019-01-01","2020-01-01","2021-01-01")),linetype=1, colour="black",size=.5)
+
+
+#################
+#####WAVELET#####
+#################
+#"trial1_sorted" file has all the distances we want to try. 
+
+library(WaveletComp)
+
+#############################Bray_Curtis#############################
+
+my.date <- seq(as.POSIXct("2018-12-07 00:00:00", format = "%F %T"),by = "month",length.out = 31)
+
+WeeklyBray<-as.numeric(wl_Euc_BC_sorted$Bray_Curtis)
+
+#Wavelet only considers date if that is the only extra column 
+
+date_BC_wvl<-data.frame(date = my.date, Bray_Curtis = WeeklyBray)
+
+my.w <- analyze.wavelet(date_BC_wvl, "Bray_Curtis",loess.span = 0,dt = 1, dj = 1/250, lowerPeriod = 1, upperPeriod = 64, make.pval = TRUE, n.sim = 1000) #1000 simulations
+
+ticks <- seq(as.POSIXct("2018-12-07 00:00:00", format = "%F %T"), as.POSIXct("2021-06-07 23:00:00", format = "%F %T"), by = "month")
+labels <- seq(as.Date("2018-12-07"), as.Date("2021-06-07"), by = "month")
+wt.image(my.w, periodlab = "periods (weeks)", legend.params = list(lab = "wavelet power levels"), label.time.axis = TRUE, show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+
+date_BC_wvl_rec<-reconstruct(my.w, plot.waves = FALSE, lwd = c(1,2), legend.coords = "topleft",show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+
+#############################Euclidean Distances#############################
+
+WeeklyEucl<-as.numeric(wl_Euc_BC_sorted$EucDist.All)
+date_Euc_wvl<-data.frame(date = my.date, EucDist.All = WeeklyEucl)
+
+my.y <- analyze.wavelet(date_Euc_wvl, "EucDist.All",loess.span = 0,dt = 1, dj = 1/250, lowerPeriod = 1, upperPeriod = 64, make.pval = TRUE, n.sim = 1000) #1000 simulations
+
+wt.image(my.y, periodlab = "periods (weeks)", legend.params = list(lab = "wavelet power levels"), label.time.axis = TRUE, show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+
+reconstruct(my.y, plot.waves = FALSE, lwd = c(1,2), legend.coords = "topleft",show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+
+#######Analysis of a bivariate time series: Coherence analysis Bray-Eucl#######
+
+#merge date_BC_wvl and date_Euc_wvl
+date_BC_Euc_wvl<-merge(date_BC_wvl, date_Euc_wvl, by="date", all=TRUE)
+
+my.wc <- analyze.coherency(date_BC_Euc_wvl, my.pair = c("Bray_Curtis","EucDist.All"),loess.span = 0,dt = 1, dj = 1/250, lowerPeriod = 1, upperPeriod = 64, make.pval = TRUE, n.sim = 1000) #This step is computing exhaustive, be patient (~30 mins in a PC)
+saveRDS(my.wc, "wc_BC_Euc_VIR.rds") #we save the rds in case we need to re run it
+
+####We can just start from here instead of estimating the coherence every time we run this script
+#my.wc<-readRDS("wc_BC_Euc_VIR.rds")
+
+#Cross-Wavelet power spectrum of the series with interval color key and restricted arrow area
+wc.image(my.wc, n.levels = 250, color.key = "interval", siglvl.contour = 0.1, siglvl.arrow = 0.05, which.arrow.sig = "wt", legend.params = list(lab = "cross-wavelet power levels"),show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+
+#Phases and phase differences at period 16, default phase axis phase axis labels expressed in time units
+#Phase distribution of the two time-series at the 16 week period
+wc.sel.phases(my.wc, sel.period = 12,only.sig = TRUE,siglvl = 0.05,phaselim = c(-pi,+pi),legend.coords = "topleft", legend.horiz = FALSE,main = "", sub = "", show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+
+#Cross-wavelet average power
+wc.avg(my.wc, siglvl = 0.01, sigcol = "red", sigpch = 20,periodlab = "period (wonths)")
+
+#Print the three panels needed to merge them into one figure using inkscape (1,2,3)
+#Also Print the statistical and corss wavelet power analysis to be added as Supp material (4,5,6)
+
+# (1) normalized Env conditins heatmap
+ggsave("wl_hm_plot.svg", plot = wl_hm_plot2, device = "svg", width = 10, height=6)
+
+# (2) wavelet BC
+svg("wl_BC_viromes.svg", width=10)
+reconstruct(my.w, plot.waves = FALSE, lwd = c(1,2), legend.coords = "topleft",show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+dev.off()
+
+# (3) wavelet Euclidean Distances
+svg("wl_EUCL_viromes.svg", width=10)
+reconstruct(my.y, plot.waves = FALSE, lwd = c(1,2), legend.coords = "topleft",show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+dev.off()
+
+#After reconstructing Bray-Curtis (2) and Euclidean (3), overlap them in Inkscape. 
+
+#(4) cross wavelet power 
+svg("wl_cross_power.svg", width=10)
+wc.image(my.wc, n.levels = 250, color.key = "interval", siglvl.contour = 0.1, siglvl.arrow = 0.05, which.arrow.sig = "wt", legend.params = list(lab = "cross-wavelet power levels"),show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+dev.off()
+
+#(5) 12 week phase 
+svg("wl_phase_12months.svg", width=10)
+wc.sel.phases(my.wc, sel.period = 12,only.sig = TRUE,siglvl = 0.05,phaselim = c(-pi,+pi),legend.coords = "topleft", legend.horiz = FALSE,main = "", sub = "", show.date = TRUE, date.format = "%F %T",spec.time.axis = list(at = ticks, labels = labels, las = 2))
+dev.off()
+
+#(6) Cross-wavelet average power
+svg("wl_averPower.svg", width=10)
+wc.avg(my.wc, siglvl = 0.01, sigcol = "red", sigpch = 20,periodlab = "period (wonths)")
+dev.off()
