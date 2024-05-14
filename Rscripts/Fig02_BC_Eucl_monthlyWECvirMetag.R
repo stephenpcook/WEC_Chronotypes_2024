@@ -34,7 +34,7 @@ library("reshape2")
 #the closest regularly spaced day on a 3-days interval throughout the time-series, and linearly interpolating 
 #the missing data for the rare occasions on which sampling did not occur.
 
-#Generate a Phyloseq object
+#Read the env data in an equidistant format
 env_sr_vir<-read.table("virome_sr_environm_data_EQ_time_nogaps.txt",header=T, row.names=1, check.names=F, sep ="\t")
 
 #Use as date
