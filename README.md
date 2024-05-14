@@ -1,5 +1,5 @@
 # WEC_Chronotypes_2024
-This repository contains processed data and code for the manuscript: Viral chronotypes and their role in shaping seasonal viral dynamics in the Western English Channel
+This repository contains processed data and code used in the analysis of the manuscript: Viral chronotypes and their role in shaping seasonal viral dynamics in the Western English Channel
 
 In this repository is hosted the first (in development) version of ChronoClustR: Please feel free to use it and provide feedback. If you find ChronoClustR useful, don't forget to cite the preprint below.
 
