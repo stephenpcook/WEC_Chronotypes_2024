@@ -1,7 +1,9 @@
+ChronoClustR.R (Beta version - May 2024)
+
 Instructions:
 
 (1) Create a specific conda environment
-ChronoClustR was benchamrked in R version 4.3.0 (2023-04-21)
+ChronoClustR was benchmarked in R version 4.3.0 (2023-04-21)
 (2) Install R and the required R packages
 (3) User can decide to run a seasonality test using the script SeasonalityTest.R
 -User should specify the time-series data frame, environmntal data (formatted as in the example virome_sr_environm_data_EQ_time.txt)
