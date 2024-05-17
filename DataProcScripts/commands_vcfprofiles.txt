@@ -1,0 +1,156 @@
+#Steps to generate SNP profiles#
+#Luis Bolanos March 2024#
+#Code generated following the mothods in Ignacio-Espinoza et al., 2020#
+
+#We need to do two things in paralel. First (A) run the VCF profiles for all the vOTUs
+#and (B) determine what vOTUs of interest fulfill the coverage requierements. 
+#Once we have both results, we can subset the profiles using the list of high coverage vOTUs of interest and 
+#wrangle the data to generate the profiles fixed by date. 
+
+####(A) Get the VCF profiles ####
+#(1) reads were mapped to the viral populations using Bowtie2 - We have this from previous analysis
+bowtie2 -x {viralpops.index}  -1 {input.fwd}  -2 {input.rev} -S {output.bwt2_sam} #this index was done based on the {input.scaffolds} output snakefile
+
+#filter alignments
+coverm filter --min-covered-fraction 1 --min-identity 98 --min-length 100 --bam my_alignments.bam --reference my_reference.fasta --output filtered_alignments.bam
+
+#(2) format sam to bam and sort the alignment - We might have this from previous analysis
+samtools view -S -b {input.mapping_sam} > {output.bwt2_bam} #sam to bam
+
+samtools sort {output.bwt2_bam} -o {mapping_populations.sorted.bam} #sort bam - We might have this from previous analysis
+
+#(3) Generate the variant profiles
+bcftools mpileup --max-depth 1000 -Ou -f {input.scaffolds} {mapping_populations.sorted.bam} | bcftools call --ploidy 1 -mv -Ob -o {output.calls}
+
+#(4) Filter the variant files based on the quality and depth established in Ignacio-Espinoza et al 2020
+bcftools view -i '%QUAL>=20 || DP<10' {output.calls} > {output.filt_calls}
+
+####(B) determine what vOTUs of interest fulfill the coverage requierements and calculate the shared SNPs/variants ####
+
+#(1) Generate a coverage table for each alignment (depth/timepoint/etc.) using samtools
+samtools coverage {mapping_populations.sorted.bam} > {coverage_table.tab}
+
+#(2) For each coverage table apply the filtering thresholds for breadth (column "coverage" > 90) and coverage (column "meandepth" >10), then cut vOTU name and meandepth
+awk '{if ($6 > 90 && $7 > 10) print}' coverage_table.tab | cut -f 1,7 | sort -k 1,1 > coverage_table.tab.filtJed #w/o filtering 
+awk '{if ($6 > 90 && $7 > 10) print}' coverage_table.98filtered.tab | cut -f 1,7 | sort -k 1,1 > coverage_table.98filtered.tab.filtJed 
+
+#loop it for all
+for sample in `cat output/all/bcf_profiles/WoTG_samples.lst`; do awk '{if ($6 > 90 && $7 > 10) print}' output/$sample/coverage_table.tab | cut -f 1,7 | sort -k 1,1 > output/$sample/coverage_table.tab.filtJed ; done
+
+#(3) generate a merged coverage table for all samples and remove all viral populations which has a missing value (NA).
+#Be aware that due to the dynamics and differences in coverage you may get just a tiny overlap of a few sequences. 
+find output -name "coverage_table.98filtered.tab.filtJed" > file_listJed.98filtered.txt
+
+# Initialize a temporary file to hold intermediate results
+temp_file=$(mktemp)
+# Initialize a variable to hold the first file in the list
+first_file=$(head -n 1 file_listJed.98filtered.txt)
+# Copy the first file to the temporary file
+cp "$first_file" "$temp_file"
+# Iterate over the remaining files and join them to the temporary file based on the first column
+tail -n +2 file_listJed.98filtered.txt| while read -r file; do
+    join -t$'\t' "$temp_file" <(sort "$file") > merged_temp.txt
+    mv merged_temp.txt "$temp_file"
+done
+# Rename the temporary file to the final output file
+mv "$temp_file" merged_coverage_table.98filtered.tab
+
+# Modify headers (change this depending on the names you have and would like to use)
+headers=$(awk '{ sub(/.*output\//, "", $0); sub(/\/coverage_table.98filtered.tab.filtJed/, "", $0); split($0, a, "/"); print a[1]"-"a[2] }' file_listJed.98filtered.txt| paste -sd '\t' | sed "s/-viral-fraction-//g" | sed "s/coverage_tableRQH5k.tab.filtJed//g")
+
+awk -v headers="$headers" 'NR == 1 {print "\t" headers} NR > 1 {print}' merged_coverage_table.98filtered.tab> final_merged_coverage_table.98filtered.tab
+
+#remove the temporal files 
+rm merged_coverage_table.98filtered.tab file_listJed.98filtered.txt
+
+#My final subset is of 1610 vOTUs out of the total 26852 vOTUs determined. Next step is to see how many of the 1610 are present in the 3090 decent dataset used to generate the chronotypes. 
+#with 98%, My final subset is of 517 vOTUs out of the total 26852 vOTUs determined #999
+
+#(4) get the list of vOTUs/populations that overcame these filters && overlap with the 3090 decent dataset.
+#This is an extra step in our analysis: subset only the vOTUs that were classified as "decent" and used in the chronotype 3090 subset.
+cut -f 1 final_merged_coverage_table.98filtered.tab | tail -n +2 > final_merged_coverage_table.98filtered.lst
+
+comm -12 <(sort decent_summary.lst ) <(sort final_merged_coverage_table.98filtered.lst) > QFed_covfil_3090comm.lst #56
+
+#(5) extract from the vcf_filt the SNPs and variants found in 
+for sample in `cat output/all/bcf_profiles/WoTG_samples.lst`; do grep -f QFed_covfil_3090comm.lst output/$sample/calls.filteredRQH5k.vcf| grep -v '^##' > output/$sample/calls.filt.RQH5k.48int.vcf; done
+
+#now I have to use these files to count the common SNPs. Output will be a table of shared variants (rows contigs / columns months)
+#awk 'FNR==NR{count[$1][$2"\t"$3"\t"$4"\t"$5]; next} ($1 in count) && ($2"\t"$3"\t"$4"\t"$5 in count[$1]) {shared[$1]++} END {for (id in shared) {printf "%s %d \n", id, shared[id]}}' output/2018-Dec-viral-fraction/calls.filt.196int.vcf output/2019-Dec-viral-fraction/calls.filt.196int.vcf
+
+#Nested loop 
+#First: Fix the first date and the second one will change (pairwise comparisons)
+find output -name "calls.filt.RQH5k.48int.vcf" > calls.files.txt
+sed "s/output\///" calls.files.txt | sed "s/\/calls.filt.RQH5k.48int.vcf//" > calls1.files.txt
+
+for i in `cat calls1.files.txt`; do
+    for j in `cat calls1.files.txt`; do
+        awk 'FNR==NR{count[$1][$2"\t"$3"\t"$4"\t"$5]; next} ($1 in count) && ($2"\t"$3"\t"$4"\t"$5 in count[$1]) {shared[$1]++} END {for (id in shared) {printf "%s %d \n", id, shared[id]}}' output/$i/calls.filt.RQH5k.48int.vcf output/$j/calls.filt.RQH5k.48int.vcf | sed "1s/^/\t"$j"\n/" > output/$i/shared_with_$j.txt;
+    done;
+done
+
+#Remove temporal files 
+rm calls.files.txt calls1.files.txt
+
+############################################
+##############shared_SNPs.sh################
+############################################
+#Developed to be run individually generate the individual (paired) shared profiles and then merge them
+
+#First test with one timpoint and then loop them. (Dec-2018)
+#Merge them by each date reference
+ls | grep "shared_with" > ind_sharedprofiles.list #generate a list of the files 
+
+#sort files
+for file in `cat ind_sharedprofiles.list`; do
+    sort -o "$file.sorted" -k1,1 "$file"
+done
+
+#Merge them - (similar as step 5 but we want to keep all and add zeros when is absent)
+
+#run the following bash script for all the timepoints/depths
+
+#!/bin/bash
+#List of unique IDs from all files
+ids=$(awk '{print $1}' *.txt.sorted| sort | uniq)
+# Create a new file to store the merged data
+merged_file="merged_shared.txt"
+echo -n "ID" > "$merged_file"
+
+# Append the header of each file to the merged file
+for file in *.txt.sorted; do
+    echo -n -e "\t$(basename "$file" .txt.sorted)" >> "$merged_file"
+done
+echo >> "$merged_file"
+
+# Iterate over each ID and append corresponding values from each file
+for id in $ids; do
+    echo -n "$id" >> "$merged_file"
+    for file in *.txt.sorted; do
+        value=$(awk -v id="$id" '$1 == id {print $2}' "$file")
+        if [ -z "$value" ]; then
+            echo -n -e "\t0" >> "$merged_file"
+        else
+            echo -n -e "\t$value" >> "$merged_file"
+        fi
+    done
+    echo >> "$merged_file"
+done
+
+#This counts the header line, remove them. Skip the first line as it is the headers. 
+awk -F'\t' 'NR == 1 || ($1 ~ /__viral-spades-short__as-yet-unknown/ && NR > 1)' merged_shared.txt > merged_shared_final.txt #shared SNPS
+
+########## End of shared_SNPs.sh (adapt to your files and copy it into a text file############
+
+#The above instructions are wrapped up in a bash script that can be looped.  -> shared_SNPs.sh
+
+for sample in $(cat ../WoTG_samples.lst); do 
+    (
+        cd "$sample" 
+        bash ../shared_SNPs.sh 
+    )
+done
+
+#FINAL OUTPUT: each directory (sample) will have a merged_shared_final.txt file with the requiered information of the shared polymoprhismps throughput the contigs and the whole series, but fixed to the specific date (directory)
+
+#From this output, we can continue using the RQH R scripts to analyse these profiles and generate the figures of the manuscript. 
