@@ -1,0 +1,363 @@
+import pandas as pd
+df = pd.read_csv('metadata.csv', index_col=0, comment='#')
+configfile: "config.yaml"
+sample = df.index
+
+rule all:
+    input:
+        "output/all/checkv/quality_summary.tsv",
+        "output/all/vcontact2/c1.clusters"
+
+rule viral_spades_short:
+    input:
+        fwd="output/{sample}/fwd.ec.no-human.hq.fq.gz",
+        rev="output/{sample}/rev.ec.no-human.hq.fq.gz",
+    output:
+        viral_assembly='output/{sample}/{sample}.viral-spades-short-viral-scaffolds.fa.gz',
+        viral_graph='output/{sample}/{sample}.viral-spades-short-viral-scaffolds.gfa.gz'
+    conda:
+        "envs/spades.yml"
+    log:
+        "logs/{sample}/viral-spades_short.log"
+    benchmark:
+        "benchmarks/{sample}/spades_short.tsv"
+    threads: 16
+    shell:
+        """
+            metaspades.py \
+            -1 {input.fwd} \
+            -2 {input.rev} \
+            --only-assembler \
+            --threads {threads} \
+            --memory 1000 \
+            -k 21,33,55,77,99,127 \
+            -o scratch/{wildcards.sample}.viral-spades-short 2>&1 | tee {log}
+
+            module load pigz
+
+            pigz scratch/{wildcards.sample}.viral-spades-short/scaffolds.fasta
+            mv scratch/{wildcards.sample}.viral-spades-short/scaffolds.fasta.gz {output.viral_assembly}
+
+            pigz scratch/{wildcards.sample}.viral-spades-short/assembly_graph_with_scaffolds.gfa
+            mv scratch/{wildcards.sample}.viral-spades-short/assembly_graph_with_scaffolds.gfa.gz {output.viral_graph}
+        """
+
+rule rename_spades_short_contigs:
+    input:
+        rules.viral_spades_short.output.viral_assembly
+    output:
+        scaffolds="output/{sample}/{sample}.viral-spades-short.renamed.fa.gz",
+        mapping="output/{sample}/{sample}.viral-spades-short.renamed.mapping.txt.gz",
+    conda:
+        "envs/bio-env.yml"    
+    shell:
+        """
+        python scripts/rename_spades_contigs.py \
+        --input {input} \
+        --output {output.scaffolds} \
+        --tag {wildcards.sample} \
+        --assembly_type short \
+        --mapping {output.mapping} \
+        --min_length 10000
+
+        """
+
+rule virsorter_spades_short_contigs:
+    input:
+        rules.rename_spades_short_contigs.output.scaffolds
+    output:
+        viral_contigs="output/{sample}/{sample}.viral-spades-short.renamed.vs2-filter.fa.gz"
+    log:
+        "logs/{sample}/virsorter-spades-short.log"
+    benchmark:
+        "benchmarks/{sample}/virsorter-spades-short.tsv"
+    threads: 16
+    conda:
+        "envs/vs2.yml"
+    params:
+        vs2dbdir=config['vs2db_dir']
+    shell:
+        """
+        virsorter run -w output/{wildcards.sample} \
+        -i {input} \
+        --db-dir {params.vs2dbdir} \
+        -j {threads} all 2>&1 | tee {log}
+
+        module load pigz
+
+        pigz output/{wildcards.sample}/final-viral-combined.fa
+        mv output/{wildcards.sample}/final-viral-combined.fa.gz {output.viral_contigs}
+        
+        """
+
+rule concatenate_contigs:
+    input:
+        expand("output/{sample}/{sample}.viral-spades-short.renamed.vs2-filter.fa.gz", sample=df.index)
+    output:
+        viral_contigs="output/all/virsorter/concatenate-contigs.viral-spades-short.renamed.all.fa.gz"
+    shell:
+        """
+        mkdir -p output/all/virsorter
+        cat {input} > {output.viral_contigs}
+        """
+
+rule merge_and_dereplicate:
+    input:
+        rules.concatenate_contigs.output.viral_contigs
+    output:
+        scaffolds="output/all/virsorter/combined-and-dereplicated.viral-populations.vs.fa.gz",
+        cluster_file="output/all/virsorter/combined-and-dereplicated.viral-populations.vs.clstr.gz"
+    log:
+        "logs/all/merge_and_dereplicate.log"
+    benchmark:
+        "benchmarks/all/virsorter-spades-short.tsv"
+    threads: 16
+    params:
+        nucmer=config['nucmer_dir']
+    shell:
+        """
+	module load pigz
+        unpigz {input}
+
+        perl /lustre/home/lb808/bioinfo_progs/Cluster_genomes_5.1.pl \
+        -f output/all/virsorter/concatenate-contigs.viral-spades-short.renamed.all.fa \
+        -d {params.nucmer} \
+        -t {threads} 2>&1 | tee {log}
+
+         mv output/all/virsorter/concatenate-contigs.viral-spades-short.renamed.all_95-85.clstr {output.cluster_file}
+         mv output/all/virsorter/concatenate-contigs.viral-spades-short.renamed.all_95-85.fna {output.scaffolds}
+        
+        """
+
+rule prodigal_for_vcontact2:
+    input:
+        rules.merge_and_dereplicate.output.scaffolds
+    output:
+        proteins="output/all/prodigal/VirSorter2_genomes.faa"
+    log:
+        "logs/all/prodigal_for_vcontact2.log"
+    benchmark:
+        "benchmarks/all/prodigal_for_vcontact2.tsv"
+    threads: 16
+    conda:
+        "envs/prodigal.yml"
+    shell:
+        """
+        mkdir -p output/all/prodigal
+        
+        prodigal  \
+        -i {input}  \
+        -p meta  \
+        -a {output.proteins}  \
+        -o output/all/prodigal/VirSorter2_genomes.prodigal
+
+        """
+
+rule vcontact2:
+    input:
+        rules.prodigal_for_vcontact2.output.proteins
+    output:
+        c1_clusters="output/all/vcontact2/c1.clusters"
+    log:
+        "logs/all/vcontact2.log"
+    benchmark:
+        "benchmarks/all/vcontact2.tsv"
+    threads: 16
+    conda:
+        "envs/vcontact2.yml"
+    params:
+        clusterone=config['clusterone_dir']
+
+    shell:
+        """
+	module load Java
+
+        vcontact2_gene2genome \
+        -p {input} \
+        -o output/all/prodigal/VirSorter2_proteins.csv \
+        -s Prodigal-FAA
+
+        vcontact2 \
+        --pcs-mode MCL \
+        --vcs-mode ClusterONE \
+        --threads {threads} \
+        --raw-proteins {input} \
+        --rel-mode Diamond \
+        --c1-bin {params.clusterone} \
+        --proteins-fp output/all/prodigal/VirSorter2_proteins.csv \
+        --db 'ProkaryoticViralRefSeq201-Merged' \
+        --output-dir output/all/vcontact2 2>&1 | tee {log} 
+    """
+
+rule checkv:
+    input:
+        rules.merge_and_dereplicate.output.scaffolds
+    output:
+        checkv_qs="output/all/checkv/quality_summary.tsv"
+    log:
+        "logs/all/checkv.log"
+    benchmark:
+        "benchmarks/all/checkv.tsv"
+    threads: 16
+    conda:
+        "envs/checkv.yml"
+    params:
+        checkv_db=config['checkv_db_dir']
+    shell:
+        """
+        checkv end_to_end {input} output/all/checkv  -d {params.checkv_db} -t {threads} 2>&1 | tee {log}
+        """
+
+rule prepare_secondvs2:
+    input:
+        checkv_qs_table=rules.checkv.output.checkv_qs,
+        scaffolds=rules.merge_and_dereplicate.output.scaffolds
+    output:
+        decent_seq_checkv="output/all/checkv/decent_seqs.fa"
+    shell:
+        """
+        grep "Medium-quality" {input.checkv_qs_table} | cut -f 1 > output/all/checkv/medium_quality.lst.txt
+        grep "High-quality" {input.checkv_qs_table} | cut -f 1 > output/all/checkv/high_quality.lst.txt
+
+        cat output/all/checkv/medium_quality.lst.txt output/all/checkv/high_quality.lst.txt > output/all/checkv/decent_seqs.lst
+
+        perl ~/scripts/pl/extractfromfasta.pl {input.scaffolds} list output/all/checkv/decent_seqs.lst > {output.decent_seq_checkv}
+
+        """
+
+rule virsorter_for_dram:
+    input:
+        rules.prepare_secondvs2.output.decent_seq_checkv
+    output:
+        viral_contigs="output/all/virsorter_for_dram/for-dramv/final-viral-combined-for-dramv.fa",
+        affi_tab="output/all/virsorter_for_dram/for-dramv/viral-affi-contigs-for-dramv.tab"
+    log:
+        "logs/all/virsorter-for-dram.log"
+    benchmark:
+        "benchmarks/all/virsorter-for-dram.tsv"
+    threads: 16
+    conda:
+        "envs/vs2.yml"
+    params:
+        vs2dbdir=config['vs2db_dir']
+    shell:
+        """
+        virsorter run -w output/all/virsorter_for_dram/ \
+        -i {input} \
+        --db-dir {params.vs2dbdir} \
+        --seqname-suffix-off \
+        --viral-gene-enrich-off \
+        --prep-for-dramv -j 40 --include-groups dsDNAphage,ssDNA --min-score 0.5 \
+        -j {threads} all 2>&1 | tee {log}
+        """
+
+rule dramv:
+    input:
+        viral_contigs=rules.virsorter_for_dram.output.viral_contigs,
+        affi_tab=rules.virsorter_for_dram.output.affi_tab
+    output:
+        "output/all/flag/end.txt"
+    log:
+        "logs/all/dramv.log"
+    benchmark:
+        "benchmarks/all/dramv.tsv"
+    threads: 16
+    conda:
+        "envs/DRAM.yml"
+    shell:
+        """
+        DRAM-v.py annotate --input_fasta {input.viral_contigs} \
+        --output_dir output/all/dramv/ \
+        -v {input.affi_tab} \
+        --threads {threads} \
+        --verbose 2>&1 | tee {log}
+
+        DRAM-v.py distill \
+        -i output/all/dramv/annotations.tsv  \
+        -o output/all/DRAMv-distill
+	
+	mkdir -p output/all/flag
+	head output/all/DRAMv-distill/amg_summary.tsv > output/all/flag/end.txt
+        """
+        
+rule bowtie2_map:
+    input:
+        fwd="output/{sample}/fwd.ec.no-human.hq.fq.gz",
+        rev="output/{sample}/rev.ec.no-human.hq.fq.gz"
+    output:
+        bwt2_sam="output/{sample}/mapping_populations.sam"
+    log:
+        "logs/{sample}/bowtie2_map.log"
+    benchmark:
+        "benchmarks/{sample}/bowtie2_map.tsv"
+    threads: 16
+    conda:
+        "envs/bowtie2.yml"
+    params:
+        bw2_index=config['bw2_index_p']
+    shell:
+        """
+        bowtie2 -x {params.bw2_index}  -1 {input.fwd}  -2 {input.rev} -p {threads} -S {output.bwt2_sam}
+        """
+
+rule sam_to_bam:
+    input:
+        mapping_sam="output/{sample}/mapping_populations.sam"
+    output:
+        bwt2_bam="output/{sample}/mapping_populations.bam",
+        bwt2_bam_sorted="output/{sample}/mapping_populations.sorted.bam"
+    log:
+        "logs/{sample}/sam_to_bam.log"
+    benchmark:
+        "benchmarks/{sample}/sam_to_map.tsv"
+    conda:
+        "envs/samtools.yml"
+    shell:
+        """
+        samtools view -S -b {input.mapping_sam} > {output.bwt2_bam}
+
+        samtools sort {output.bwt2_bam} -o {output.bwt2_bam_sorted}
+        """
+
+rule coverm:
+    input:
+        mapping_bam="output/{sample}/mapping_populations.sorted.bam"
+    output:
+        covm_rpkm="output/{sample}/mapping_populations.rpkm.txt",
+    log:
+        "logs/{sample}/coverm.log"
+    benchmark:
+        "benchmarks/{sample}/coverm.tsv"
+    conda:
+        "envs/coverm.yml"
+    shell:
+        """
+        coverm contig --bam-files {input.mapping_bam} --min-read-percent-identity 0.9 \
+        --methods rpkm --min-covered-fraction 0.4 --output-file {output.covm_rpkm}
+        """
+
+rule chg_header2:
+    output:
+        expand("output/{sample}/mapping_populations.rpkm.txt.md", sample=df.index)
+    shell:
+        """
+        for f_name in output/*/mapping_populations.rpkm.txt.tmp; \
+        do f="${f_name%/*}"; g="${f//-viral-fraction}"; \
+        awk -F'\t' -v FS="${g//output\/}" 'NR==1 {$2=FS}1' "$f_name" | sed "s/mapping_populations.sorted RPKM //" > "$f_name.md"; done
+	"""
+
+rule sam_contigs_cov:
+    input:
+        mapping_bam="output/{sample}/mapping_populations.sorted.bam"
+    output:
+        cov_table="output/{sample}/coverage_table.tab"
+    log:
+        "logs/{sample}/sam_contigs_cov.log"
+    benchmark:
+        "benchmarks/{sample}/sam_contigs_cov.tsv"
+    conda:
+        "envs/samtools.yml"
+    shell:
+        """
+        samtools coverage {input.mapping_bam} > {output.cov_table}
+        """
