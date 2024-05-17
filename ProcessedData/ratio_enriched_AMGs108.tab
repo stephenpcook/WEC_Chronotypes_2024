@@ -1,0 +1,925 @@
+final_kluster	annot	count.x	pattern	count.y	ratio
+100s	zphosphoheptose isomerase	1	seasonal	19	0.0526315789473684
+100s	primase	0	seasonal	19	0
+100s	amidoligase enzyme	0	seasonal	19	0
+100s	nucleotide-sugar epimerase	4	seasonal	19	0.210526315789474
+100s	ferrochelatase	0	seasonal	19	0
+100s	2OG-Fe(II) oxygenase	1	seasonal	19	0.0526315789473684
+101s	zphosphoheptose isomerase	0	seasonal	19	0
+101s	nucleotide-sugar epimerase	4	seasonal	19	0.210526315789474
+101s	amidoligase enzyme	0	seasonal	19	0
+101s	primase	0	seasonal	19	0
+101s	ferrochelatase	0	seasonal	19	0
+101s	2OG-Fe(II) oxygenase	2	seasonal	19	0.105263157894737
+102s	ferrochelatase	0	seasonal	28	0
+102s	zphosphoheptose isomerase	0	seasonal	28	0
+102s	2OG-Fe(II) oxygenase	0	seasonal	28	0
+102s	nucleotide-sugar epimerase	2	seasonal	28	0.0714285714285714
+102s	amidoligase enzyme	0	seasonal	28	0
+102s	primase	0	seasonal	28	0
+103s	ferrochelatase	0	seasonal	35	0
+103s	zphosphoheptose isomerase	1	seasonal	35	0.0285714285714286
+103s	nucleotide-sugar epimerase	6	seasonal	35	0.171428571428571
+103s	primase	1	seasonal	35	0.0285714285714286
+103s	2OG-Fe(II) oxygenase	1	seasonal	35	0.0285714285714286
+103s	amidoligase enzyme	1	seasonal	35	0.0285714285714286
+104s	ferrochelatase	4	seasonal	35	0.114285714285714
+104s	zphosphoheptose isomerase	0	seasonal	35	0
+104s	primase	7	seasonal	35	0.2
+104s	nucleotide-sugar epimerase	0	seasonal	35	0
+104s	2OG-Fe(II) oxygenase	11	seasonal	35	0.314285714285714
+104s	amidoligase enzyme	0	seasonal	35	0
+105s	zphosphoheptose isomerase	0	seasonal	23	0
+105s	2OG-Fe(II) oxygenase	1	seasonal	23	0.0434782608695652
+105s	ferrochelatase	0	seasonal	23	0
+105s	nucleotide-sugar epimerase	3	seasonal	23	0.130434782608696
+105s	amidoligase enzyme	0	seasonal	23	0
+105s	primase	0	seasonal	23	0
+106s	ferrochelatase	0	seasonal	17	0
+106s	zphosphoheptose isomerase	0	seasonal	17	0
+106s	2OG-Fe(II) oxygenase	3	seasonal	17	0.176470588235294
+106s	primase	0	seasonal	17	0
+106s	nucleotide-sugar epimerase	12	seasonal	17	0.705882352941177
+106s	amidoligase enzyme	0	seasonal	17	0
+107s	ferrochelatase	0	seasonal	9	0
+107s	zphosphoheptose isomerase	0	seasonal	9	0
+107s	2OG-Fe(II) oxygenase	0	seasonal	9	0
+107s	amidoligase enzyme	0	seasonal	9	0
+107s	primase	1	seasonal	9	0.111111111111111
+107s	nucleotide-sugar epimerase	0	seasonal	9	0
+108s	zphosphoheptose isomerase	1	seasonal	11	0.0909090909090909
+108s	ferrochelatase	0	seasonal	11	0
+108s	primase	0	seasonal	11	0
+108s	nucleotide-sugar epimerase	4	seasonal	11	0.363636363636364
+108s	2OG-Fe(II) oxygenase	0	seasonal	11	0
+108s	amidoligase enzyme	0	seasonal	11	0
+10ns	nucleotide-sugar epimerase	1	non_seasonal	16	0.0625
+10ns	zphosphoheptose isomerase	0	non_seasonal	16	0
+10ns	2OG-Fe(II) oxygenase	4	non_seasonal	16	0.25
+10ns	amidoligase enzyme	0	non_seasonal	16	0
+10ns	ferrochelatase	0	non_seasonal	16	0
+10ns	primase	0	non_seasonal	16	0
+10s	ferrochelatase	0	seasonal	9	0
+10s	primase	0	seasonal	9	0
+10s	2OG-Fe(II) oxygenase	0	seasonal	9	0
+10s	zphosphoheptose isomerase	0	seasonal	9	0
+10s	amidoligase enzyme	0	seasonal	9	0
+10s	nucleotide-sugar epimerase	2	seasonal	9	0.222222222222222
+11ns	2OG-Fe(II) oxygenase	6	non_seasonal	11	0.545454545454545
+11ns	primase	0	non_seasonal	11	0
+11ns	nucleotide-sugar epimerase	3	non_seasonal	11	0.272727272727273
+11ns	ferrochelatase	1	non_seasonal	11	0.0909090909090909
+11ns	amidoligase enzyme	0	non_seasonal	11	0
+11ns	zphosphoheptose isomerase	0	non_seasonal	11	0
+11s	ferrochelatase	0	seasonal	33	0
+11s	amidoligase enzyme	2	seasonal	33	0.0606060606060606
+11s	primase	0	seasonal	33	0
+11s	zphosphoheptose isomerase	0	seasonal	33	0
+11s	2OG-Fe(II) oxygenase	2	seasonal	33	0.0606060606060606
+11s	nucleotide-sugar epimerase	0	seasonal	33	0
+12ns	primase	0	non_seasonal	16	0
+12ns	2OG-Fe(II) oxygenase	0	non_seasonal	16	0
+12ns	ferrochelatase	0	non_seasonal	16	0
+12ns	nucleotide-sugar epimerase	1	non_seasonal	16	0.0625
+12ns	zphosphoheptose isomerase	0	non_seasonal	16	0
+12ns	amidoligase enzyme	0	non_seasonal	16	0
+12s	ferrochelatase	0	seasonal	65	0
+12s	primase	4	seasonal	65	0.0615384615384615
+12s	nucleotide-sugar epimerase	0	seasonal	65	0
+12s	amidoligase enzyme	0	seasonal	65	0
+12s	2OG-Fe(II) oxygenase	2	seasonal	65	0.0307692307692308
+12s	zphosphoheptose isomerase	0	seasonal	65	0
+13ns	primase	2	non_seasonal	22	0.0909090909090909
+13ns	2OG-Fe(II) oxygenase	0	non_seasonal	22	0
+13ns	zphosphoheptose isomerase	0	non_seasonal	22	0
+13ns	ferrochelatase	0	non_seasonal	22	0
+13ns	nucleotide-sugar epimerase	0	non_seasonal	22	0
+13ns	amidoligase enzyme	0	non_seasonal	22	0
+13s	ferrochelatase	0	seasonal	14	0
+13s	2OG-Fe(II) oxygenase	0	seasonal	14	0
+13s	nucleotide-sugar epimerase	0	seasonal	14	0
+13s	primase	0	seasonal	14	0
+13s	zphosphoheptose isomerase	0	seasonal	14	0
+13s	amidoligase enzyme	1	seasonal	14	0.0714285714285714
+14ns	nucleotide-sugar epimerase	1	non_seasonal	28	0.0357142857142857
+14ns	ferrochelatase	0	non_seasonal	28	0
+14ns	amidoligase enzyme	0	non_seasonal	28	0
+14ns	2OG-Fe(II) oxygenase	0	non_seasonal	28	0
+14ns	primase	1	non_seasonal	28	0.0357142857142857
+14ns	zphosphoheptose isomerase	1	non_seasonal	28	0.0357142857142857
+14s	ferrochelatase	0	seasonal	20	0
+14s	nucleotide-sugar epimerase	0	seasonal	20	0
+14s	amidoligase enzyme	0	seasonal	20	0
+14s	primase	2	seasonal	20	0.1
+14s	2OG-Fe(II) oxygenase	0	seasonal	20	0
+14s	zphosphoheptose isomerase	0	seasonal	20	0
+15ns	ferrochelatase	1	non_seasonal	11	0.0909090909090909
+15ns	2OG-Fe(II) oxygenase	3	non_seasonal	11	0.272727272727273
+15ns	primase	1	non_seasonal	11	0.0909090909090909
+15ns	zphosphoheptose isomerase	0	non_seasonal	11	0
+15ns	nucleotide-sugar epimerase	0	non_seasonal	11	0
+15ns	amidoligase enzyme	0	non_seasonal	11	0
+15s	2OG-Fe(II) oxygenase	0	seasonal	13	0
+15s	zphosphoheptose isomerase	1	seasonal	13	0.0769230769230769
+15s	primase	1	seasonal	13	0.0769230769230769
+15s	ferrochelatase	0	seasonal	13	0
+15s	amidoligase enzyme	0	seasonal	13	0
+15s	nucleotide-sugar epimerase	1	seasonal	13	0.0769230769230769
+16ns	nucleotide-sugar epimerase	2	non_seasonal	10	0.2
+16ns	2OG-Fe(II) oxygenase	0	non_seasonal	10	0
+16ns	ferrochelatase	0	non_seasonal	10	0
+16ns	amidoligase enzyme	0	non_seasonal	10	0
+16ns	zphosphoheptose isomerase	0	non_seasonal	10	0
+16ns	primase	2	non_seasonal	10	0.2
+16s	amidoligase enzyme	0	seasonal	15	0
+16s	primase	1	seasonal	15	0.0666666666666667
+16s	nucleotide-sugar epimerase	0	seasonal	15	0
+16s	ferrochelatase	3	seasonal	15	0.2
+16s	2OG-Fe(II) oxygenase	8	seasonal	15	0.533333333333333
+16s	zphosphoheptose isomerase	0	seasonal	15	0
+17ns	ferrochelatase	0	non_seasonal	5	0
+17ns	nucleotide-sugar epimerase	0	non_seasonal	5	0
+17ns	zphosphoheptose isomerase	0	non_seasonal	5	0
+17ns	primase	0	non_seasonal	5	0
+17ns	2OG-Fe(II) oxygenase	0	non_seasonal	5	0
+17ns	amidoligase enzyme	0	non_seasonal	5	0
+17s	primase	3	seasonal	16	0.1875
+17s	ferrochelatase	0	seasonal	16	0
+17s	nucleotide-sugar epimerase	0	seasonal	16	0
+17s	2OG-Fe(II) oxygenase	1	seasonal	16	0.0625
+17s	zphosphoheptose isomerase	0	seasonal	16	0
+17s	amidoligase enzyme	1	seasonal	16	0.0625
+18ns	primase	1	non_seasonal	32	0.03125
+18ns	ferrochelatase	0	non_seasonal	32	0
+18ns	2OG-Fe(II) oxygenase	0	non_seasonal	32	0
+18ns	zphosphoheptose isomerase	0	non_seasonal	32	0
+18ns	nucleotide-sugar epimerase	0	non_seasonal	32	0
+18ns	amidoligase enzyme	0	non_seasonal	32	0
+18s	ferrochelatase	0	seasonal	18	0
+18s	nucleotide-sugar epimerase	3	seasonal	18	0.166666666666667
+18s	primase	0	seasonal	18	0
+18s	2OG-Fe(II) oxygenase	0	seasonal	18	0
+18s	zphosphoheptose isomerase	0	seasonal	18	0
+18s	amidoligase enzyme	4	seasonal	18	0.222222222222222
+19ns	nucleotide-sugar epimerase	5	non_seasonal	17	0.294117647058824
+19ns	ferrochelatase	0	non_seasonal	17	0
+19ns	zphosphoheptose isomerase	0	non_seasonal	17	0
+19ns	amidoligase enzyme	0	non_seasonal	17	0
+19ns	primase	1	non_seasonal	17	0.0588235294117647
+19ns	2OG-Fe(II) oxygenase	0	non_seasonal	17	0
+19s	ferrochelatase	0	seasonal	11	0
+19s	primase	0	seasonal	11	0
+19s	amidoligase enzyme	0	seasonal	11	0
+19s	2OG-Fe(II) oxygenase	0	seasonal	11	0
+19s	zphosphoheptose isomerase	0	seasonal	11	0
+19s	nucleotide-sugar epimerase	0	seasonal	11	0
+1ns	zphosphoheptose isomerase	0	non_seasonal	12	0
+1ns	2OG-Fe(II) oxygenase	0	non_seasonal	12	0
+1ns	ferrochelatase	0	non_seasonal	12	0
+1ns	primase	0	non_seasonal	12	0
+1ns	amidoligase enzyme	0	non_seasonal	12	0
+1ns	nucleotide-sugar epimerase	0	non_seasonal	12	0
+1s	ferrochelatase	2	seasonal	48	0.0416666666666667
+1s	2OG-Fe(II) oxygenase	13	seasonal	48	0.270833333333333
+1s	amidoligase enzyme	1	seasonal	48	0.0208333333333333
+1s	primase	7	seasonal	48	0.145833333333333
+1s	zphosphoheptose isomerase	1	seasonal	48	0.0208333333333333
+1s	nucleotide-sugar epimerase	6	seasonal	48	0.125
+20ns	amidoligase enzyme	0	non_seasonal	17	0
+20ns	primase	1	non_seasonal	17	0.0588235294117647
+20ns	ferrochelatase	0	non_seasonal	17	0
+20ns	zphosphoheptose isomerase	0	non_seasonal	17	0
+20ns	nucleotide-sugar epimerase	0	non_seasonal	17	0
+20ns	2OG-Fe(II) oxygenase	1	non_seasonal	17	0.0588235294117647
+20s	nucleotide-sugar epimerase	0	seasonal	14	0
+20s	ferrochelatase	0	seasonal	14	0
+20s	primase	0	seasonal	14	0
+20s	2OG-Fe(II) oxygenase	0	seasonal	14	0
+20s	zphosphoheptose isomerase	0	seasonal	14	0
+20s	amidoligase enzyme	0	seasonal	14	0
+21ns	ferrochelatase	0	non_seasonal	15	0
+21ns	zphosphoheptose isomerase	0	non_seasonal	15	0
+21ns	nucleotide-sugar epimerase	0	non_seasonal	15	0
+21ns	2OG-Fe(II) oxygenase	0	non_seasonal	15	0
+21ns	primase	0	non_seasonal	15	0
+21ns	amidoligase enzyme	0	non_seasonal	15	0
+21s	primase	1	seasonal	28	0.0357142857142857
+21s	nucleotide-sugar epimerase	3	seasonal	28	0.107142857142857
+21s	2OG-Fe(II) oxygenase	3	seasonal	28	0.107142857142857
+21s	amidoligase enzyme	0	seasonal	28	0
+21s	ferrochelatase	0	seasonal	28	0
+21s	zphosphoheptose isomerase	1	seasonal	28	0.0357142857142857
+22ns	primase	1	non_seasonal	23	0.0434782608695652
+22ns	ferrochelatase	0	non_seasonal	23	0
+22ns	zphosphoheptose isomerase	0	non_seasonal	23	0
+22ns	nucleotide-sugar epimerase	0	non_seasonal	23	0
+22ns	2OG-Fe(II) oxygenase	0	non_seasonal	23	0
+22ns	amidoligase enzyme	0	non_seasonal	23	0
+22s	primase	3	seasonal	14	0.214285714285714
+22s	nucleotide-sugar epimerase	0	seasonal	14	0
+22s	2OG-Fe(II) oxygenase	1	seasonal	14	0.0714285714285714
+22s	amidoligase enzyme	0	seasonal	14	0
+22s	ferrochelatase	1	seasonal	14	0.0714285714285714
+22s	zphosphoheptose isomerase	0	seasonal	14	0
+23ns	nucleotide-sugar epimerase	0	non_seasonal	9	0
+23ns	ferrochelatase	0	non_seasonal	9	0
+23ns	zphosphoheptose isomerase	0	non_seasonal	9	0
+23ns	primase	0	non_seasonal	9	0
+23ns	amidoligase enzyme	0	non_seasonal	9	0
+23ns	2OG-Fe(II) oxygenase	0	non_seasonal	9	0
+23s	amidoligase enzyme	1	seasonal	27	0.037037037037037
+23s	primase	4	seasonal	27	0.148148148148148
+23s	ferrochelatase	0	seasonal	27	0
+23s	zphosphoheptose isomerase	1	seasonal	27	0.037037037037037
+23s	nucleotide-sugar epimerase	13	seasonal	27	0.481481481481481
+23s	2OG-Fe(II) oxygenase	7	seasonal	27	0.259259259259259
+24ns	nucleotide-sugar epimerase	1	non_seasonal	5	0.2
+24ns	zphosphoheptose isomerase	0	non_seasonal	5	0
+24ns	ferrochelatase	0	non_seasonal	5	0
+24ns	primase	0	non_seasonal	5	0
+24ns	amidoligase enzyme	0	non_seasonal	5	0
+24ns	2OG-Fe(II) oxygenase	0	non_seasonal	5	0
+24s	amidoligase enzyme	0	seasonal	21	0
+24s	ferrochelatase	0	seasonal	21	0
+24s	primase	0	seasonal	21	0
+24s	zphosphoheptose isomerase	0	seasonal	21	0
+24s	nucleotide-sugar epimerase	0	seasonal	21	0
+24s	2OG-Fe(II) oxygenase	0	seasonal	21	0
+25ns	nucleotide-sugar epimerase	0	non_seasonal	9	0
+25ns	amidoligase enzyme	0	non_seasonal	9	0
+25ns	primase	0	non_seasonal	9	0
+25ns	zphosphoheptose isomerase	0	non_seasonal	9	0
+25ns	ferrochelatase	0	non_seasonal	9	0
+25ns	2OG-Fe(II) oxygenase	0	non_seasonal	9	0
+25s	amidoligase enzyme	0	seasonal	22	0
+25s	nucleotide-sugar epimerase	0	seasonal	22	0
+25s	primase	1	seasonal	22	0.0454545454545455
+25s	zphosphoheptose isomerase	0	seasonal	22	0
+25s	ferrochelatase	1	seasonal	22	0.0454545454545455
+25s	2OG-Fe(II) oxygenase	6	seasonal	22	0.272727272727273
+26ns	zphosphoheptose isomerase	0	non_seasonal	13	0
+26ns	2OG-Fe(II) oxygenase	0	non_seasonal	13	0
+26ns	ferrochelatase	0	non_seasonal	13	0
+26ns	nucleotide-sugar epimerase	0	non_seasonal	13	0
+26ns	primase	0	non_seasonal	13	0
+26ns	amidoligase enzyme	0	non_seasonal	13	0
+26s	primase	3	seasonal	25	0.12
+26s	nucleotide-sugar epimerase	1	seasonal	25	0.04
+26s	ferrochelatase	1	seasonal	25	0.04
+26s	2OG-Fe(II) oxygenase	6	seasonal	25	0.24
+26s	zphosphoheptose isomerase	1	seasonal	25	0.04
+26s	amidoligase enzyme	0	seasonal	25	0
+27ns	zphosphoheptose isomerase	0	non_seasonal	2	0
+27ns	2OG-Fe(II) oxygenase	0	non_seasonal	2	0
+27ns	ferrochelatase	0	non_seasonal	2	0
+27ns	nucleotide-sugar epimerase	0	non_seasonal	2	0
+27ns	primase	0	non_seasonal	2	0
+27ns	amidoligase enzyme	0	non_seasonal	2	0
+27s	primase	4	seasonal	24	0.166666666666667
+27s	ferrochelatase	0	seasonal	24	0
+27s	2OG-Fe(II) oxygenase	2	seasonal	24	0.0833333333333333
+27s	zphosphoheptose isomerase	1	seasonal	24	0.0416666666666667
+27s	amidoligase enzyme	0	seasonal	24	0
+27s	nucleotide-sugar epimerase	3	seasonal	24	0.125
+28ns	zphosphoheptose isomerase	0	non_seasonal	20	0
+28ns	amidoligase enzyme	0	non_seasonal	20	0
+28ns	2OG-Fe(II) oxygenase	0	non_seasonal	20	0
+28ns	ferrochelatase	0	non_seasonal	20	0
+28ns	primase	0	non_seasonal	20	0
+28ns	nucleotide-sugar epimerase	0	non_seasonal	20	0
+28s	2OG-Fe(II) oxygenase	1	seasonal	15	0.0666666666666667
+28s	ferrochelatase	0	seasonal	15	0
+28s	primase	2	seasonal	15	0.133333333333333
+28s	nucleotide-sugar epimerase	0	seasonal	15	0
+28s	amidoligase enzyme	0	seasonal	15	0
+28s	zphosphoheptose isomerase	0	seasonal	15	0
+29ns	zphosphoheptose isomerase	1	non_seasonal	33	0.0303030303030303
+29ns	primase	0	non_seasonal	33	0
+29ns	nucleotide-sugar epimerase	1	non_seasonal	33	0.0303030303030303
+29ns	amidoligase enzyme	0	non_seasonal	33	0
+29ns	ferrochelatase	0	non_seasonal	33	0
+29ns	2OG-Fe(II) oxygenase	1	non_seasonal	33	0.0303030303030303
+29s	primase	1	seasonal	20	0.05
+29s	2OG-Fe(II) oxygenase	3	seasonal	20	0.15
+29s	nucleotide-sugar epimerase	4	seasonal	20	0.2
+29s	ferrochelatase	1	seasonal	20	0.05
+29s	zphosphoheptose isomerase	1	seasonal	20	0.05
+29s	amidoligase enzyme	0	seasonal	20	0
+2ns	zphosphoheptose isomerase	0	non_seasonal	5	0
+2ns	primase	0	non_seasonal	5	0
+2ns	nucleotide-sugar epimerase	0	non_seasonal	5	0
+2ns	ferrochelatase	0	non_seasonal	5	0
+2ns	amidoligase enzyme	0	non_seasonal	5	0
+2ns	2OG-Fe(II) oxygenase	0	non_seasonal	5	0
+2s	zphosphoheptose isomerase	0	seasonal	40	0
+2s	2OG-Fe(II) oxygenase	0	seasonal	40	0
+2s	ferrochelatase	0	seasonal	40	0
+2s	amidoligase enzyme	0	seasonal	40	0
+2s	primase	0	seasonal	40	0
+2s	nucleotide-sugar epimerase	2	seasonal	40	0.05
+30ns	zphosphoheptose isomerase	0	non_seasonal	35	0
+30ns	2OG-Fe(II) oxygenase	0	non_seasonal	35	0
+30ns	nucleotide-sugar epimerase	0	non_seasonal	35	0
+30ns	ferrochelatase	0	non_seasonal	35	0
+30ns	amidoligase enzyme	0	non_seasonal	35	0
+30ns	primase	0	non_seasonal	35	0
+30s	2OG-Fe(II) oxygenase	2	seasonal	20	0.1
+30s	ferrochelatase	0	seasonal	20	0
+30s	primase	0	seasonal	20	0
+30s	amidoligase enzyme	0	seasonal	20	0
+30s	nucleotide-sugar epimerase	1	seasonal	20	0.05
+30s	zphosphoheptose isomerase	0	seasonal	20	0
+31ns	zphosphoheptose isomerase	0	non_seasonal	12	0
+31ns	2OG-Fe(II) oxygenase	1	non_seasonal	12	0.0833333333333333
+31ns	amidoligase enzyme	0	non_seasonal	12	0
+31ns	nucleotide-sugar epimerase	0	non_seasonal	12	0
+31ns	ferrochelatase	0	non_seasonal	12	0
+31ns	primase	0	non_seasonal	12	0
+31s	2OG-Fe(II) oxygenase	1	seasonal	21	0.0476190476190476
+31s	ferrochelatase	0	seasonal	21	0
+31s	primase	1	seasonal	21	0.0476190476190476
+31s	nucleotide-sugar epimerase	3	seasonal	21	0.142857142857143
+31s	amidoligase enzyme	0	seasonal	21	0
+31s	zphosphoheptose isomerase	1	seasonal	21	0.0476190476190476
+32ns	amidoligase enzyme	0	non_seasonal	6	0
+32ns	zphosphoheptose isomerase	0	non_seasonal	6	0
+32ns	primase	0	non_seasonal	6	0
+32ns	2OG-Fe(II) oxygenase	0	non_seasonal	6	0
+32ns	nucleotide-sugar epimerase	0	non_seasonal	6	0
+32ns	ferrochelatase	0	non_seasonal	6	0
+32s	2OG-Fe(II) oxygenase	9	seasonal	21	0.428571428571429
+32s	ferrochelatase	3	seasonal	21	0.142857142857143
+32s	primase	5	seasonal	21	0.238095238095238
+32s	amidoligase enzyme	1	seasonal	21	0.0476190476190476
+32s	nucleotide-sugar epimerase	1	seasonal	21	0.0476190476190476
+32s	zphosphoheptose isomerase	1	seasonal	21	0.0476190476190476
+33ns	amidoligase enzyme	0	non_seasonal	15	0
+33ns	zphosphoheptose isomerase	0	non_seasonal	15	0
+33ns	primase	1	non_seasonal	15	0.0666666666666667
+33ns	nucleotide-sugar epimerase	0	non_seasonal	15	0
+33ns	2OG-Fe(II) oxygenase	0	non_seasonal	15	0
+33ns	ferrochelatase	0	non_seasonal	15	0
+33s	primase	1	seasonal	17	0.0588235294117647
+33s	amidoligase enzyme	0	seasonal	17	0
+33s	2OG-Fe(II) oxygenase	0	seasonal	17	0
+33s	ferrochelatase	0	seasonal	17	0
+33s	nucleotide-sugar epimerase	0	seasonal	17	0
+33s	zphosphoheptose isomerase	0	seasonal	17	0
+34ns	primase	0	non_seasonal	7	0
+34ns	zphosphoheptose isomerase	0	non_seasonal	7	0
+34ns	amidoligase enzyme	0	non_seasonal	7	0
+34ns	2OG-Fe(II) oxygenase	0	non_seasonal	7	0
+34ns	nucleotide-sugar epimerase	0	non_seasonal	7	0
+34ns	ferrochelatase	0	non_seasonal	7	0
+34s	amidoligase enzyme	0	seasonal	17	0
+34s	ferrochelatase	0	seasonal	17	0
+34s	2OG-Fe(II) oxygenase	0	seasonal	17	0
+34s	primase	1	seasonal	17	0.0588235294117647
+34s	nucleotide-sugar epimerase	0	seasonal	17	0
+34s	zphosphoheptose isomerase	0	seasonal	17	0
+35ns	amidoligase enzyme	0	non_seasonal	12	0
+35ns	zphosphoheptose isomerase	0	non_seasonal	12	0
+35ns	primase	0	non_seasonal	12	0
+35ns	nucleotide-sugar epimerase	0	non_seasonal	12	0
+35ns	ferrochelatase	0	non_seasonal	12	0
+35ns	2OG-Fe(II) oxygenase	1	non_seasonal	12	0.0833333333333333
+35s	nucleotide-sugar epimerase	0	seasonal	33	0
+35s	amidoligase enzyme	4	seasonal	33	0.121212121212121
+35s	2OG-Fe(II) oxygenase	2	seasonal	33	0.0606060606060606
+35s	primase	1	seasonal	33	0.0303030303030303
+35s	zphosphoheptose isomerase	0	seasonal	33	0
+35s	ferrochelatase	0	seasonal	33	0
+36ns	zphosphoheptose isomerase	0	non_seasonal	9	0
+36ns	amidoligase enzyme	0	non_seasonal	9	0
+36ns	primase	0	non_seasonal	9	0
+36ns	2OG-Fe(II) oxygenase	0	non_seasonal	9	0
+36ns	ferrochelatase	0	non_seasonal	9	0
+36ns	nucleotide-sugar epimerase	0	non_seasonal	9	0
+36s	nucleotide-sugar epimerase	0	seasonal	22	0
+36s	amidoligase enzyme	0	seasonal	22	0
+36s	ferrochelatase	1	seasonal	22	0.0454545454545455
+36s	2OG-Fe(II) oxygenase	1	seasonal	22	0.0454545454545455
+36s	primase	2	seasonal	22	0.0909090909090909
+36s	zphosphoheptose isomerase	0	seasonal	22	0
+37ns	zphosphoheptose isomerase	0	non_seasonal	11	0
+37ns	amidoligase enzyme	0	non_seasonal	11	0
+37ns	primase	0	non_seasonal	11	0
+37ns	ferrochelatase	0	non_seasonal	11	0
+37ns	2OG-Fe(II) oxygenase	1	non_seasonal	11	0.0909090909090909
+37ns	nucleotide-sugar epimerase	0	non_seasonal	11	0
+37s	nucleotide-sugar epimerase	4	seasonal	28	0.142857142857143
+37s	zphosphoheptose isomerase	2	seasonal	28	0.0714285714285714
+37s	amidoligase enzyme	0	seasonal	28	0
+37s	2OG-Fe(II) oxygenase	6	seasonal	28	0.214285714285714
+37s	primase	1	seasonal	28	0.0357142857142857
+37s	ferrochelatase	1	seasonal	28	0.0357142857142857
+38ns	zphosphoheptose isomerase	0	non_seasonal	20	0
+38ns	amidoligase enzyme	0	non_seasonal	20	0
+38ns	2OG-Fe(II) oxygenase	0	non_seasonal	20	0
+38ns	ferrochelatase	0	non_seasonal	20	0
+38ns	primase	0	non_seasonal	20	0
+38ns	nucleotide-sugar epimerase	0	non_seasonal	20	0
+38s	primase	4	seasonal	21	0.19047619047619
+38s	2OG-Fe(II) oxygenase	9	seasonal	21	0.428571428571429
+38s	nucleotide-sugar epimerase	2	seasonal	21	0.0952380952380952
+38s	ferrochelatase	3	seasonal	21	0.142857142857143
+38s	zphosphoheptose isomerase	0	seasonal	21	0
+38s	amidoligase enzyme	0	seasonal	21	0
+39ns	primase	0	non_seasonal	11	0
+39ns	amidoligase enzyme	0	non_seasonal	11	0
+39ns	ferrochelatase	0	non_seasonal	11	0
+39ns	nucleotide-sugar epimerase	0	non_seasonal	11	0
+39ns	2OG-Fe(II) oxygenase	2	non_seasonal	11	0.181818181818182
+39ns	zphosphoheptose isomerase	0	non_seasonal	11	0
+39s	2OG-Fe(II) oxygenase	2	seasonal	36	0.0555555555555556
+39s	primase	3	seasonal	36	0.0833333333333333
+39s	ferrochelatase	0	seasonal	36	0
+39s	zphosphoheptose isomerase	0	seasonal	36	0
+39s	nucleotide-sugar epimerase	3	seasonal	36	0.0833333333333333
+39s	amidoligase enzyme	0	seasonal	36	0
+3ns	primase	0	non_seasonal	4	0
+3ns	nucleotide-sugar epimerase	0	non_seasonal	4	0
+3ns	ferrochelatase	0	non_seasonal	4	0
+3ns	zphosphoheptose isomerase	0	non_seasonal	4	0
+3ns	2OG-Fe(II) oxygenase	0	non_seasonal	4	0
+3ns	amidoligase enzyme	0	non_seasonal	4	0
+3s	2OG-Fe(II) oxygenase	1	seasonal	30	0.0333333333333333
+3s	zphosphoheptose isomerase	0	seasonal	30	0
+3s	amidoligase enzyme	0	seasonal	30	0
+3s	nucleotide-sugar epimerase	2	seasonal	30	0.0666666666666667
+3s	ferrochelatase	0	seasonal	30	0
+3s	primase	0	seasonal	30	0
+40ns	zphosphoheptose isomerase	0	non_seasonal	12	0
+40ns	nucleotide-sugar epimerase	0	non_seasonal	12	0
+40ns	primase	0	non_seasonal	12	0
+40ns	amidoligase enzyme	0	non_seasonal	12	0
+40ns	ferrochelatase	0	non_seasonal	12	0
+40ns	2OG-Fe(II) oxygenase	0	non_seasonal	12	0
+40s	2OG-Fe(II) oxygenase	2	seasonal	6	0.333333333333333
+40s	primase	0	seasonal	6	0
+40s	zphosphoheptose isomerase	1	seasonal	6	0.166666666666667
+40s	ferrochelatase	1	seasonal	6	0.166666666666667
+40s	nucleotide-sugar epimerase	3	seasonal	6	0.5
+40s	amidoligase enzyme	0	seasonal	6	0
+41ns	ferrochelatase	0	non_seasonal	5	0
+41ns	zphosphoheptose isomerase	0	non_seasonal	5	0
+41ns	nucleotide-sugar epimerase	0	non_seasonal	5	0
+41ns	primase	0	non_seasonal	5	0
+41ns	amidoligase enzyme	0	non_seasonal	5	0
+41ns	2OG-Fe(II) oxygenase	0	non_seasonal	5	0
+41s	2OG-Fe(II) oxygenase	1	seasonal	9	0.111111111111111
+41s	primase	0	seasonal	9	0
+41s	zphosphoheptose isomerase	0	seasonal	9	0
+41s	ferrochelatase	0	seasonal	9	0
+41s	amidoligase enzyme	0	seasonal	9	0
+41s	nucleotide-sugar epimerase	1	seasonal	9	0.111111111111111
+42ns	zphosphoheptose isomerase	0	non_seasonal	8	0
+42ns	amidoligase enzyme	0	non_seasonal	8	0
+42ns	ferrochelatase	0	non_seasonal	8	0
+42ns	2OG-Fe(II) oxygenase	0	non_seasonal	8	0
+42ns	primase	0	non_seasonal	8	0
+42ns	nucleotide-sugar epimerase	0	non_seasonal	8	0
+42s	2OG-Fe(II) oxygenase	0	seasonal	14	0
+42s	ferrochelatase	0	seasonal	14	0
+42s	nucleotide-sugar epimerase	3	seasonal	14	0.214285714285714
+42s	zphosphoheptose isomerase	0	seasonal	14	0
+42s	primase	1	seasonal	14	0.0714285714285714
+42s	amidoligase enzyme	0	seasonal	14	0
+43ns	ferrochelatase	0	non_seasonal	2	0
+43ns	zphosphoheptose isomerase	0	non_seasonal	2	0
+43ns	nucleotide-sugar epimerase	0	non_seasonal	2	0
+43ns	2OG-Fe(II) oxygenase	0	non_seasonal	2	0
+43ns	primase	0	non_seasonal	2	0
+43ns	amidoligase enzyme	0	non_seasonal	2	0
+43s	2OG-Fe(II) oxygenase	6	seasonal	34	0.176470588235294
+43s	ferrochelatase	2	seasonal	34	0.0588235294117647
+43s	zphosphoheptose isomerase	0	seasonal	34	0
+43s	nucleotide-sugar epimerase	0	seasonal	34	0
+43s	primase	2	seasonal	34	0.0588235294117647
+43s	amidoligase enzyme	1	seasonal	34	0.0294117647058824
+44ns	zphosphoheptose isomerase	0	non_seasonal	7	0
+44ns	nucleotide-sugar epimerase	0	non_seasonal	7	0
+44ns	2OG-Fe(II) oxygenase	0	non_seasonal	7	0
+44ns	ferrochelatase	0	non_seasonal	7	0
+44ns	amidoligase enzyme	0	non_seasonal	7	0
+44ns	primase	0	non_seasonal	7	0
+44s	primase	1	seasonal	13	0.0769230769230769
+44s	ferrochelatase	1	seasonal	13	0.0769230769230769
+44s	2OG-Fe(II) oxygenase	1	seasonal	13	0.0769230769230769
+44s	zphosphoheptose isomerase	0	seasonal	13	0
+44s	nucleotide-sugar epimerase	3	seasonal	13	0.230769230769231
+44s	amidoligase enzyme	0	seasonal	13	0
+45ns	zphosphoheptose isomerase	0	non_seasonal	2	0
+45ns	primase	0	non_seasonal	2	0
+45ns	2OG-Fe(II) oxygenase	0	non_seasonal	2	0
+45ns	amidoligase enzyme	0	non_seasonal	2	0
+45ns	nucleotide-sugar epimerase	0	non_seasonal	2	0
+45ns	ferrochelatase	0	non_seasonal	2	0
+45s	ferrochelatase	0	seasonal	11	0
+45s	nucleotide-sugar epimerase	0	seasonal	11	0
+45s	2OG-Fe(II) oxygenase	1	seasonal	11	0.0909090909090909
+45s	zphosphoheptose isomerase	0	seasonal	11	0
+45s	primase	0	seasonal	11	0
+45s	amidoligase enzyme	0	seasonal	11	0
+46ns	amidoligase enzyme	0	non_seasonal	11	0
+46ns	primase	0	non_seasonal	11	0
+46ns	nucleotide-sugar epimerase	0	non_seasonal	11	0
+46ns	ferrochelatase	0	non_seasonal	11	0
+46ns	2OG-Fe(II) oxygenase	0	non_seasonal	11	0
+46ns	zphosphoheptose isomerase	0	non_seasonal	11	0
+46s	ferrochelatase	0	seasonal	10	0
+46s	nucleotide-sugar epimerase	0	seasonal	10	0
+46s	zphosphoheptose isomerase	0	seasonal	10	0
+46s	primase	0	seasonal	10	0
+46s	2OG-Fe(II) oxygenase	0	seasonal	10	0
+46s	amidoligase enzyme	0	seasonal	10	0
+47s	ferrochelatase	0	seasonal	28	0
+47s	2OG-Fe(II) oxygenase	10	seasonal	28	0.357142857142857
+47s	nucleotide-sugar epimerase	0	seasonal	28	0
+47s	amidoligase enzyme	1	seasonal	28	0.0357142857142857
+47s	zphosphoheptose isomerase	0	seasonal	28	0
+47s	primase	1	seasonal	28	0.0357142857142857
+48s	ferrochelatase	0	seasonal	19	0
+48s	2OG-Fe(II) oxygenase	0	seasonal	19	0
+48s	zphosphoheptose isomerase	0	seasonal	19	0
+48s	nucleotide-sugar epimerase	0	seasonal	19	0
+48s	primase	0	seasonal	19	0
+48s	amidoligase enzyme	0	seasonal	19	0
+49s	zphosphoheptose isomerase	0	seasonal	21	0
+49s	ferrochelatase	3	seasonal	21	0.142857142857143
+49s	primase	2	seasonal	21	0.0952380952380952
+49s	2OG-Fe(II) oxygenase	5	seasonal	21	0.238095238095238
+49s	nucleotide-sugar epimerase	1	seasonal	21	0.0476190476190476
+49s	amidoligase enzyme	0	seasonal	21	0
+4ns	primase	0	non_seasonal	7	0
+4ns	nucleotide-sugar epimerase	0	non_seasonal	7	0
+4ns	amidoligase enzyme	0	non_seasonal	7	0
+4ns	zphosphoheptose isomerase	0	non_seasonal	7	0
+4ns	2OG-Fe(II) oxygenase	0	non_seasonal	7	0
+4ns	ferrochelatase	0	non_seasonal	7	0
+4s	nucleotide-sugar epimerase	2	seasonal	12	0.166666666666667
+4s	primase	0	seasonal	12	0
+4s	ferrochelatase	0	seasonal	12	0
+4s	zphosphoheptose isomerase	0	seasonal	12	0
+4s	2OG-Fe(II) oxygenase	6	seasonal	12	0.5
+4s	amidoligase enzyme	0	seasonal	12	0
+50s	ferrochelatase	0	seasonal	29	0
+50s	primase	0	seasonal	29	0
+50s	nucleotide-sugar epimerase	0	seasonal	29	0
+50s	2OG-Fe(II) oxygenase	4	seasonal	29	0.137931034482759
+50s	zphosphoheptose isomerase	0	seasonal	29	0
+50s	amidoligase enzyme	0	seasonal	29	0
+51s	ferrochelatase	0	seasonal	16	0
+51s	primase	0	seasonal	16	0
+51s	amidoligase enzyme	0	seasonal	16	0
+51s	zphosphoheptose isomerase	0	seasonal	16	0
+51s	2OG-Fe(II) oxygenase	2	seasonal	16	0.125
+51s	nucleotide-sugar epimerase	4	seasonal	16	0.25
+52s	ferrochelatase	2	seasonal	33	0.0606060606060606
+52s	zphosphoheptose isomerase	0	seasonal	33	0
+52s	nucleotide-sugar epimerase	0	seasonal	33	0
+52s	2OG-Fe(II) oxygenase	10	seasonal	33	0.303030303030303
+52s	primase	4	seasonal	33	0.121212121212121
+52s	amidoligase enzyme	1	seasonal	33	0.0303030303030303
+53s	ferrochelatase	2	seasonal	22	0.0909090909090909
+53s	2OG-Fe(II) oxygenase	7	seasonal	22	0.318181818181818
+53s	nucleotide-sugar epimerase	4	seasonal	22	0.181818181818182
+53s	primase	2	seasonal	22	0.0909090909090909
+53s	zphosphoheptose isomerase	2	seasonal	22	0.0909090909090909
+53s	amidoligase enzyme	1	seasonal	22	0.0454545454545455
+54s	ferrochelatase	0	seasonal	28	0
+54s	nucleotide-sugar epimerase	0	seasonal	28	0
+54s	amidoligase enzyme	2	seasonal	28	0.0714285714285714
+54s	primase	0	seasonal	28	0
+54s	2OG-Fe(II) oxygenase	4	seasonal	28	0.142857142857143
+54s	zphosphoheptose isomerase	0	seasonal	28	0
+55s	nucleotide-sugar epimerase	2	seasonal	19	0.105263157894737
+55s	ferrochelatase	0	seasonal	19	0
+55s	primase	3	seasonal	19	0.157894736842105
+55s	amidoligase enzyme	0	seasonal	19	0
+55s	2OG-Fe(II) oxygenase	4	seasonal	19	0.210526315789474
+55s	zphosphoheptose isomerase	0	seasonal	19	0
+56s	ferrochelatase	0	seasonal	21	0
+56s	primase	2	seasonal	21	0.0952380952380952
+56s	2OG-Fe(II) oxygenase	2	seasonal	21	0.0952380952380952
+56s	nucleotide-sugar epimerase	0	seasonal	21	0
+56s	amidoligase enzyme	0	seasonal	21	0
+56s	zphosphoheptose isomerase	0	seasonal	21	0
+57s	ferrochelatase	0	seasonal	8	0
+57s	amidoligase enzyme	0	seasonal	8	0
+57s	nucleotide-sugar epimerase	0	seasonal	8	0
+57s	primase	0	seasonal	8	0
+57s	2OG-Fe(II) oxygenase	0	seasonal	8	0
+57s	zphosphoheptose isomerase	0	seasonal	8	0
+58s	ferrochelatase	0	seasonal	20	0
+58s	zphosphoheptose isomerase	0	seasonal	20	0
+58s	primase	0	seasonal	20	0
+58s	amidoligase enzyme	0	seasonal	20	0
+58s	nucleotide-sugar epimerase	0	seasonal	20	0
+58s	2OG-Fe(II) oxygenase	1	seasonal	20	0.05
+59s	ferrochelatase	0	seasonal	24	0
+59s	primase	1	seasonal	24	0.0416666666666667
+59s	nucleotide-sugar epimerase	1	seasonal	24	0.0416666666666667
+59s	amidoligase enzyme	0	seasonal	24	0
+59s	zphosphoheptose isomerase	0	seasonal	24	0
+59s	2OG-Fe(II) oxygenase	0	seasonal	24	0
+5ns	nucleotide-sugar epimerase	0	non_seasonal	23	0
+5ns	ferrochelatase	0	non_seasonal	23	0
+5ns	amidoligase enzyme	0	non_seasonal	23	0
+5ns	2OG-Fe(II) oxygenase	1	non_seasonal	23	0.0434782608695652
+5ns	zphosphoheptose isomerase	0	non_seasonal	23	0
+5ns	primase	0	non_seasonal	23	0
+5s	ferrochelatase	1	seasonal	46	0.0217391304347826
+5s	primase	3	seasonal	46	0.0652173913043478
+5s	amidoligase enzyme	0	seasonal	46	0
+5s	2OG-Fe(II) oxygenase	4	seasonal	46	0.0869565217391304
+5s	nucleotide-sugar epimerase	3	seasonal	46	0.0652173913043478
+5s	zphosphoheptose isomerase	0	seasonal	46	0
+60s	nucleotide-sugar epimerase	11	seasonal	35	0.314285714285714
+60s	zphosphoheptose isomerase	0	seasonal	35	0
+60s	ferrochelatase	0	seasonal	35	0
+60s	primase	2	seasonal	35	0.0571428571428571
+60s	amidoligase enzyme	0	seasonal	35	0
+60s	2OG-Fe(II) oxygenase	4	seasonal	35	0.114285714285714
+61s	nucleotide-sugar epimerase	3	seasonal	21	0.142857142857143
+61s	ferrochelatase	2	seasonal	21	0.0952380952380952
+61s	zphosphoheptose isomerase	0	seasonal	21	0
+61s	amidoligase enzyme	0	seasonal	21	0
+61s	primase	3	seasonal	21	0.142857142857143
+61s	2OG-Fe(II) oxygenase	5	seasonal	21	0.238095238095238
+62s	amidoligase enzyme	0	seasonal	14	0
+62s	nucleotide-sugar epimerase	1	seasonal	14	0.0714285714285714
+62s	primase	1	seasonal	14	0.0714285714285714
+62s	2OG-Fe(II) oxygenase	1	seasonal	14	0.0714285714285714
+62s	zphosphoheptose isomerase	0	seasonal	14	0
+62s	ferrochelatase	0	seasonal	14	0
+63s	nucleotide-sugar epimerase	0	seasonal	33	0
+63s	ferrochelatase	1	seasonal	33	0.0303030303030303
+63s	2OG-Fe(II) oxygenase	1	seasonal	33	0.0303030303030303
+63s	amidoligase enzyme	6	seasonal	33	0.181818181818182
+63s	zphosphoheptose isomerase	0	seasonal	33	0
+63s	primase	4	seasonal	33	0.121212121212121
+64s	ferrochelatase	2	seasonal	20	0.1
+64s	nucleotide-sugar epimerase	0	seasonal	20	0
+64s	2OG-Fe(II) oxygenase	6	seasonal	20	0.3
+64s	primase	2	seasonal	20	0.1
+64s	amidoligase enzyme	0	seasonal	20	0
+64s	zphosphoheptose isomerase	0	seasonal	20	0
+65s	ferrochelatase	0	seasonal	31	0
+65s	nucleotide-sugar epimerase	1	seasonal	31	0.032258064516129
+65s	primase	3	seasonal	31	0.0967741935483871
+65s	zphosphoheptose isomerase	1	seasonal	31	0.032258064516129
+65s	2OG-Fe(II) oxygenase	9	seasonal	31	0.290322580645161
+65s	amidoligase enzyme	0	seasonal	31	0
+66s	primase	0	seasonal	17	0
+66s	ferrochelatase	0	seasonal	17	0
+66s	nucleotide-sugar epimerase	0	seasonal	17	0
+66s	2OG-Fe(II) oxygenase	2	seasonal	17	0.117647058823529
+66s	amidoligase enzyme	0	seasonal	17	0
+66s	zphosphoheptose isomerase	0	seasonal	17	0
+67s	primase	1	seasonal	21	0.0476190476190476
+67s	ferrochelatase	0	seasonal	21	0
+67s	nucleotide-sugar epimerase	1	seasonal	21	0.0476190476190476
+67s	2OG-Fe(II) oxygenase	2	seasonal	21	0.0952380952380952
+67s	amidoligase enzyme	0	seasonal	21	0
+67s	zphosphoheptose isomerase	0	seasonal	21	0
+68s	ferrochelatase	7	seasonal	22	0.318181818181818
+68s	amidoligase enzyme	0	seasonal	22	0
+68s	2OG-Fe(II) oxygenase	20	seasonal	22	0.909090909090909
+68s	zphosphoheptose isomerase	0	seasonal	22	0
+68s	nucleotide-sugar epimerase	5	seasonal	22	0.227272727272727
+68s	primase	6	seasonal	22	0.272727272727273
+69s	zphosphoheptose isomerase	0	seasonal	27	0
+69s	ferrochelatase	0	seasonal	27	0
+69s	primase	0	seasonal	27	0
+69s	amidoligase enzyme	0	seasonal	27	0
+69s	nucleotide-sugar epimerase	0	seasonal	27	0
+69s	2OG-Fe(II) oxygenase	0	seasonal	27	0
+6ns	ferrochelatase	1	non_seasonal	18	0.0555555555555556
+6ns	nucleotide-sugar epimerase	0	non_seasonal	18	0
+6ns	amidoligase enzyme	0	non_seasonal	18	0
+6ns	2OG-Fe(II) oxygenase	1	non_seasonal	18	0.0555555555555556
+6ns	primase	0	non_seasonal	18	0
+6ns	zphosphoheptose isomerase	0	non_seasonal	18	0
+6s	ferrochelatase	0	seasonal	33	0
+6s	zphosphoheptose isomerase	1	seasonal	33	0.0303030303030303
+6s	amidoligase enzyme	1	seasonal	33	0.0303030303030303
+6s	primase	0	seasonal	33	0
+6s	2OG-Fe(II) oxygenase	3	seasonal	33	0.0909090909090909
+6s	nucleotide-sugar epimerase	2	seasonal	33	0.0606060606060606
+70s	ferrochelatase	0	seasonal	42	0
+70s	nucleotide-sugar epimerase	0	seasonal	42	0
+70s	zphosphoheptose isomerase	1	seasonal	42	0.0238095238095238
+70s	primase	2	seasonal	42	0.0476190476190476
+70s	amidoligase enzyme	0	seasonal	42	0
+70s	2OG-Fe(II) oxygenase	5	seasonal	42	0.119047619047619
+71s	amidoligase enzyme	0	seasonal	22	0
+71s	primase	2	seasonal	22	0.0909090909090909
+71s	nucleotide-sugar epimerase	0	seasonal	22	0
+71s	ferrochelatase	0	seasonal	22	0
+71s	zphosphoheptose isomerase	0	seasonal	22	0
+71s	2OG-Fe(II) oxygenase	0	seasonal	22	0
+72s	nucleotide-sugar epimerase	0	seasonal	26	0
+72s	primase	1	seasonal	26	0.0384615384615385
+72s	ferrochelatase	0	seasonal	26	0
+72s	zphosphoheptose isomerase	0	seasonal	26	0
+72s	2OG-Fe(II) oxygenase	0	seasonal	26	0
+72s	amidoligase enzyme	0	seasonal	26	0
+73s	nucleotide-sugar epimerase	1	seasonal	39	0.0256410256410256
+73s	2OG-Fe(II) oxygenase	2	seasonal	39	0.0512820512820513
+73s	primase	0	seasonal	39	0
+73s	amidoligase enzyme	0	seasonal	39	0
+73s	ferrochelatase	0	seasonal	39	0
+73s	zphosphoheptose isomerase	0	seasonal	39	0
+74s	primase	0	seasonal	17	0
+74s	nucleotide-sugar epimerase	0	seasonal	17	0
+74s	zphosphoheptose isomerase	0	seasonal	17	0
+74s	ferrochelatase	0	seasonal	17	0
+74s	amidoligase enzyme	0	seasonal	17	0
+74s	2OG-Fe(II) oxygenase	0	seasonal	17	0
+75s	zphosphoheptose isomerase	0	seasonal	39	0
+75s	nucleotide-sugar epimerase	1	seasonal	39	0.0256410256410256
+75s	primase	0	seasonal	39	0
+75s	ferrochelatase	2	seasonal	39	0.0512820512820513
+75s	amidoligase enzyme	0	seasonal	39	0
+75s	2OG-Fe(II) oxygenase	6	seasonal	39	0.153846153846154
+76s	nucleotide-sugar epimerase	2	seasonal	44	0.0454545454545455
+76s	primase	1	seasonal	44	0.0227272727272727
+76s	ferrochelatase	0	seasonal	44	0
+76s	zphosphoheptose isomerase	1	seasonal	44	0.0227272727272727
+76s	amidoligase enzyme	0	seasonal	44	0
+76s	2OG-Fe(II) oxygenase	2	seasonal	44	0.0454545454545455
+77s	nucleotide-sugar epimerase	0	seasonal	22	0
+77s	ferrochelatase	0	seasonal	22	0
+77s	zphosphoheptose isomerase	0	seasonal	22	0
+77s	primase	1	seasonal	22	0.0454545454545455
+77s	2OG-Fe(II) oxygenase	0	seasonal	22	0
+77s	amidoligase enzyme	0	seasonal	22	0
+78s	nucleotide-sugar epimerase	0	seasonal	19	0
+78s	ferrochelatase	0	seasonal	19	0
+78s	primase	1	seasonal	19	0.0526315789473684
+78s	zphosphoheptose isomerase	0	seasonal	19	0
+78s	amidoligase enzyme	0	seasonal	19	0
+78s	2OG-Fe(II) oxygenase	1	seasonal	19	0.0526315789473684
+79s	zphosphoheptose isomerase	0	seasonal	19	0
+79s	amidoligase enzyme	0	seasonal	19	0
+79s	nucleotide-sugar epimerase	1	seasonal	19	0.0526315789473684
+79s	ferrochelatase	1	seasonal	19	0.0526315789473684
+79s	primase	4	seasonal	19	0.210526315789474
+79s	2OG-Fe(II) oxygenase	3	seasonal	19	0.157894736842105
+7ns	amidoligase enzyme	0	non_seasonal	12	0
+7ns	2OG-Fe(II) oxygenase	0	non_seasonal	12	0
+7ns	ferrochelatase	0	non_seasonal	12	0
+7ns	zphosphoheptose isomerase	0	non_seasonal	12	0
+7ns	primase	0	non_seasonal	12	0
+7ns	nucleotide-sugar epimerase	0	non_seasonal	12	0
+7s	zphosphoheptose isomerase	0	seasonal	16	0
+7s	2OG-Fe(II) oxygenase	0	seasonal	16	0
+7s	ferrochelatase	0	seasonal	16	0
+7s	primase	1	seasonal	16	0.0625
+7s	amidoligase enzyme	0	seasonal	16	0
+7s	nucleotide-sugar epimerase	0	seasonal	16	0
+80s	zphosphoheptose isomerase	0	seasonal	22	0
+80s	nucleotide-sugar epimerase	0	seasonal	22	0
+80s	primase	2	seasonal	22	0.0909090909090909
+80s	ferrochelatase	2	seasonal	22	0.0909090909090909
+80s	amidoligase enzyme	0	seasonal	22	0
+80s	2OG-Fe(II) oxygenase	5	seasonal	22	0.227272727272727
+81s	nucleotide-sugar epimerase	0	seasonal	17	0
+81s	zphosphoheptose isomerase	0	seasonal	17	0
+81s	primase	4	seasonal	17	0.235294117647059
+81s	2OG-Fe(II) oxygenase	0	seasonal	17	0
+81s	amidoligase enzyme	0	seasonal	17	0
+81s	ferrochelatase	0	seasonal	17	0
+82s	amidoligase enzyme	0	seasonal	22	0
+82s	zphosphoheptose isomerase	0	seasonal	22	0
+82s	primase	4	seasonal	22	0.181818181818182
+82s	nucleotide-sugar epimerase	1	seasonal	22	0.0454545454545455
+82s	2OG-Fe(II) oxygenase	16	seasonal	22	0.727272727272727
+82s	ferrochelatase	5	seasonal	22	0.227272727272727
+83s	zphosphoheptose isomerase	0	seasonal	33	0
+83s	nucleotide-sugar epimerase	0	seasonal	33	0
+83s	amidoligase enzyme	0	seasonal	33	0
+83s	primase	2	seasonal	33	0.0606060606060606
+83s	2OG-Fe(II) oxygenase	3	seasonal	33	0.0909090909090909
+83s	ferrochelatase	1	seasonal	33	0.0303030303030303
+84s	zphosphoheptose isomerase	1	seasonal	27	0.037037037037037
+84s	ferrochelatase	1	seasonal	27	0.037037037037037
+84s	nucleotide-sugar epimerase	2	seasonal	27	0.0740740740740741
+84s	2OG-Fe(II) oxygenase	3	seasonal	27	0.111111111111111
+84s	amidoligase enzyme	0	seasonal	27	0
+84s	primase	4	seasonal	27	0.148148148148148
+85s	zphosphoheptose isomerase	2	seasonal	22	0.0909090909090909
+85s	2OG-Fe(II) oxygenase	0	seasonal	22	0
+85s	ferrochelatase	0	seasonal	22	0
+85s	nucleotide-sugar epimerase	5	seasonal	22	0.227272727272727
+85s	amidoligase enzyme	0	seasonal	22	0
+85s	primase	0	seasonal	22	0
+86s	ferrochelatase	2	seasonal	29	0.0689655172413793
+86s	zphosphoheptose isomerase	0	seasonal	29	0
+86s	2OG-Fe(II) oxygenase	3	seasonal	29	0.103448275862069
+86s	amidoligase enzyme	0	seasonal	29	0
+86s	primase	1	seasonal	29	0.0344827586206897
+86s	nucleotide-sugar epimerase	4	seasonal	29	0.137931034482759
+87s	zphosphoheptose isomerase	0	seasonal	8	0
+87s	nucleotide-sugar epimerase	3	seasonal	8	0.375
+87s	ferrochelatase	0	seasonal	8	0
+87s	primase	0	seasonal	8	0
+87s	amidoligase enzyme	0	seasonal	8	0
+87s	2OG-Fe(II) oxygenase	0	seasonal	8	0
+88s	ferrochelatase	0	seasonal	25	0
+88s	nucleotide-sugar epimerase	0	seasonal	25	0
+88s	zphosphoheptose isomerase	0	seasonal	25	0
+88s	primase	0	seasonal	25	0
+88s	amidoligase enzyme	0	seasonal	25	0
+88s	2OG-Fe(II) oxygenase	0	seasonal	25	0
+89s	amidoligase enzyme	0	seasonal	16	0
+89s	zphosphoheptose isomerase	0	seasonal	16	0
+89s	primase	1	seasonal	16	0.0625
+89s	nucleotide-sugar epimerase	0	seasonal	16	0
+89s	ferrochelatase	0	seasonal	16	0
+89s	2OG-Fe(II) oxygenase	1	seasonal	16	0.0625
+8ns	ferrochelatase	0	non_seasonal	17	0
+8ns	2OG-Fe(II) oxygenase	0	non_seasonal	17	0
+8ns	primase	0	non_seasonal	17	0
+8ns	nucleotide-sugar epimerase	0	non_seasonal	17	0
+8ns	zphosphoheptose isomerase	0	non_seasonal	17	0
+8ns	amidoligase enzyme	0	non_seasonal	17	0
+8s	primase	1	seasonal	28	0.0357142857142857
+8s	ferrochelatase	0	seasonal	28	0
+8s	nucleotide-sugar epimerase	2	seasonal	28	0.0714285714285714
+8s	amidoligase enzyme	0	seasonal	28	0
+8s	zphosphoheptose isomerase	0	seasonal	28	0
+8s	2OG-Fe(II) oxygenase	0	seasonal	28	0
+90s	nucleotide-sugar epimerase	0	seasonal	31	0
+90s	zphosphoheptose isomerase	0	seasonal	31	0
+90s	primase	5	seasonal	31	0.161290322580645
+90s	amidoligase enzyme	2	seasonal	31	0.0645161290322581
+90s	2OG-Fe(II) oxygenase	1	seasonal	31	0.032258064516129
+90s	ferrochelatase	0	seasonal	31	0
+91s	nucleotide-sugar epimerase	1	seasonal	23	0.0434782608695652
+91s	zphosphoheptose isomerase	0	seasonal	23	0
+91s	amidoligase enzyme	0	seasonal	23	0
+91s	ferrochelatase	2	seasonal	23	0.0869565217391304
+91s	primase	4	seasonal	23	0.173913043478261
+91s	2OG-Fe(II) oxygenase	4	seasonal	23	0.173913043478261
+92s	zphosphoheptose isomerase	1	seasonal	29	0.0344827586206897
+92s	nucleotide-sugar epimerase	2	seasonal	29	0.0689655172413793
+92s	ferrochelatase	0	seasonal	29	0
+92s	2OG-Fe(II) oxygenase	2	seasonal	29	0.0689655172413793
+92s	primase	1	seasonal	29	0.0344827586206897
+92s	amidoligase enzyme	0	seasonal	29	0
+93s	zphosphoheptose isomerase	1	seasonal	6	0.166666666666667
+93s	2OG-Fe(II) oxygenase	0	seasonal	6	0
+93s	ferrochelatase	0	seasonal	6	0
+93s	nucleotide-sugar epimerase	1	seasonal	6	0.166666666666667
+93s	amidoligase enzyme	0	seasonal	6	0
+93s	primase	0	seasonal	6	0
+94s	amidoligase enzyme	0	seasonal	23	0
+94s	primase	2	seasonal	23	0.0869565217391304
+94s	zphosphoheptose isomerase	0	seasonal	23	0
+94s	ferrochelatase	3	seasonal	23	0.130434782608696
+94s	nucleotide-sugar epimerase	1	seasonal	23	0.0434782608695652
+94s	2OG-Fe(II) oxygenase	4	seasonal	23	0.173913043478261
+95s	amidoligase enzyme	0	seasonal	19	0
+95s	ferrochelatase	0	seasonal	19	0
+95s	primase	1	seasonal	19	0.0526315789473684
+95s	zphosphoheptose isomerase	0	seasonal	19	0
+95s	nucleotide-sugar epimerase	2	seasonal	19	0.105263157894737
+95s	2OG-Fe(II) oxygenase	1	seasonal	19	0.0526315789473684
+96s	zphosphoheptose isomerase	1	seasonal	18	0.0555555555555556
+96s	ferrochelatase	2	seasonal	18	0.111111111111111
+96s	nucleotide-sugar epimerase	5	seasonal	18	0.277777777777778
+96s	2OG-Fe(II) oxygenase	6	seasonal	18	0.333333333333333
+96s	primase	2	seasonal	18	0.111111111111111
+96s	amidoligase enzyme	1	seasonal	18	0.0555555555555556
+97s	amidoligase enzyme	0	seasonal	18	0
+97s	primase	3	seasonal	18	0.166666666666667
+97s	2OG-Fe(II) oxygenase	5	seasonal	18	0.277777777777778
+97s	nucleotide-sugar epimerase	0	seasonal	18	0
+97s	ferrochelatase	0	seasonal	18	0
+97s	zphosphoheptose isomerase	1	seasonal	18	0.0555555555555556
+98s	zphosphoheptose isomerase	0	seasonal	24	0
+98s	amidoligase enzyme	1	seasonal	24	0.0416666666666667
+98s	primase	1	seasonal	24	0.0416666666666667
+98s	2OG-Fe(II) oxygenase	0	seasonal	24	0
+98s	ferrochelatase	0	seasonal	24	0
+98s	nucleotide-sugar epimerase	0	seasonal	24	0
+99s	amidoligase enzyme	0	seasonal	25	0
+99s	zphosphoheptose isomerase	0	seasonal	25	0
+99s	primase	2	seasonal	25	0.08
+99s	2OG-Fe(II) oxygenase	0	seasonal	25	0
+99s	nucleotide-sugar epimerase	1	seasonal	25	0.04
+99s	ferrochelatase	0	seasonal	25	0
+9ns	2OG-Fe(II) oxygenase	0	non_seasonal	9	0
+9ns	primase	0	non_seasonal	9	0
+9ns	amidoligase enzyme	0	non_seasonal	9	0
+9ns	ferrochelatase	0	non_seasonal	9	0
+9ns	nucleotide-sugar epimerase	0	non_seasonal	9	0
+9ns	zphosphoheptose isomerase	0	non_seasonal	9	0
+9s	amidoligase enzyme	0	seasonal	23	0
+9s	primase	2	seasonal	23	0.0869565217391304
+9s	2OG-Fe(II) oxygenase	6	seasonal	23	0.260869565217391
+9s	ferrochelatase	2	seasonal	23	0.0869565217391304
+9s	nucleotide-sugar epimerase	3	seasonal	23	0.130434782608696
+9s	zphosphoheptose isomerase	0	seasonal	23	0
