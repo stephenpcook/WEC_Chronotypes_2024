@@ -1,0 +1,257 @@
+import pandas as pd
+df = pd.read_csv('metadata.csv', index_col=0, comment='#')
+configfile: "config.yaml"
+sample = df.index
+
+rule all:
+    input:
+        expand("output/{sample}/coverage_tableRQH5k.tab.filtJed",sample = df.index),
+        "output/all/vcontact2/RQH5k/c1.clusters",
+	expand("output/{sample}/calls.filteredRQH5k.vcf",sample = df.index)
+
+rule rename_spades_short_contigs:
+    input:
+        contigs="output/{sample}/{sample}.viral-spades-short-viral-scaffolds.fa.gz"
+    output:
+        scaffolds="output/{sample}/{sample}.viral-spades-short-viral-scaffolds.5k.fa.gz",
+        mapping="output/{sample}/{sample}.viral-spades-short-viral-scaffolds.5k.txt.gz",
+    conda:
+        "envs/bio-env.yml"    
+    shell:
+        """
+        python scripts/rename_spades_contigs.py \
+        --input {input.contigs} \
+        --output {output.scaffolds} \
+        --tag {wildcards.sample} \
+        --assembly_type short \
+        --mapping {output.mapping} \
+        --min_length 5000
+        """
+
+rule virsorter_spades_short_contigs:
+    input:
+        cross_ass="output/all/virsorter/cross-cat-5k-contigs.viral-spades-short.renamed.RQH/all.cross.viral-spades.5k.merged.fasta.gz"  
+    output:
+        viral_contigs="output/all/virsorter/cross-cat-5k-contigs.viral-spades-short.renamed.RQH/all.cross.5k.viruses.fasta.gz"
+    log:
+        "logs/all/virsorter-spades-short_RQH5k.log"
+    benchmark:
+        "benchmarks/all/virsorter-spades-short_RQH5k.tsv"
+    threads: 16
+    conda:
+        "envs/vs2.yml"
+    params:
+        vs2dbdir=config['vs2db_dir']
+    shell:
+        """
+        virsorter run -w output/all/virsorter/cross-cat-5k-contigs.viral-spades-short.renamed.RQH/ \
+        -i {input.cross_ass} \
+        --db-dir {params.vs2dbdir} \
+        -j {threads} all 2>&1 | tee {log}
+
+        module load pigz
+
+        pigz output/all/virsorter/cross-cat-5k-contigs.viral-spades-short.renamed.RQH/final-viral-combined.fa
+        mv output/all/virsorter/cross-cat-5k-contigs.viral-spades-short.renamed.RQH/final-viral-combined.fa.gz {output.viral_contigs}
+        
+        """
+
+rule prodigal_for_vcontact2:
+    input:
+        fasta=rules.virsorter_spades_short_contigs.output.viral_contigs
+    output:
+        unzipped="output/all/virsorter/cross-cat-5k-contigs.viral-spades-short.renamed.RQH/all.cross.5k.viruses.fasta",
+        proteins="output/all/prodigal/RQH/VirSorter2_genomes5k.faa",
+        genomes="output/all/prodigal/RQH/VirSorter2_genomes5k.prodigal"
+    log:
+        "logs/all/prodigal_for_vcontact2_RQH5k.log"
+    benchmark:
+        "benchmarks/all/prodigal_for_vcontact2_RQH5k.tsv"
+    threads: 16
+    conda:
+        "envs/prodigal.yml"
+    shell:
+        """
+        zcat {input.fasta} > {output.unzipped}
+        
+        prodigal  \
+        -i {output.unzipped} \
+        -p meta  \
+        -a {output.proteins}  \
+        -o {output.genomes}
+
+        """
+
+rule vcontact2:
+    input:
+        rules.prodigal_for_vcontact2.output.proteins
+    output:
+        c1_clusters="output/all/vcontact2/RQH5k/c1.clusters"
+    log:
+        "logs/all/vcontact2_RQH5k.log"
+    benchmark:
+        "benchmarks/all/vcontact2_RQH5k.tsv"
+    threads: 16
+    conda:
+        "envs/vcontact2.yml"
+    params:
+        clusterone=config['clusterone_dir']
+
+    shell:
+        """
+    module load Java
+
+        vcontact2_gene2genome \
+        -p {input} \
+        -o output/all/prodigal/RQH/VirSorter2_proteins5k.csv \
+        -s Prodigal-FAA
+
+        vcontact2 \
+        --pcs-mode MCL \
+        --vcs-mode ClusterONE \
+        --threads {threads} \
+        --raw-proteins {input} \
+        --rel-mode Diamond \
+        --c1-bin {params.clusterone} \
+        --proteins-fp output/all/prodigal/RQH/VirSorter2_proteins5k.csv \
+        --db 'ProkaryoticViralRefSeq201-Merged' \
+        --output-dir output/all/vcontact2/RQH5k 2>&1 | tee {log} 
+    """
+
+rule checkv:
+    input:
+        rules.virsorter_spades_short_contigs.output.viral_contigs
+    output:
+        checkv_qs="output/all/checkv/RQH5k/quality_summary.tsv",
+        checkv_fasta="output/all/checkv/RQH5k/viruses.fna"
+    log:
+        "logs/all/checkv_RQH5k.log"
+    benchmark:
+        "benchmarks/all/checkv_RQH5k.tsv"
+    threads: 16
+    conda:
+        "envs/checkv.yml"
+    params:
+        checkv_db=config['checkv_db_dir']
+    shell:
+        """
+        checkv end_to_end {input} output/all/checkv/RQH5k  -d {params.checkv_db} -t {threads} 2>&1 | tee {log}
+        """
+
+rule bowtie2_map:
+    input:
+        fwd="output/{sample}/fwd.ec.no-human.hq.fq.gz",
+        rev="output/{sample}/rev.ec.no-human.hq.fq.gz",
+        seqs=rules.checkv.output.checkv_fasta
+
+    output:
+        bwt2_sam="output/{sample}/mapping_populationsRQH5k.sam"
+    log:
+        "logs/{sample}/bowtie2_mapRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/bowtie2_mapRQH5k.tsv"
+    threads: 16
+    conda:
+        "envs/bowtie2.yml"
+    shell:
+        """
+        bowtie2 -x output/all/checkv/RQH5k/viruses  -1 {input.fwd}  -2 {input.rev} -p {threads} -S {output.bwt2_sam} --non-deterministic
+        """
+
+rule sam_to_bam:
+    input:
+        mapping_sam="output/{sample}/mapping_populationsRQH5k.sam"
+    output:
+        bwt2_bam="output/{sample}/mapping_populationsRQH5k.bam",
+        bwt2_bam_sorted="output/{sample}/mapping_populationsRQH5k.sorted.bam"
+    log:
+        "logs/{sample}/sam_to_bamRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/sam_to_mapRQH5k.tsv"
+    conda:
+        "envs/samtools.yml"
+    shell:
+        """
+        samtools view -S -b {input.mapping_sam} > {output.bwt2_bam}
+
+        samtools sort {output.bwt2_bam} -o {output.bwt2_bam_sorted}
+        """
+
+rule coverm:
+    input:
+        mapping_bam=rules.sam_to_bam.output.bwt2_bam_sorted
+    output:
+        mapping_bam_filt="output/{sample}/mapping_populations.filteredRQH5k.bam"
+    log:
+        "logs/{sample}/covermfiltRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/covermfiltRQH5k.tsv"
+    conda:
+        "envs/coverm.yml"
+    shell:
+        """
+        coverm filter --min-read-aligned-percent 100 --min-read-percent-identity 98 --min-read-aligned-length 100  \
+    --bam-files {input.mapping_bam}  --output-bam-files {output.mapping_bam_filt}
+        """
+
+rule bcf_variants:
+    input:
+        mapping_bam = rules.coverm.output.mapping_bam_filt,
+        scaffolds = rules.checkv.output.checkv_fasta
+    output:
+        calls = "output/{sample}/calls.filteredRQH5k.bcf"
+    log:
+        "logs/{sample}/bcf_vars.filteredRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/bcf_vars.filteredRQH5k.tsv"
+    conda:
+        "envs/bcftools.yml"
+    shell:
+        """
+        bcftools mpileup --max-depth 1000 -Ou -f {input.scaffolds} {input.mapping_bam} | bcftools call --ploidy 1 -mv -Ob -o {output.calls}
+        """
+rule bcf_filter:
+    input:
+        calls = rules.bcf_variants.output.calls
+    output:
+        filt_calls = "output/{sample}/calls.filteredRQH5k.vcf"
+    log:
+        "logs/{sample}/bcf_vars_filt.filteredRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/bcf_vars_filt.filteredRQH5k.tsv"
+    conda:
+        "envs/bcftools.yml"
+    shell:
+        """
+        bcftools view -i '%QUAL>=20 || DP<10' {input.calls} > {output.filt_calls}
+        """
+
+rule samtools_cov:
+    input:
+        mapping_bamsorted=rules.coverm.output.mapping_bam_filt
+    output:
+        cov_table="output/{sample}/coverage_table.98filteredRQH5k.tab"
+    log:
+        "logs/{sample}/sam_to_bam_filtRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/sam_to_map_filtRQH5k.tsv"
+    conda:
+        "envs/samtools.yml"
+    shell:
+        """
+        samtools coverage {input.mapping_bamsorted} > {output.cov_table}
+        """
+
+rule filt_covetable:
+    input:
+        cov_table=rules.samtools_cov.output.cov_table
+    output:
+        filt_cov_table="output/{sample}/coverage_tableRQH5k.tab.filtJed"
+    log:
+        "logs/{sample}/cov.filteredRQH5k.log"
+    benchmark:
+        "benchmarks/{sample}/cov.filteredRQH5k.tsv"
+    shell:
+        """
+        awk '$6 > 90 && $7 > 10 {{print}}' {input.cov_table} | cut -f 1,7 | sort -k 1,1 > {output.filt_cov_table}
+        """
