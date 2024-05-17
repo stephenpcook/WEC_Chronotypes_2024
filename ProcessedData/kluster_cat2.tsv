@@ -1,0 +1,1541 @@
+final_kluster	category	count	pattern
+1s	unknown function	1969	seasonal
+2s	unknown function	1534	seasonal
+3s	unknown function	1163	seasonal
+4s	unknown function	657	seasonal
+5s	unknown function	1657	seasonal
+6s	unknown function	1300	seasonal
+1ns	unknown function	527	non_seasonal
+7s	unknown function	608	seasonal
+8s	unknown function	1287	seasonal
+9s	unknown function	812	seasonal
+10s	unknown function	426	seasonal
+2ns	unknown function	115	non_seasonal
+11s	unknown function	1095	seasonal
+12s	unknown function	2401	seasonal
+13s	unknown function	512	seasonal
+14s	unknown function	803	seasonal
+15s	unknown function	517	seasonal
+16s	unknown function	514	seasonal
+3ns	unknown function	162	non_seasonal
+17s	unknown function	775	seasonal
+18s	unknown function	839	seasonal
+19s	unknown function	404	seasonal
+20s	unknown function	391	seasonal
+21s	unknown function	1081	seasonal
+22s	unknown function	519	seasonal
+23s	unknown function	1511	seasonal
+24s	unknown function	600	seasonal
+4ns	unknown function	221	non_seasonal
+25s	unknown function	867	seasonal
+26s	unknown function	842	seasonal
+5ns	unknown function	778	non_seasonal
+6ns	unknown function	497	non_seasonal
+7ns	unknown function	472	non_seasonal
+27s	unknown function	903	seasonal
+28s	unknown function	518	seasonal
+8ns	unknown function	837	non_seasonal
+29s	unknown function	993	seasonal
+30s	unknown function	856	seasonal
+31s	unknown function	919	seasonal
+9ns	unknown function	358	non_seasonal
+32s	unknown function	921	seasonal
+33s	unknown function	530	seasonal
+34s	unknown function	524	seasonal
+35s	unknown function	1198	seasonal
+36s	unknown function	893	seasonal
+37s	unknown function	1463	seasonal
+10ns	unknown function	826	non_seasonal
+11ns	unknown function	593	non_seasonal
+12ns	unknown function	597	non_seasonal
+38s	unknown function	945	seasonal
+39s	unknown function	1524	seasonal
+13ns	unknown function	823	non_seasonal
+40s	unknown function	250	seasonal
+41s	unknown function	242	seasonal
+42s	unknown function	565	seasonal
+43s	unknown function	1304	seasonal
+44s	unknown function	451	seasonal
+45s	unknown function	409	seasonal
+46s	unknown function	444	seasonal
+14ns	unknown function	1297	non_seasonal
+47s	unknown function	1088	seasonal
+48s	unknown function	769	seasonal
+49s	unknown function	804	seasonal
+50s	unknown function	1118	seasonal
+15ns	unknown function	435	non_seasonal
+51s	unknown function	719	seasonal
+52s	unknown function	1343	seasonal
+53s	unknown function	1106	seasonal
+54s	unknown function	1102	seasonal
+55s	unknown function	933	seasonal
+56s	unknown function	906	seasonal
+57s	unknown function	385	seasonal
+58s	unknown function	715	seasonal
+59s	unknown function	851	seasonal
+60s	unknown function	1442	seasonal
+61s	unknown function	1016	seasonal
+62s	unknown function	555	seasonal
+16ns	unknown function	553	non_seasonal
+63s	unknown function	1445	seasonal
+64s	unknown function	624	seasonal
+17ns	unknown function	188	non_seasonal
+65s	unknown function	1613	seasonal
+66s	unknown function	586	seasonal
+18ns	unknown function	1245	non_seasonal
+67s	unknown function	861	seasonal
+68s	unknown function	1137	seasonal
+69s	unknown function	1005	seasonal
+70s	unknown function	1533	seasonal
+19ns	unknown function	737	non_seasonal
+20ns	unknown function	481	non_seasonal
+71s	unknown function	958	seasonal
+72s	unknown function	788	seasonal
+73s	unknown function	1505	seasonal
+21ns	unknown function	618	non_seasonal
+22ns	unknown function	688	non_seasonal
+74s	unknown function	593	seasonal
+75s	unknown function	1268	seasonal
+76s	unknown function	1744	seasonal
+77s	unknown function	731	seasonal
+78s	unknown function	628	seasonal
+23ns	unknown function	313	non_seasonal
+24ns	unknown function	229	non_seasonal
+79s	unknown function	622	seasonal
+80s	unknown function	869	seasonal
+81s	unknown function	683	seasonal
+25ns	unknown function	306	non_seasonal
+82s	unknown function	1010	seasonal
+83s	unknown function	1043	seasonal
+84s	unknown function	1211	seasonal
+26ns	unknown function	392	non_seasonal
+85s	unknown function	1102	seasonal
+27ns	unknown function	90	non_seasonal
+28ns	unknown function	693	non_seasonal
+86s	unknown function	1249	seasonal
+87s	unknown function	491	seasonal
+88s	unknown function	769	seasonal
+89s	unknown function	662	seasonal
+90s	unknown function	1438	seasonal
+91s	unknown function	903	seasonal
+92s	unknown function	1117	seasonal
+93s	unknown function	279	seasonal
+94s	unknown function	950	seasonal
+95s	unknown function	697	seasonal
+96s	unknown function	813	seasonal
+29ns	unknown function	1105	non_seasonal
+30ns	unknown function	1428	non_seasonal
+97s	unknown function	772	seasonal
+31ns	unknown function	449	non_seasonal
+32ns	unknown function	280	non_seasonal
+33ns	unknown function	569	non_seasonal
+34ns	unknown function	264	non_seasonal
+35ns	unknown function	408	non_seasonal
+98s	unknown function	832	seasonal
+36ns	unknown function	278	non_seasonal
+99s	unknown function	1035	seasonal
+37ns	unknown function	310	non_seasonal
+38ns	unknown function	655	non_seasonal
+100s	unknown function	737	seasonal
+39ns	unknown function	433	non_seasonal
+101s	unknown function	890	seasonal
+40ns	unknown function	451	non_seasonal
+41ns	unknown function	176	non_seasonal
+102s	unknown function	1193	seasonal
+42ns	unknown function	227	non_seasonal
+103s	unknown function	1592	seasonal
+104s	unknown function	1491	seasonal
+105s	unknown function	814	seasonal
+106s	unknown function	894	seasonal
+107s	unknown function	327	seasonal
+108s	unknown function	462	seasonal
+43ns	unknown function	58	non_seasonal
+44ns	unknown function	350	non_seasonal
+45ns	unknown function	33	non_seasonal
+46ns	unknown function	362	non_seasonal
+1s	tail	59	seasonal
+2s	tail	59	seasonal
+3s	tail	32	seasonal
+4s	tail	13	seasonal
+5s	tail	77	seasonal
+6s	tail	52	seasonal
+1ns	tail	36	non_seasonal
+7s	tail	9	seasonal
+8s	tail	38	seasonal
+9s	tail	30	seasonal
+10s	tail	14	seasonal
+2ns	tail	0	non_seasonal
+11s	tail	20	seasonal
+12s	tail	65	seasonal
+13s	tail	20	seasonal
+14s	tail	19	seasonal
+15s	tail	29	seasonal
+16s	tail	19	seasonal
+3ns	tail	5	non_seasonal
+17s	tail	11	seasonal
+18s	tail	18	seasonal
+19s	tail	9	seasonal
+20s	tail	7	seasonal
+21s	tail	22	seasonal
+22s	tail	12	seasonal
+23s	tail	41	seasonal
+24s	tail	40	seasonal
+4ns	tail	19	non_seasonal
+25s	tail	12	seasonal
+26s	tail	32	seasonal
+5ns	tail	24	non_seasonal
+6ns	tail	15	non_seasonal
+7ns	tail	38	non_seasonal
+27s	tail	26	seasonal
+28s	tail	17	seasonal
+8ns	tail	13	non_seasonal
+29s	tail	30	seasonal
+30s	tail	23	seasonal
+31s	tail	25	seasonal
+9ns	tail	5	non_seasonal
+32s	tail	29	seasonal
+33s	tail	18	seasonal
+34s	tail	20	seasonal
+35s	tail	26	seasonal
+36s	tail	15	seasonal
+37s	tail	46	seasonal
+10ns	tail	29	non_seasonal
+11ns	tail	46	non_seasonal
+12ns	tail	40	non_seasonal
+38s	tail	16	seasonal
+39s	tail	79	seasonal
+13ns	tail	19	non_seasonal
+40s	tail	9	seasonal
+41s	tail	6	seasonal
+42s	tail	12	seasonal
+43s	tail	36	seasonal
+44s	tail	28	seasonal
+45s	tail	13	seasonal
+46s	tail	13	seasonal
+14ns	tail	48	non_seasonal
+47s	tail	40	seasonal
+48s	tail	5	seasonal
+49s	tail	26	seasonal
+50s	tail	38	seasonal
+15ns	tail	11	non_seasonal
+51s	tail	17	seasonal
+52s	tail	28	seasonal
+53s	tail	33	seasonal
+54s	tail	31	seasonal
+55s	tail	11	seasonal
+56s	tail	15	seasonal
+57s	tail	20	seasonal
+58s	tail	17	seasonal
+59s	tail	16	seasonal
+60s	tail	55	seasonal
+61s	tail	28	seasonal
+62s	tail	10	seasonal
+16ns	tail	13	non_seasonal
+63s	tail	39	seasonal
+64s	tail	22	seasonal
+17ns	tail	3	non_seasonal
+65s	tail	44	seasonal
+66s	tail	9	seasonal
+18ns	tail	40	non_seasonal
+67s	tail	18	seasonal
+68s	tail	27	seasonal
+69s	tail	35	seasonal
+70s	tail	52	seasonal
+19ns	tail	27	non_seasonal
+20ns	tail	21	non_seasonal
+71s	tail	34	seasonal
+72s	tail	30	seasonal
+73s	tail	34	seasonal
+21ns	tail	40	non_seasonal
+22ns	tail	53	non_seasonal
+74s	tail	16	seasonal
+75s	tail	39	seasonal
+76s	tail	55	seasonal
+77s	tail	34	seasonal
+78s	tail	35	seasonal
+23ns	tail	12	non_seasonal
+24ns	tail	20	non_seasonal
+79s	tail	19	seasonal
+80s	tail	25	seasonal
+81s	tail	20	seasonal
+25ns	tail	21	non_seasonal
+82s	tail	32	seasonal
+83s	tail	35	seasonal
+84s	tail	25	seasonal
+26ns	tail	14	non_seasonal
+85s	tail	39	seasonal
+27ns	tail	0	non_seasonal
+28ns	tail	17	non_seasonal
+86s	tail	32	seasonal
+87s	tail	5	seasonal
+88s	tail	29	seasonal
+89s	tail	13	seasonal
+90s	tail	35	seasonal
+91s	tail	19	seasonal
+92s	tail	23	seasonal
+93s	tail	7	seasonal
+94s	tail	36	seasonal
+95s	tail	12	seasonal
+96s	tail	13	seasonal
+29ns	tail	57	non_seasonal
+30ns	tail	41	non_seasonal
+97s	tail	24	seasonal
+31ns	tail	22	non_seasonal
+32ns	tail	7	non_seasonal
+33ns	tail	12	non_seasonal
+34ns	tail	5	non_seasonal
+35ns	tail	20	non_seasonal
+98s	tail	48	seasonal
+36ns	tail	22	non_seasonal
+99s	tail	29	seasonal
+37ns	tail	10	non_seasonal
+38ns	tail	22	non_seasonal
+100s	tail	29	seasonal
+39ns	tail	32	non_seasonal
+101s	tail	16	seasonal
+40ns	tail	6	non_seasonal
+41ns	tail	11	non_seasonal
+102s	tail	37	seasonal
+42ns	tail	7	non_seasonal
+103s	tail	38	seasonal
+104s	tail	26	seasonal
+105s	tail	54	seasonal
+106s	tail	39	seasonal
+107s	tail	3	seasonal
+108s	tail	12	seasonal
+43ns	tail	0	non_seasonal
+44ns	tail	39	non_seasonal
+45ns	tail	0	non_seasonal
+46ns	tail	4	non_seasonal
+1s	head and packaging	107	seasonal
+2s	head and packaging	82	seasonal
+3s	head and packaging	53	seasonal
+4s	head and packaging	33	seasonal
+5s	head and packaging	106	seasonal
+6s	head and packaging	75	seasonal
+1ns	head and packaging	37	non_seasonal
+7s	head and packaging	25	seasonal
+8s	head and packaging	71	seasonal
+9s	head and packaging	45	seasonal
+10s	head and packaging	26	seasonal
+2ns	head and packaging	11	non_seasonal
+11s	head and packaging	82	seasonal
+12s	head and packaging	116	seasonal
+13s	head and packaging	34	seasonal
+14s	head and packaging	55	seasonal
+15s	head and packaging	35	seasonal
+16s	head and packaging	30	seasonal
+3ns	head and packaging	8	non_seasonal
+17s	head and packaging	37	seasonal
+18s	head and packaging	20	seasonal
+19s	head and packaging	20	seasonal
+20s	head and packaging	18	seasonal
+21s	head and packaging	57	seasonal
+22s	head and packaging	47	seasonal
+23s	head and packaging	73	seasonal
+24s	head and packaging	40	seasonal
+4ns	head and packaging	18	non_seasonal
+25s	head and packaging	62	seasonal
+26s	head and packaging	51	seasonal
+5ns	head and packaging	55	non_seasonal
+6ns	head and packaging	28	non_seasonal
+7ns	head and packaging	45	non_seasonal
+27s	head and packaging	49	seasonal
+28s	head and packaging	47	seasonal
+8ns	head and packaging	33	non_seasonal
+29s	head and packaging	52	seasonal
+30s	head and packaging	60	seasonal
+31s	head and packaging	47	seasonal
+9ns	head and packaging	19	non_seasonal
+32s	head and packaging	49	seasonal
+33s	head and packaging	45	seasonal
+34s	head and packaging	35	seasonal
+35s	head and packaging	79	seasonal
+36s	head and packaging	45	seasonal
+37s	head and packaging	70	seasonal
+10ns	head and packaging	25	non_seasonal
+11ns	head and packaging	46	non_seasonal
+12ns	head and packaging	51	non_seasonal
+38s	head and packaging	58	seasonal
+39s	head and packaging	101	seasonal
+13ns	head and packaging	37	non_seasonal
+40s	head and packaging	14	seasonal
+41s	head and packaging	26	seasonal
+42s	head and packaging	27	seasonal
+43s	head and packaging	76	seasonal
+44s	head and packaging	53	seasonal
+45s	head and packaging	41	seasonal
+46s	head and packaging	21	seasonal
+14ns	head and packaging	86	non_seasonal
+47s	head and packaging	57	seasonal
+48s	head and packaging	45	seasonal
+49s	head and packaging	43	seasonal
+50s	head and packaging	91	seasonal
+15ns	head and packaging	19	non_seasonal
+51s	head and packaging	39	seasonal
+52s	head and packaging	63	seasonal
+53s	head and packaging	68	seasonal
+54s	head and packaging	44	seasonal
+55s	head and packaging	37	seasonal
+56s	head and packaging	41	seasonal
+57s	head and packaging	19	seasonal
+58s	head and packaging	61	seasonal
+59s	head and packaging	36	seasonal
+60s	head and packaging	83	seasonal
+61s	head and packaging	57	seasonal
+62s	head and packaging	32	seasonal
+16ns	head and packaging	19	non_seasonal
+63s	head and packaging	68	seasonal
+64s	head and packaging	46	seasonal
+17ns	head and packaging	5	non_seasonal
+65s	head and packaging	89	seasonal
+66s	head and packaging	34	seasonal
+18ns	head and packaging	76	non_seasonal
+67s	head and packaging	51	seasonal
+68s	head and packaging	45	seasonal
+69s	head and packaging	82	seasonal
+70s	head and packaging	105	seasonal
+19ns	head and packaging	39	non_seasonal
+20ns	head and packaging	45	non_seasonal
+71s	head and packaging	53	seasonal
+72s	head and packaging	75	seasonal
+73s	head and packaging	113	seasonal
+21ns	head and packaging	44	non_seasonal
+22ns	head and packaging	91	non_seasonal
+74s	head and packaging	50	seasonal
+75s	head and packaging	75	seasonal
+76s	head and packaging	132	seasonal
+77s	head and packaging	38	seasonal
+78s	head and packaging	54	seasonal
+23ns	head and packaging	20	non_seasonal
+24ns	head and packaging	8	non_seasonal
+79s	head and packaging	45	seasonal
+80s	head and packaging	43	seasonal
+81s	head and packaging	37	seasonal
+25ns	head and packaging	33	non_seasonal
+82s	head and packaging	59	seasonal
+83s	head and packaging	82	seasonal
+84s	head and packaging	75	seasonal
+26ns	head and packaging	45	non_seasonal
+85s	head and packaging	48	seasonal
+27ns	head and packaging	8	non_seasonal
+28ns	head and packaging	42	non_seasonal
+86s	head and packaging	49	seasonal
+87s	head and packaging	16	seasonal
+88s	head and packaging	37	seasonal
+89s	head and packaging	28	seasonal
+90s	head and packaging	78	seasonal
+91s	head and packaging	49	seasonal
+92s	head and packaging	54	seasonal
+93s	head and packaging	17	seasonal
+94s	head and packaging	73	seasonal
+95s	head and packaging	46	seasonal
+96s	head and packaging	20	seasonal
+29ns	head and packaging	77	non_seasonal
+30ns	head and packaging	87	non_seasonal
+97s	head and packaging	32	seasonal
+31ns	head and packaging	43	non_seasonal
+32ns	head and packaging	24	non_seasonal
+33ns	head and packaging	37	non_seasonal
+34ns	head and packaging	26	non_seasonal
+35ns	head and packaging	17	non_seasonal
+98s	head and packaging	77	seasonal
+36ns	head and packaging	25	non_seasonal
+99s	head and packaging	38	seasonal
+37ns	head and packaging	35	non_seasonal
+38ns	head and packaging	43	non_seasonal
+100s	head and packaging	44	seasonal
+39ns	head and packaging	47	non_seasonal
+101s	head and packaging	49	seasonal
+40ns	head and packaging	25	non_seasonal
+41ns	head and packaging	9	non_seasonal
+102s	head and packaging	78	seasonal
+42ns	head and packaging	15	non_seasonal
+103s	head and packaging	65	seasonal
+104s	head and packaging	72	seasonal
+105s	head and packaging	55	seasonal
+106s	head and packaging	55	seasonal
+107s	head and packaging	9	seasonal
+108s	head and packaging	31	seasonal
+43ns	head and packaging	3	non_seasonal
+44ns	head and packaging	28	non_seasonal
+45ns	head and packaging	6	non_seasonal
+46ns	head and packaging	27	non_seasonal
+1s	DNA. RNA and nucleotide metabolism	142	seasonal
+2s	DNA. RNA and nucleotide metabolism	113	seasonal
+3s	DNA. RNA and nucleotide metabolism	73	seasonal
+4s	DNA. RNA and nucleotide metabolism	43	seasonal
+5s	DNA. RNA and nucleotide metabolism	118	seasonal
+6s	DNA. RNA and nucleotide metabolism	82	seasonal
+1ns	DNA. RNA and nucleotide metabolism	72	non_seasonal
+7s	DNA. RNA and nucleotide metabolism	40	seasonal
+8s	DNA. RNA and nucleotide metabolism	106	seasonal
+9s	DNA. RNA and nucleotide metabolism	62	seasonal
+10s	DNA. RNA and nucleotide metabolism	30	seasonal
+2ns	DNA. RNA and nucleotide metabolism	5	non_seasonal
+11s	DNA. RNA and nucleotide metabolism	66	seasonal
+12s	DNA. RNA and nucleotide metabolism	175	seasonal
+13s	DNA. RNA and nucleotide metabolism	19	seasonal
+14s	DNA. RNA and nucleotide metabolism	49	seasonal
+15s	DNA. RNA and nucleotide metabolism	56	seasonal
+16s	DNA. RNA and nucleotide metabolism	33	seasonal
+3ns	DNA. RNA and nucleotide metabolism	14	non_seasonal
+17s	DNA. RNA and nucleotide metabolism	44	seasonal
+18s	DNA. RNA and nucleotide metabolism	57	seasonal
+19s	DNA. RNA and nucleotide metabolism	41	seasonal
+20s	DNA. RNA and nucleotide metabolism	21	seasonal
+21s	DNA. RNA and nucleotide metabolism	65	seasonal
+22s	DNA. RNA and nucleotide metabolism	30	seasonal
+23s	DNA. RNA and nucleotide metabolism	106	seasonal
+24s	DNA. RNA and nucleotide metabolism	26	seasonal
+4ns	DNA. RNA and nucleotide metabolism	11	non_seasonal
+25s	DNA. RNA and nucleotide metabolism	71	seasonal
+26s	DNA. RNA and nucleotide metabolism	61	seasonal
+5ns	DNA. RNA and nucleotide metabolism	67	non_seasonal
+6ns	DNA. RNA and nucleotide metabolism	20	non_seasonal
+7ns	DNA. RNA and nucleotide metabolism	35	non_seasonal
+27s	DNA. RNA and nucleotide metabolism	67	seasonal
+28s	DNA. RNA and nucleotide metabolism	60	seasonal
+8ns	DNA. RNA and nucleotide metabolism	48	non_seasonal
+29s	DNA. RNA and nucleotide metabolism	62	seasonal
+30s	DNA. RNA and nucleotide metabolism	62	seasonal
+31s	DNA. RNA and nucleotide metabolism	65	seasonal
+9ns	DNA. RNA and nucleotide metabolism	30	non_seasonal
+32s	DNA. RNA and nucleotide metabolism	80	seasonal
+33s	DNA. RNA and nucleotide metabolism	22	seasonal
+34s	DNA. RNA and nucleotide metabolism	34	seasonal
+35s	DNA. RNA and nucleotide metabolism	77	seasonal
+36s	DNA. RNA and nucleotide metabolism	44	seasonal
+37s	DNA. RNA and nucleotide metabolism	107	seasonal
+10ns	DNA. RNA and nucleotide metabolism	56	non_seasonal
+11ns	DNA. RNA and nucleotide metabolism	45	non_seasonal
+12ns	DNA. RNA and nucleotide metabolism	61	non_seasonal
+38s	DNA. RNA and nucleotide metabolism	64	seasonal
+39s	DNA. RNA and nucleotide metabolism	108	seasonal
+13ns	DNA. RNA and nucleotide metabolism	63	non_seasonal
+40s	DNA. RNA and nucleotide metabolism	16	seasonal
+41s	DNA. RNA and nucleotide metabolism	22	seasonal
+42s	DNA. RNA and nucleotide metabolism	29	seasonal
+43s	DNA. RNA and nucleotide metabolism	107	seasonal
+44s	DNA. RNA and nucleotide metabolism	36	seasonal
+45s	DNA. RNA and nucleotide metabolism	13	seasonal
+46s	DNA. RNA and nucleotide metabolism	28	seasonal
+14ns	DNA. RNA and nucleotide metabolism	91	non_seasonal
+47s	DNA. RNA and nucleotide metabolism	76	seasonal
+48s	DNA. RNA and nucleotide metabolism	67	seasonal
+49s	DNA. RNA and nucleotide metabolism	70	seasonal
+50s	DNA. RNA and nucleotide metabolism	67	seasonal
+15ns	DNA. RNA and nucleotide metabolism	32	non_seasonal
+51s	DNA. RNA and nucleotide metabolism	44	seasonal
+52s	DNA. RNA and nucleotide metabolism	100	seasonal
+53s	DNA. RNA and nucleotide metabolism	95	seasonal
+54s	DNA. RNA and nucleotide metabolism	62	seasonal
+55s	DNA. RNA and nucleotide metabolism	48	seasonal
+56s	DNA. RNA and nucleotide metabolism	69	seasonal
+57s	DNA. RNA and nucleotide metabolism	19	seasonal
+58s	DNA. RNA and nucleotide metabolism	54	seasonal
+59s	DNA. RNA and nucleotide metabolism	55	seasonal
+60s	DNA. RNA and nucleotide metabolism	127	seasonal
+61s	DNA. RNA and nucleotide metabolism	61	seasonal
+62s	DNA. RNA and nucleotide metabolism	41	seasonal
+16ns	DNA. RNA and nucleotide metabolism	46	non_seasonal
+63s	DNA. RNA and nucleotide metabolism	80	seasonal
+64s	DNA. RNA and nucleotide metabolism	47	seasonal
+17ns	DNA. RNA and nucleotide metabolism	6	non_seasonal
+65s	DNA. RNA and nucleotide metabolism	132	seasonal
+66s	DNA. RNA and nucleotide metabolism	25	seasonal
+18ns	DNA. RNA and nucleotide metabolism	105	non_seasonal
+67s	DNA. RNA and nucleotide metabolism	57	seasonal
+68s	DNA. RNA and nucleotide metabolism	75	seasonal
+69s	DNA. RNA and nucleotide metabolism	67	seasonal
+70s	DNA. RNA and nucleotide metabolism	124	seasonal
+19ns	DNA. RNA and nucleotide metabolism	61	non_seasonal
+20ns	DNA. RNA and nucleotide metabolism	32	non_seasonal
+71s	DNA. RNA and nucleotide metabolism	69	seasonal
+72s	DNA. RNA and nucleotide metabolism	53	seasonal
+73s	DNA. RNA and nucleotide metabolism	83	seasonal
+21ns	DNA. RNA and nucleotide metabolism	61	non_seasonal
+22ns	DNA. RNA and nucleotide metabolism	77	non_seasonal
+74s	DNA. RNA and nucleotide metabolism	39	seasonal
+75s	DNA. RNA and nucleotide metabolism	81	seasonal
+76s	DNA. RNA and nucleotide metabolism	139	seasonal
+77s	DNA. RNA and nucleotide metabolism	44	seasonal
+78s	DNA. RNA and nucleotide metabolism	54	seasonal
+23ns	DNA. RNA and nucleotide metabolism	31	non_seasonal
+24ns	DNA. RNA and nucleotide metabolism	38	non_seasonal
+79s	DNA. RNA and nucleotide metabolism	49	seasonal
+80s	DNA. RNA and nucleotide metabolism	79	seasonal
+81s	DNA. RNA and nucleotide metabolism	48	seasonal
+25ns	DNA. RNA and nucleotide metabolism	25	non_seasonal
+82s	DNA. RNA and nucleotide metabolism	68	seasonal
+83s	DNA. RNA and nucleotide metabolism	88	seasonal
+84s	DNA. RNA and nucleotide metabolism	90	seasonal
+26ns	DNA. RNA and nucleotide metabolism	42	non_seasonal
+85s	DNA. RNA and nucleotide metabolism	82	seasonal
+27ns	DNA. RNA and nucleotide metabolism	6	non_seasonal
+28ns	DNA. RNA and nucleotide metabolism	47	non_seasonal
+86s	DNA. RNA and nucleotide metabolism	79	seasonal
+87s	DNA. RNA and nucleotide metabolism	26	seasonal
+88s	DNA. RNA and nucleotide metabolism	49	seasonal
+89s	DNA. RNA and nucleotide metabolism	39	seasonal
+90s	DNA. RNA and nucleotide metabolism	120	seasonal
+91s	DNA. RNA and nucleotide metabolism	66	seasonal
+92s	DNA. RNA and nucleotide metabolism	66	seasonal
+93s	DNA. RNA and nucleotide metabolism	28	seasonal
+94s	DNA. RNA and nucleotide metabolism	74	seasonal
+95s	DNA. RNA and nucleotide metabolism	59	seasonal
+96s	DNA. RNA and nucleotide metabolism	57	seasonal
+29ns	DNA. RNA and nucleotide metabolism	110	non_seasonal
+30ns	DNA. RNA and nucleotide metabolism	100	non_seasonal
+97s	DNA. RNA and nucleotide metabolism	52	seasonal
+31ns	DNA. RNA and nucleotide metabolism	47	non_seasonal
+32ns	DNA. RNA and nucleotide metabolism	29	non_seasonal
+33ns	DNA. RNA and nucleotide metabolism	50	non_seasonal
+34ns	DNA. RNA and nucleotide metabolism	21	non_seasonal
+35ns	DNA. RNA and nucleotide metabolism	45	non_seasonal
+98s	DNA. RNA and nucleotide metabolism	85	seasonal
+36ns	DNA. RNA and nucleotide metabolism	15	non_seasonal
+99s	DNA. RNA and nucleotide metabolism	57	seasonal
+37ns	DNA. RNA and nucleotide metabolism	27	non_seasonal
+38ns	DNA. RNA and nucleotide metabolism	56	non_seasonal
+100s	DNA. RNA and nucleotide metabolism	37	seasonal
+39ns	DNA. RNA and nucleotide metabolism	32	non_seasonal
+101s	DNA. RNA and nucleotide metabolism	80	seasonal
+40ns	DNA. RNA and nucleotide metabolism	23	non_seasonal
+41ns	DNA. RNA and nucleotide metabolism	25	non_seasonal
+102s	DNA. RNA and nucleotide metabolism	97	seasonal
+42ns	DNA. RNA and nucleotide metabolism	26	non_seasonal
+103s	DNA. RNA and nucleotide metabolism	99	seasonal
+104s	DNA. RNA and nucleotide metabolism	80	seasonal
+105s	DNA. RNA and nucleotide metabolism	74	seasonal
+106s	DNA. RNA and nucleotide metabolism	85	seasonal
+107s	DNA. RNA and nucleotide metabolism	18	seasonal
+108s	DNA. RNA and nucleotide metabolism	29	seasonal
+43ns	DNA. RNA and nucleotide metabolism	3	non_seasonal
+44ns	DNA. RNA and nucleotide metabolism	70	non_seasonal
+45ns	DNA. RNA and nucleotide metabolism	3	non_seasonal
+46ns	DNA. RNA and nucleotide metabolism	24	non_seasonal
+1s	other	47	seasonal
+2s	other	42	seasonal
+3s	other	26	seasonal
+4s	other	24	seasonal
+5s	other	49	seasonal
+6s	other	42	seasonal
+1ns	other	25	non_seasonal
+7s	other	9	seasonal
+8s	other	45	seasonal
+9s	other	27	seasonal
+10s	other	20	seasonal
+2ns	other	1	non_seasonal
+11s	other	44	seasonal
+12s	other	58	seasonal
+13s	other	17	seasonal
+14s	other	20	seasonal
+15s	other	17	seasonal
+16s	other	14	seasonal
+3ns	other	5	non_seasonal
+17s	other	20	seasonal
+18s	other	24	seasonal
+19s	other	13	seasonal
+20s	other	13	seasonal
+21s	other	35	seasonal
+22s	other	13	seasonal
+23s	other	61	seasonal
+24s	other	10	seasonal
+4ns	other	7	non_seasonal
+25s	other	24	seasonal
+26s	other	21	seasonal
+5ns	other	27	non_seasonal
+6ns	other	7	non_seasonal
+7ns	other	11	non_seasonal
+27s	other	31	seasonal
+28s	other	18	seasonal
+8ns	other	11	non_seasonal
+29s	other	25	seasonal
+30s	other	40	seasonal
+31s	other	24	seasonal
+9ns	other	17	non_seasonal
+32s	other	26	seasonal
+33s	other	6	seasonal
+34s	other	17	seasonal
+35s	other	31	seasonal
+36s	other	20	seasonal
+37s	other	44	seasonal
+10ns	other	28	non_seasonal
+11ns	other	29	non_seasonal
+12ns	other	19	non_seasonal
+38s	other	16	seasonal
+39s	other	41	seasonal
+13ns	other	20	non_seasonal
+40s	other	13	seasonal
+41s	other	7	seasonal
+42s	other	11	seasonal
+43s	other	39	seasonal
+44s	other	18	seasonal
+45s	other	9	seasonal
+46s	other	9	seasonal
+14ns	other	42	non_seasonal
+47s	other	31	seasonal
+48s	other	19	seasonal
+49s	other	29	seasonal
+50s	other	44	seasonal
+15ns	other	11	non_seasonal
+51s	other	20	seasonal
+52s	other	36	seasonal
+53s	other	42	seasonal
+54s	other	26	seasonal
+55s	other	26	seasonal
+56s	other	24	seasonal
+57s	other	13	seasonal
+58s	other	27	seasonal
+59s	other	24	seasonal
+60s	other	47	seasonal
+61s	other	44	seasonal
+62s	other	16	seasonal
+16ns	other	23	non_seasonal
+63s	other	43	seasonal
+64s	other	19	seasonal
+17ns	other	2	non_seasonal
+65s	other	48	seasonal
+66s	other	9	seasonal
+18ns	other	39	non_seasonal
+67s	other	13	seasonal
+68s	other	31	seasonal
+69s	other	37	seasonal
+70s	other	51	seasonal
+19ns	other	23	non_seasonal
+20ns	other	13	non_seasonal
+71s	other	24	seasonal
+72s	other	22	seasonal
+73s	other	44	seasonal
+21ns	other	20	non_seasonal
+22ns	other	16	non_seasonal
+74s	other	9	seasonal
+75s	other	33	seasonal
+76s	other	50	seasonal
+77s	other	20	seasonal
+78s	other	16	seasonal
+23ns	other	11	non_seasonal
+24ns	other	18	non_seasonal
+79s	other	21	seasonal
+80s	other	23	seasonal
+81s	other	22	seasonal
+25ns	other	8	non_seasonal
+82s	other	37	seasonal
+83s	other	41	seasonal
+84s	other	31	seasonal
+26ns	other	12	non_seasonal
+85s	other	32	seasonal
+27ns	other	3	non_seasonal
+28ns	other	20	non_seasonal
+86s	other	43	seasonal
+87s	other	14	seasonal
+88s	other	17	seasonal
+89s	other	17	seasonal
+90s	other	36	seasonal
+91s	other	24	seasonal
+92s	other	28	seasonal
+93s	other	11	seasonal
+94s	other	35	seasonal
+95s	other	29	seasonal
+96s	other	27	seasonal
+29ns	other	45	non_seasonal
+30ns	other	45	non_seasonal
+97s	other	18	seasonal
+31ns	other	17	non_seasonal
+32ns	other	11	non_seasonal
+33ns	other	22	non_seasonal
+34ns	other	10	non_seasonal
+35ns	other	14	non_seasonal
+98s	other	37	seasonal
+36ns	other	7	non_seasonal
+99s	other	31	seasonal
+37ns	other	14	non_seasonal
+38ns	other	12	non_seasonal
+100s	other	13	seasonal
+39ns	other	21	non_seasonal
+101s	other	21	seasonal
+40ns	other	12	non_seasonal
+41ns	other	12	non_seasonal
+102s	other	46	seasonal
+42ns	other	5	non_seasonal
+103s	other	39	seasonal
+104s	other	37	seasonal
+105s	other	34	seasonal
+106s	other	40	seasonal
+107s	other	4	seasonal
+108s	other	17	seasonal
+43ns	other	1	non_seasonal
+44ns	other	30	non_seasonal
+45ns	other	1	non_seasonal
+46ns	other	13	non_seasonal
+1s	moron. auxiliary metabolic gene and host takeover	31	seasonal
+2s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+3s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+4s	moron. auxiliary metabolic gene and host takeover	11	seasonal
+5s	moron. auxiliary metabolic gene and host takeover	24	seasonal
+6s	moron. auxiliary metabolic gene and host takeover	11	seasonal
+1ns	moron. auxiliary metabolic gene and host takeover	2	non_seasonal
+7s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+8s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+9s	moron. auxiliary metabolic gene and host takeover	13	seasonal
+10s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+2ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+11s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+12s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+13s	moron. auxiliary metabolic gene and host takeover	1	seasonal
+14s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+15s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+16s	moron. auxiliary metabolic gene and host takeover	18	seasonal
+3ns	moron. auxiliary metabolic gene and host takeover	2	non_seasonal
+17s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+18s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+19s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+20s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+21s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+22s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+23s	moron. auxiliary metabolic gene and host takeover	31	seasonal
+24s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+4ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+25s	moron. auxiliary metabolic gene and host takeover	10	seasonal
+26s	moron. auxiliary metabolic gene and host takeover	10	seasonal
+5ns	moron. auxiliary metabolic gene and host takeover	4	non_seasonal
+6ns	moron. auxiliary metabolic gene and host takeover	3	non_seasonal
+7ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+27s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+28s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+8ns	moron. auxiliary metabolic gene and host takeover	6	non_seasonal
+29s	moron. auxiliary metabolic gene and host takeover	18	seasonal
+30s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+31s	moron. auxiliary metabolic gene and host takeover	10	seasonal
+9ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+32s	moron. auxiliary metabolic gene and host takeover	20	seasonal
+33s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+34s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+35s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+36s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+37s	moron. auxiliary metabolic gene and host takeover	18	seasonal
+10ns	moron. auxiliary metabolic gene and host takeover	22	non_seasonal
+11ns	moron. auxiliary metabolic gene and host takeover	12	non_seasonal
+12ns	moron. auxiliary metabolic gene and host takeover	3	non_seasonal
+38s	moron. auxiliary metabolic gene and host takeover	28	seasonal
+39s	moron. auxiliary metabolic gene and host takeover	10	seasonal
+13ns	moron. auxiliary metabolic gene and host takeover	4	non_seasonal
+40s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+41s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+42s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+43s	moron. auxiliary metabolic gene and host takeover	16	seasonal
+44s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+45s	moron. auxiliary metabolic gene and host takeover	1	seasonal
+46s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+14ns	moron. auxiliary metabolic gene and host takeover	6	non_seasonal
+47s	moron. auxiliary metabolic gene and host takeover	18	seasonal
+48s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+49s	moron. auxiliary metabolic gene and host takeover	11	seasonal
+50s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+15ns	moron. auxiliary metabolic gene and host takeover	9	non_seasonal
+51s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+52s	moron. auxiliary metabolic gene and host takeover	20	seasonal
+53s	moron. auxiliary metabolic gene and host takeover	22	seasonal
+54s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+55s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+56s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+57s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+58s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+59s	moron. auxiliary metabolic gene and host takeover	1	seasonal
+60s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+61s	moron. auxiliary metabolic gene and host takeover	16	seasonal
+62s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+16ns	moron. auxiliary metabolic gene and host takeover	4	non_seasonal
+63s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+64s	moron. auxiliary metabolic gene and host takeover	14	seasonal
+17ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+65s	moron. auxiliary metabolic gene and host takeover	17	seasonal
+66s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+18ns	moron. auxiliary metabolic gene and host takeover	4	non_seasonal
+67s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+68s	moron. auxiliary metabolic gene and host takeover	41	seasonal
+69s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+70s	moron. auxiliary metabolic gene and host takeover	18	seasonal
+19ns	moron. auxiliary metabolic gene and host takeover	11	non_seasonal
+20ns	moron. auxiliary metabolic gene and host takeover	2	non_seasonal
+71s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+72s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+73s	moron. auxiliary metabolic gene and host takeover	8	seasonal
+21ns	moron. auxiliary metabolic gene and host takeover	5	non_seasonal
+22ns	moron. auxiliary metabolic gene and host takeover	2	non_seasonal
+74s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+75s	moron. auxiliary metabolic gene and host takeover	15	seasonal
+76s	moron. auxiliary metabolic gene and host takeover	16	seasonal
+77s	moron. auxiliary metabolic gene and host takeover	0	seasonal
+78s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+23ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+24ns	moron. auxiliary metabolic gene and host takeover	5	non_seasonal
+79s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+80s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+81s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+25ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+82s	moron. auxiliary metabolic gene and host takeover	33	seasonal
+83s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+84s	moron. auxiliary metabolic gene and host takeover	13	seasonal
+26ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+85s	moron. auxiliary metabolic gene and host takeover	8	seasonal
+27ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+28ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+86s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+87s	moron. auxiliary metabolic gene and host takeover	2	seasonal
+88s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+89s	moron. auxiliary metabolic gene and host takeover	6	seasonal
+90s	moron. auxiliary metabolic gene and host takeover	19	seasonal
+91s	moron. auxiliary metabolic gene and host takeover	12	seasonal
+92s	moron. auxiliary metabolic gene and host takeover	8	seasonal
+93s	moron. auxiliary metabolic gene and host takeover	4	seasonal
+94s	moron. auxiliary metabolic gene and host takeover	13	seasonal
+95s	moron. auxiliary metabolic gene and host takeover	3	seasonal
+96s	moron. auxiliary metabolic gene and host takeover	17	seasonal
+29ns	moron. auxiliary metabolic gene and host takeover	7	non_seasonal
+30ns	moron. auxiliary metabolic gene and host takeover	8	non_seasonal
+97s	moron. auxiliary metabolic gene and host takeover	19	seasonal
+31ns	moron. auxiliary metabolic gene and host takeover	6	non_seasonal
+32ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+33ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+34ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+35ns	moron. auxiliary metabolic gene and host takeover	4	non_seasonal
+98s	moron. auxiliary metabolic gene and host takeover	6	seasonal
+36ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+99s	moron. auxiliary metabolic gene and host takeover	8	seasonal
+37ns	moron. auxiliary metabolic gene and host takeover	4	non_seasonal
+38ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+100s	moron. auxiliary metabolic gene and host takeover	7	seasonal
+39ns	moron. auxiliary metabolic gene and host takeover	2	non_seasonal
+101s	moron. auxiliary metabolic gene and host takeover	9	seasonal
+40ns	moron. auxiliary metabolic gene and host takeover	2	non_seasonal
+41ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+102s	moron. auxiliary metabolic gene and host takeover	6	seasonal
+42ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+103s	moron. auxiliary metabolic gene and host takeover	10	seasonal
+104s	moron. auxiliary metabolic gene and host takeover	29	seasonal
+105s	moron. auxiliary metabolic gene and host takeover	8	seasonal
+106s	moron. auxiliary metabolic gene and host takeover	8	seasonal
+107s	moron. auxiliary metabolic gene and host takeover	0	seasonal
+108s	moron. auxiliary metabolic gene and host takeover	5	seasonal
+43ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+44ns	moron. auxiliary metabolic gene and host takeover	10	non_seasonal
+45ns	moron. auxiliary metabolic gene and host takeover	1	non_seasonal
+46ns	moron. auxiliary metabolic gene and host takeover	0	non_seasonal
+1s	transcription regulation	2	seasonal
+2s	transcription regulation	0	seasonal
+3s	transcription regulation	2	seasonal
+4s	transcription regulation	0	seasonal
+5s	transcription regulation	2	seasonal
+6s	transcription regulation	3	seasonal
+1ns	transcription regulation	1	non_seasonal
+7s	transcription regulation	1	seasonal
+8s	transcription regulation	4	seasonal
+9s	transcription regulation	0	seasonal
+10s	transcription regulation	0	seasonal
+2ns	transcription regulation	0	non_seasonal
+11s	transcription regulation	0	seasonal
+12s	transcription regulation	2	seasonal
+13s	transcription regulation	1	seasonal
+14s	transcription regulation	0	seasonal
+15s	transcription regulation	0	seasonal
+16s	transcription regulation	0	seasonal
+3ns	transcription regulation	0	non_seasonal
+17s	transcription regulation	2	seasonal
+18s	transcription regulation	1	seasonal
+19s	transcription regulation	2	seasonal
+20s	transcription regulation	0	seasonal
+21s	transcription regulation	1	seasonal
+22s	transcription regulation	2	seasonal
+23s	transcription regulation	3	seasonal
+24s	transcription regulation	0	seasonal
+4ns	transcription regulation	0	non_seasonal
+25s	transcription regulation	0	seasonal
+26s	transcription regulation	0	seasonal
+5ns	transcription regulation	1	non_seasonal
+6ns	transcription regulation	0	non_seasonal
+7ns	transcription regulation	2	non_seasonal
+27s	transcription regulation	0	seasonal
+28s	transcription regulation	0	seasonal
+8ns	transcription regulation	0	non_seasonal
+29s	transcription regulation	1	seasonal
+30s	transcription regulation	2	seasonal
+31s	transcription regulation	0	seasonal
+9ns	transcription regulation	0	non_seasonal
+32s	transcription regulation	2	seasonal
+33s	transcription regulation	0	seasonal
+34s	transcription regulation	0	seasonal
+35s	transcription regulation	1	seasonal
+36s	transcription regulation	0	seasonal
+37s	transcription regulation	2	seasonal
+10ns	transcription regulation	14	non_seasonal
+11ns	transcription regulation	3	non_seasonal
+12ns	transcription regulation	2	non_seasonal
+38s	transcription regulation	0	seasonal
+39s	transcription regulation	6	seasonal
+13ns	transcription regulation	0	non_seasonal
+40s	transcription regulation	0	seasonal
+41s	transcription regulation	0	seasonal
+42s	transcription regulation	0	seasonal
+43s	transcription regulation	0	seasonal
+44s	transcription regulation	3	seasonal
+45s	transcription regulation	0	seasonal
+46s	transcription regulation	0	seasonal
+14ns	transcription regulation	3	non_seasonal
+47s	transcription regulation	0	seasonal
+48s	transcription regulation	0	seasonal
+49s	transcription regulation	1	seasonal
+50s	transcription regulation	1	seasonal
+15ns	transcription regulation	0	non_seasonal
+51s	transcription regulation	0	seasonal
+52s	transcription regulation	0	seasonal
+53s	transcription regulation	2	seasonal
+54s	transcription regulation	0	seasonal
+55s	transcription regulation	0	seasonal
+56s	transcription regulation	0	seasonal
+57s	transcription regulation	0	seasonal
+58s	transcription regulation	0	seasonal
+59s	transcription regulation	0	seasonal
+60s	transcription regulation	3	seasonal
+61s	transcription regulation	1	seasonal
+62s	transcription regulation	0	seasonal
+16ns	transcription regulation	0	non_seasonal
+63s	transcription regulation	1	seasonal
+64s	transcription regulation	1	seasonal
+17ns	transcription regulation	1	non_seasonal
+65s	transcription regulation	4	seasonal
+66s	transcription regulation	0	seasonal
+18ns	transcription regulation	5	non_seasonal
+67s	transcription regulation	0	seasonal
+68s	transcription regulation	0	seasonal
+69s	transcription regulation	0	seasonal
+70s	transcription regulation	2	seasonal
+19ns	transcription regulation	0	non_seasonal
+20ns	transcription regulation	0	non_seasonal
+71s	transcription regulation	1	seasonal
+72s	transcription regulation	0	seasonal
+73s	transcription regulation	3	seasonal
+21ns	transcription regulation	2	non_seasonal
+22ns	transcription regulation	3	non_seasonal
+74s	transcription regulation	0	seasonal
+75s	transcription regulation	3	seasonal
+76s	transcription regulation	4	seasonal
+77s	transcription regulation	0	seasonal
+78s	transcription regulation	0	seasonal
+23ns	transcription regulation	1	non_seasonal
+24ns	transcription regulation	4	non_seasonal
+79s	transcription regulation	1	seasonal
+80s	transcription regulation	1	seasonal
+81s	transcription regulation	1	seasonal
+25ns	transcription regulation	0	non_seasonal
+82s	transcription regulation	1	seasonal
+83s	transcription regulation	0	seasonal
+84s	transcription regulation	0	seasonal
+26ns	transcription regulation	0	non_seasonal
+85s	transcription regulation	5	seasonal
+27ns	transcription regulation	0	non_seasonal
+28ns	transcription regulation	2	non_seasonal
+86s	transcription regulation	10	seasonal
+87s	transcription regulation	2	seasonal
+88s	transcription regulation	0	seasonal
+89s	transcription regulation	0	seasonal
+90s	transcription regulation	4	seasonal
+91s	transcription regulation	0	seasonal
+92s	transcription regulation	2	seasonal
+93s	transcription regulation	1	seasonal
+94s	transcription regulation	2	seasonal
+95s	transcription regulation	1	seasonal
+96s	transcription regulation	0	seasonal
+29ns	transcription regulation	2	non_seasonal
+30ns	transcription regulation	0	non_seasonal
+97s	transcription regulation	0	seasonal
+31ns	transcription regulation	5	non_seasonal
+32ns	transcription regulation	0	non_seasonal
+33ns	transcription regulation	0	non_seasonal
+34ns	transcription regulation	0	non_seasonal
+35ns	transcription regulation	1	non_seasonal
+98s	transcription regulation	6	seasonal
+36ns	transcription regulation	2	non_seasonal
+99s	transcription regulation	3	seasonal
+37ns	transcription regulation	0	non_seasonal
+38ns	transcription regulation	0	non_seasonal
+100s	transcription regulation	0	seasonal
+39ns	transcription regulation	2	non_seasonal
+101s	transcription regulation	1	seasonal
+40ns	transcription regulation	0	non_seasonal
+41ns	transcription regulation	1	non_seasonal
+102s	transcription regulation	2	seasonal
+42ns	transcription regulation	0	non_seasonal
+103s	transcription regulation	3	seasonal
+104s	transcription regulation	1	seasonal
+105s	transcription regulation	0	seasonal
+106s	transcription regulation	2	seasonal
+107s	transcription regulation	0	seasonal
+108s	transcription regulation	0	seasonal
+43ns	transcription regulation	0	non_seasonal
+44ns	transcription regulation	10	non_seasonal
+45ns	transcription regulation	0	non_seasonal
+46ns	transcription regulation	0	non_seasonal
+1s	lysis	27	seasonal
+2s	lysis	24	seasonal
+3s	lysis	8	seasonal
+4s	lysis	10	seasonal
+5s	lysis	19	seasonal
+6s	lysis	9	seasonal
+1ns	lysis	6	non_seasonal
+7s	lysis	10	seasonal
+8s	lysis	14	seasonal
+9s	lysis	13	seasonal
+10s	lysis	5	seasonal
+2ns	lysis	0	non_seasonal
+11s	lysis	17	seasonal
+12s	lysis	30	seasonal
+13s	lysis	13	seasonal
+14s	lysis	9	seasonal
+15s	lysis	3	seasonal
+16s	lysis	9	seasonal
+3ns	lysis	3	non_seasonal
+17s	lysis	13	seasonal
+18s	lysis	8	seasonal
+19s	lysis	8	seasonal
+20s	lysis	4	seasonal
+21s	lysis	7	seasonal
+22s	lysis	6	seasonal
+23s	lysis	14	seasonal
+24s	lysis	9	seasonal
+4ns	lysis	3	non_seasonal
+25s	lysis	12	seasonal
+26s	lysis	13	seasonal
+5ns	lysis	14	non_seasonal
+6ns	lysis	6	non_seasonal
+7ns	lysis	9	non_seasonal
+27s	lysis	13	seasonal
+28s	lysis	3	seasonal
+8ns	lysis	7	non_seasonal
+29s	lysis	10	seasonal
+30s	lysis	14	seasonal
+31s	lysis	7	seasonal
+9ns	lysis	5	non_seasonal
+32s	lysis	8	seasonal
+33s	lysis	8	seasonal
+34s	lysis	4	seasonal
+35s	lysis	9	seasonal
+36s	lysis	3	seasonal
+37s	lysis	11	seasonal
+10ns	lysis	9	non_seasonal
+11ns	lysis	3	non_seasonal
+12ns	lysis	10	non_seasonal
+38s	lysis	9	seasonal
+39s	lysis	15	seasonal
+13ns	lysis	8	non_seasonal
+40s	lysis	4	seasonal
+41s	lysis	3	seasonal
+42s	lysis	2	seasonal
+43s	lysis	21	seasonal
+44s	lysis	6	seasonal
+45s	lysis	3	seasonal
+46s	lysis	7	seasonal
+14ns	lysis	17	non_seasonal
+47s	lysis	21	seasonal
+48s	lysis	8	seasonal
+49s	lysis	13	seasonal
+50s	lysis	25	seasonal
+15ns	lysis	9	non_seasonal
+51s	lysis	7	seasonal
+52s	lysis	20	seasonal
+53s	lysis	10	seasonal
+54s	lysis	16	seasonal
+55s	lysis	3	seasonal
+56s	lysis	8	seasonal
+57s	lysis	1	seasonal
+58s	lysis	18	seasonal
+59s	lysis	5	seasonal
+60s	lysis	18	seasonal
+61s	lysis	15	seasonal
+62s	lysis	8	seasonal
+16ns	lysis	4	non_seasonal
+63s	lysis	17	seasonal
+64s	lysis	7	seasonal
+17ns	lysis	1	non_seasonal
+65s	lysis	17	seasonal
+66s	lysis	4	seasonal
+18ns	lysis	19	non_seasonal
+67s	lysis	9	seasonal
+68s	lysis	10	seasonal
+69s	lysis	13	seasonal
+70s	lysis	36	seasonal
+19ns	lysis	9	non_seasonal
+20ns	lysis	7	non_seasonal
+71s	lysis	18	seasonal
+72s	lysis	17	seasonal
+73s	lysis	20	seasonal
+21ns	lysis	7	non_seasonal
+22ns	lysis	9	non_seasonal
+74s	lysis	9	seasonal
+75s	lysis	15	seasonal
+76s	lysis	20	seasonal
+77s	lysis	10	seasonal
+78s	lysis	13	seasonal
+23ns	lysis	9	non_seasonal
+24ns	lysis	2	non_seasonal
+79s	lysis	15	seasonal
+80s	lysis	8	seasonal
+81s	lysis	11	seasonal
+25ns	lysis	6	non_seasonal
+82s	lysis	9	seasonal
+83s	lysis	17	seasonal
+84s	lysis	11	seasonal
+26ns	lysis	9	non_seasonal
+85s	lysis	14	seasonal
+27ns	lysis	0	non_seasonal
+28ns	lysis	12	non_seasonal
+86s	lysis	11	seasonal
+87s	lysis	1	seasonal
+88s	lysis	12	seasonal
+89s	lysis	2	seasonal
+90s	lysis	15	seasonal
+91s	lysis	12	seasonal
+92s	lysis	6	seasonal
+93s	lysis	1	seasonal
+94s	lysis	16	seasonal
+95s	lysis	14	seasonal
+96s	lysis	11	seasonal
+29ns	lysis	21	non_seasonal
+30ns	lysis	12	non_seasonal
+97s	lysis	11	seasonal
+31ns	lysis	12	non_seasonal
+32ns	lysis	6	non_seasonal
+33ns	lysis	14	non_seasonal
+34ns	lysis	6	non_seasonal
+35ns	lysis	4	non_seasonal
+98s	lysis	16	seasonal
+36ns	lysis	2	non_seasonal
+99s	lysis	13	seasonal
+37ns	lysis	3	non_seasonal
+38ns	lysis	11	non_seasonal
+100s	lysis	4	seasonal
+39ns	lysis	5	non_seasonal
+101s	lysis	9	seasonal
+40ns	lysis	5	non_seasonal
+41ns	lysis	4	non_seasonal
+102s	lysis	23	seasonal
+42ns	lysis	4	non_seasonal
+103s	lysis	17	seasonal
+104s	lysis	14	seasonal
+105s	lysis	15	seasonal
+106s	lysis	9	seasonal
+107s	lysis	6	seasonal
+108s	lysis	5	seasonal
+43ns	lysis	1	non_seasonal
+44ns	lysis	13	non_seasonal
+45ns	lysis	0	non_seasonal
+46ns	lysis	3	non_seasonal
+1s	integration and excision	6	seasonal
+2s	integration and excision	5	seasonal
+3s	integration and excision	8	seasonal
+4s	integration and excision	2	seasonal
+5s	integration and excision	10	seasonal
+6s	integration and excision	3	seasonal
+1ns	integration and excision	1	non_seasonal
+7s	integration and excision	4	seasonal
+8s	integration and excision	7	seasonal
+9s	integration and excision	1	seasonal
+10s	integration and excision	2	seasonal
+2ns	integration and excision	0	non_seasonal
+11s	integration and excision	2	seasonal
+12s	integration and excision	0	seasonal
+13s	integration and excision	0	seasonal
+14s	integration and excision	3	seasonal
+15s	integration and excision	1	seasonal
+16s	integration and excision	3	seasonal
+3ns	integration and excision	0	non_seasonal
+17s	integration and excision	1	seasonal
+18s	integration and excision	2	seasonal
+19s	integration and excision	2	seasonal
+20s	integration and excision	0	seasonal
+21s	integration and excision	1	seasonal
+22s	integration and excision	1	seasonal
+23s	integration and excision	2	seasonal
+24s	integration and excision	1	seasonal
+4ns	integration and excision	0	non_seasonal
+25s	integration and excision	2	seasonal
+26s	integration and excision	1	seasonal
+5ns	integration and excision	2	non_seasonal
+6ns	integration and excision	1	non_seasonal
+7ns	integration and excision	1	non_seasonal
+27s	integration and excision	1	seasonal
+28s	integration and excision	3	seasonal
+8ns	integration and excision	4	non_seasonal
+29s	integration and excision	1	seasonal
+30s	integration and excision	2	seasonal
+31s	integration and excision	3	seasonal
+9ns	integration and excision	2	non_seasonal
+32s	integration and excision	3	seasonal
+33s	integration and excision	0	seasonal
+34s	integration and excision	0	seasonal
+35s	integration and excision	1	seasonal
+36s	integration and excision	0	seasonal
+37s	integration and excision	2	seasonal
+10ns	integration and excision	8	non_seasonal
+11ns	integration and excision	0	non_seasonal
+12ns	integration and excision	2	non_seasonal
+38s	integration and excision	1	seasonal
+39s	integration and excision	4	seasonal
+13ns	integration and excision	2	non_seasonal
+40s	integration and excision	0	seasonal
+41s	integration and excision	1	seasonal
+42s	integration and excision	0	seasonal
+43s	integration and excision	4	seasonal
+44s	integration and excision	1	seasonal
+45s	integration and excision	0	seasonal
+46s	integration and excision	0	seasonal
+14ns	integration and excision	1	non_seasonal
+47s	integration and excision	4	seasonal
+48s	integration and excision	1	seasonal
+49s	integration and excision	4	seasonal
+50s	integration and excision	4	seasonal
+15ns	integration and excision	2	non_seasonal
+51s	integration and excision	0	seasonal
+52s	integration and excision	2	seasonal
+53s	integration and excision	3	seasonal
+54s	integration and excision	5	seasonal
+55s	integration and excision	3	seasonal
+56s	integration and excision	3	seasonal
+57s	integration and excision	0	seasonal
+58s	integration and excision	0	seasonal
+59s	integration and excision	4	seasonal
+60s	integration and excision	5	seasonal
+61s	integration and excision	0	seasonal
+62s	integration and excision	0	seasonal
+16ns	integration and excision	0	non_seasonal
+63s	integration and excision	3	seasonal
+64s	integration and excision	1	seasonal
+17ns	integration and excision	0	non_seasonal
+65s	integration and excision	0	seasonal
+66s	integration and excision	1	seasonal
+18ns	integration and excision	3	non_seasonal
+67s	integration and excision	4	seasonal
+68s	integration and excision	1	seasonal
+69s	integration and excision	0	seasonal
+70s	integration and excision	7	seasonal
+19ns	integration and excision	1	non_seasonal
+20ns	integration and excision	1	non_seasonal
+71s	integration and excision	3	seasonal
+72s	integration and excision	2	seasonal
+73s	integration and excision	1	seasonal
+21ns	integration and excision	2	non_seasonal
+22ns	integration and excision	4	non_seasonal
+74s	integration and excision	0	seasonal
+75s	integration and excision	4	seasonal
+76s	integration and excision	5	seasonal
+77s	integration and excision	2	seasonal
+78s	integration and excision	1	seasonal
+23ns	integration and excision	0	non_seasonal
+24ns	integration and excision	1	non_seasonal
+79s	integration and excision	3	seasonal
+80s	integration and excision	2	seasonal
+81s	integration and excision	0	seasonal
+25ns	integration and excision	1	non_seasonal
+82s	integration and excision	1	seasonal
+83s	integration and excision	2	seasonal
+84s	integration and excision	3	seasonal
+26ns	integration and excision	1	non_seasonal
+85s	integration and excision	0	seasonal
+27ns	integration and excision	0	non_seasonal
+28ns	integration and excision	1	non_seasonal
+86s	integration and excision	3	seasonal
+87s	integration and excision	0	seasonal
+88s	integration and excision	0	seasonal
+89s	integration and excision	1	seasonal
+90s	integration and excision	1	seasonal
+91s	integration and excision	1	seasonal
+92s	integration and excision	2	seasonal
+93s	integration and excision	0	seasonal
+94s	integration and excision	1	seasonal
+95s	integration and excision	2	seasonal
+96s	integration and excision	0	seasonal
+29ns	integration and excision	3	non_seasonal
+30ns	integration and excision	2	non_seasonal
+97s	integration and excision	2	seasonal
+31ns	integration and excision	1	non_seasonal
+32ns	integration and excision	1	non_seasonal
+33ns	integration and excision	0	non_seasonal
+34ns	integration and excision	2	non_seasonal
+35ns	integration and excision	0	non_seasonal
+98s	integration and excision	1	seasonal
+36ns	integration and excision	1	non_seasonal
+99s	integration and excision	2	seasonal
+37ns	integration and excision	0	non_seasonal
+38ns	integration and excision	2	non_seasonal
+100s	integration and excision	3	seasonal
+39ns	integration and excision	0	non_seasonal
+101s	integration and excision	0	seasonal
+40ns	integration and excision	0	non_seasonal
+41ns	integration and excision	0	non_seasonal
+102s	integration and excision	3	seasonal
+42ns	integration and excision	0	non_seasonal
+103s	integration and excision	2	seasonal
+104s	integration and excision	1	seasonal
+105s	integration and excision	3	seasonal
+106s	integration and excision	0	seasonal
+107s	integration and excision	1	seasonal
+108s	integration and excision	2	seasonal
+43ns	integration and excision	0	non_seasonal
+44ns	integration and excision	0	non_seasonal
+45ns	integration and excision	0	non_seasonal
+46ns	integration and excision	0	non_seasonal
+1s	connector	9	seasonal
+2s	connector	24	seasonal
+3s	connector	7	seasonal
+4s	connector	2	seasonal
+5s	connector	15	seasonal
+6s	connector	10	seasonal
+1ns	connector	6	non_seasonal
+7s	connector	2	seasonal
+8s	connector	4	seasonal
+9s	connector	6	seasonal
+10s	connector	2	seasonal
+2ns	connector	0	non_seasonal
+11s	connector	4	seasonal
+12s	connector	10	seasonal
+13s	connector	5	seasonal
+14s	connector	8	seasonal
+15s	connector	5	seasonal
+16s	connector	5	seasonal
+3ns	connector	0	non_seasonal
+17s	connector	2	seasonal
+18s	connector	1	seasonal
+19s	connector	3	seasonal
+20s	connector	2	seasonal
+21s	connector	6	seasonal
+22s	connector	1	seasonal
+23s	connector	7	seasonal
+24s	connector	7	seasonal
+4ns	connector	4	non_seasonal
+25s	connector	1	seasonal
+26s	connector	7	seasonal
+5ns	connector	4	non_seasonal
+6ns	connector	5	non_seasonal
+7ns	connector	4	non_seasonal
+27s	connector	5	seasonal
+28s	connector	6	seasonal
+8ns	connector	2	non_seasonal
+29s	connector	7	seasonal
+30s	connector	4	seasonal
+31s	connector	6	seasonal
+9ns	connector	1	non_seasonal
+32s	connector	4	seasonal
+33s	connector	3	seasonal
+34s	connector	2	seasonal
+35s	connector	10	seasonal
+36s	connector	2	seasonal
+37s	connector	5	seasonal
+10ns	connector	4	non_seasonal
+11ns	connector	9	non_seasonal
+12ns	connector	6	non_seasonal
+38s	connector	3	seasonal
+39s	connector	10	seasonal
+13ns	connector	6	non_seasonal
+40s	connector	1	seasonal
+41s	connector	1	seasonal
+42s	connector	2	seasonal
+43s	connector	6	seasonal
+44s	connector	3	seasonal
+45s	connector	3	seasonal
+46s	connector	1	seasonal
+14ns	connector	6	non_seasonal
+47s	connector	13	seasonal
+48s	connector	2	seasonal
+49s	connector	7	seasonal
+50s	connector	9	seasonal
+15ns	connector	4	non_seasonal
+51s	connector	3	seasonal
+52s	connector	3	seasonal
+53s	connector	3	seasonal
+54s	connector	13	seasonal
+55s	connector	0	seasonal
+56s	connector	6	seasonal
+57s	connector	2	seasonal
+58s	connector	10	seasonal
+59s	connector	9	seasonal
+60s	connector	9	seasonal
+61s	connector	3	seasonal
+62s	connector	1	seasonal
+16ns	connector	3	non_seasonal
+63s	connector	5	seasonal
+64s	connector	6	seasonal
+17ns	connector	0	non_seasonal
+65s	connector	5	seasonal
+66s	connector	1	seasonal
+18ns	connector	9	non_seasonal
+67s	connector	6	seasonal
+68s	connector	0	seasonal
+69s	connector	12	seasonal
+70s	connector	5	seasonal
+19ns	connector	5	non_seasonal
+20ns	connector	5	non_seasonal
+71s	connector	6	seasonal
+72s	connector	5	seasonal
+73s	connector	8	seasonal
+21ns	connector	3	non_seasonal
+22ns	connector	19	non_seasonal
+74s	connector	2	seasonal
+75s	connector	7	seasonal
+76s	connector	13	seasonal
+77s	connector	7	seasonal
+78s	connector	5	seasonal
+23ns	connector	4	non_seasonal
+24ns	connector	3	non_seasonal
+79s	connector	3	seasonal
+80s	connector	9	seasonal
+81s	connector	1	seasonal
+25ns	connector	4	non_seasonal
+82s	connector	5	seasonal
+83s	connector	4	seasonal
+84s	connector	2	seasonal
+26ns	connector	1	non_seasonal
+85s	connector	4	seasonal
+27ns	connector	0	non_seasonal
+28ns	connector	3	non_seasonal
+86s	connector	4	seasonal
+87s	connector	0	seasonal
+88s	connector	4	seasonal
+89s	connector	6	seasonal
+90s	connector	6	seasonal
+91s	connector	2	seasonal
+92s	connector	6	seasonal
+93s	connector	2	seasonal
+94s	connector	7	seasonal
+95s	connector	3	seasonal
+96s	connector	1	seasonal
+29ns	connector	8	non_seasonal
+30ns	connector	6	non_seasonal
+97s	connector	4	seasonal
+31ns	connector	4	non_seasonal
+32ns	connector	1	non_seasonal
+33ns	connector	3	non_seasonal
+34ns	connector	0	non_seasonal
+35ns	connector	2	non_seasonal
+98s	connector	10	seasonal
+36ns	connector	7	non_seasonal
+99s	connector	3	seasonal
+37ns	connector	2	non_seasonal
+38ns	connector	6	non_seasonal
+100s	connector	5	seasonal
+39ns	connector	13	non_seasonal
+101s	connector	1	seasonal
+40ns	connector	4	non_seasonal
+41ns	connector	3	non_seasonal
+102s	connector	6	seasonal
+42ns	connector	3	non_seasonal
+103s	connector	5	seasonal
+104s	connector	0	seasonal
+105s	connector	12	seasonal
+106s	connector	8	seasonal
+107s	connector	0	seasonal
+108s	connector	1	seasonal
+43ns	connector	0	non_seasonal
+44ns	connector	6	non_seasonal
+45ns	connector	0	non_seasonal
+46ns	connector	0	non_seasonal
