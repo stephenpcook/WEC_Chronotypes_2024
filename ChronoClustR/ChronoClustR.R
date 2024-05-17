@@ -1,4 +1,6 @@
 #!/usr/bin/env Rscript
+
+#Read arguments (user input)
 args = commandArgs(trailingOnly=TRUE)
 
 countwec <- read.table(args[1],header=T, row.names=1, check.names=F, sep ="\t")
@@ -12,7 +14,7 @@ output_path <- args[5] # Output path for writing results
 #end_month <- as.integer(args[9]) #TSconversor parameters
 #frequency_all <- as.integer(args[10]) #TSconversor parameters
 
-#TSconversor parameeters
+#TSconversor parameters (these are placeholders for a new version)
 
 # Check that output path ends with a slash, if not add it
 if (!grepl("/$", output_path)) {
@@ -51,7 +53,7 @@ library(KneeArrower)
 
 ###DEFINE FUNCTIONS###
 
-#FUNCTION 1: convert our datasets into a time-series object
+#FUNCTION 1 [placeholder for next version]: convert our datasets into a time-series object
 #Parameters are inputted by the user depending on the start/end and frequency of its datasets
 #This could be adapted to any type of frequency: hours, days, months, years, etc. 
 
@@ -59,7 +61,7 @@ library(KneeArrower)
  #ts(df$value, start = s, end=e, frequency = f) 
  #}
 
-#FUNCTION 2 Seasonality check 
+#FUNCTION 2 Seasonality check [placeholder for next version]:
 #check_seasonality_fisher <- function(ls){
   #ls %>% 
     #map(~ts_conversor(.x)) %>% 
@@ -71,15 +73,15 @@ library(KneeArrower)
 #}
 
 #FUNCTION 3 extract the centroids for the number of subsamples the user inputs 
-#USAGE: data.frame (usr input), how many subsets of 100 contig time-series user want to use to estimate multiple centroids (usr input), distance type (tsclust options) and centroid type (tsclust options)
+#distance type and centroid type are options derived from the TSclust package, please refer to TSclust package for further information.
 
 centroid_generator<-function(data,number_subsets,usr_dist_type,usr_centroid_type,size) {
   centroid_list = vector("list",length(number_subsets))
   available_data <- data #initializie available data
   data.sub<-data[FALSE,] #initialize data.sub with the same structure that "data"
    for (i in 1:number_subsets) {
-    available_data <- anti_join(available_data,data.sub) #first cycle is full dataset compared to an empty one, the next cycle available_data will be a new df without the first cycle extract data nd like thut succesively. 
-    data.sub<- sample_n(available_data,size) #THIS IS BEING SAMPLE WITHOUT REPLECEMENT IN THIS VERSION of the script, similar as generate_reprs_contigs_wo_replacement.R
+    available_data <- anti_join(available_data,data.sub) #first cycle compares the complete dataset to an empty holder, the next cycle "available_data" will be a new data frame without the first cycle extract data. 
+    data.sub<- sample_n(available_data,size) #sampling without replacement. User want to make sure the when the indicated subset size is divided between the total # of time-series the residue is 0 or close to 0.
     data_rpkms100.pam <- tsclust(data.sub , type="partitional", k=3L:(size-1), distance=usr_dist_type, centroid=usr_centroid_type)
     data_clust_stats100<-sapply(data_rpkms100.pam , cvi, type = "internal")
     maxSil<-max(data_clust_stats100[1,])
@@ -91,12 +93,15 @@ centroid_generator<-function(data,number_subsets,usr_dist_type,usr_centroid_type
   centroid_list
 }
 
-#FUNCTION 4: This function was created for the specific dataset analyzed here
+#FUNCTION 4 Plot the z-scores grouping them by the newly defined chronotypes. 
+#These plots provide a visual resource to evaluate whether the clustering was consistent and accurate. 
+#Further user evaluation of the distances within clusters should be done.
+#This function was created for the specific dataset analyzed here
 #Users are welcome to modify it depending of their own requierements. 
 
 function_plotsTS <- function(plots,column_name,DataFrame){
 cluster<- DataFrame[DataFrame[[column_name]]==plots,]$obs
-#Here subset the zscores by rownames (this is different than the other)
+#Subset the zscores by rownames
 cluster_df_zscore<-monthly_all_rpkms.normz.forplot.melt[monthly_all_rpkms.normz.forplot.melt$contig %in% cluster, ]
 #PLOT
 ggplot(cluster_df_zscore,aes(x = variable, y = value, group=contig)) +
@@ -114,7 +119,7 @@ euclidean_distance_func <- function(x, y) {
 #FUNCTION 6 Within_MeanEuclDist:
 function_Within_MeanEuclDist <- function(plots,column_name,DataFrame){
 cluster<- DataFrame[DataFrame[[column_name]]==plots,]$obs
-#Here subset the zscores 
+#Subset the zscores 
 cluster_df_zscore<-monthly_all_rpkms.normz.forplot.melt[monthly_all_rpkms.normz.forplot.melt$contig %in% cluster, ]
 #Unmelt
 unmelted_zscore<-t(data.frame(cluster_df_zscore  %>% pivot_wider(names_from = contig, values_from = value)))
@@ -129,7 +134,8 @@ mean_distance <- mean(pairwise_distances)
 }
 
 #Set the directory to the output inputted by the user
-setwd(output_path) #I did this to output the reporting curves and heatmaps into the output dir - comment if this is not what you want.
+setwd(output_path) #the automatic reporting curves and heatmaps will be placed into the output directory. 
+#These plots help to check that each iteration ran without a problem and the final co-occurence table was derived from valid calculations.
 
 countwect<-t(countwec) #transpose Time-series data frame
 VIR_cl_env$sample<-rownames(VIR_cl_env)
@@ -137,16 +143,17 @@ VIR_cl_envdate<-VIR_cl_env[ , c("sample","Date_wavelet")]
 VIR_cl_envdate$sample<-paste0("X",1:nrow(VIR_cl_envdate),".",VIR_cl_envdate$sample)
 VIR_cl_envdate$Date_wavelet<-as.Date(VIR_cl_envdate$Date_wavelet,"%d/%m/%Y")
 
-monthly_RPKM<-merge(VIR_cl_envdate,countwect,by=0, all = TRUE) ######I need to interpolate this
+monthly_RPKM<-merge(VIR_cl_envdate,countwect,by=0, all = TRUE)
 monthly_RPKM$Date_wavelet<-as.Date(monthly_RPKM$Date_wavelet,"%d/%m/%Y")
-monthly_RPKM_sorted<-(monthly_RPKM[order(monthly_RPKM$Date_wavelet),]) #dim 32 26854
+monthly_RPKM_sorted<-(monthly_RPKM[order(monthly_RPKM$Date_wavelet),])
 
-#Interpolation of the numerical columns. Im skipping 1:3 becuase these are other alphanumerical strings (Row.names-sample-Date_wavelet)
+#Interpolation of the numerical columns. Program skips 1:3 becuase these are other alphanumerical strings (Row.names-sample-Date_wavelet)
 monthly_RPKM_sort_trim_int<- data.frame(monthly_RPKM_sorted[1:3], na.approx(monthly_RPKM_sorted[4:length(monthly_RPKM_sorted)])) #na.approx fn -> interpolation
 monthly_RPKM_sort_trim_int_cl<-monthly_RPKM_sort_trim_int[,c(3:length(monthly_RPKM_sorted))]
 
 ################################################
 #############SEASONALITY CHECK##################
+#Placeholder -  work in progress #
 
 #monthly_RPKM_sort_trim_int_cl_melt<-melt(monthly_RPKM_sort_trim_int_cl, id.vars=c("Date_wavelet")) #this is for the seasonal check
 
@@ -193,12 +200,12 @@ monthly_RPKM_sort_trim_int_cl<-monthly_RPKM_sort_trim_int[,c(3:length(monthly_RP
 ###############END OF SEASONALITY CHECK#######################
 
 ##work in progress#
-#In the new version the seasonality check will be implemented. This means the user can indicate in the input paremeter 
+#In the new version the seasonality check will be implemented. This means the user can indicate in an input parameter
 #whether the time-series should be evaluated separately (seasonal vs non seasonal)
-#In the current version, it is assumed the user has run XX code first to output the seasonal and not seasonal rows of the time-series
-#then ChronoClustR.R is run with each of this output files. (User can used the same env file)
+#In the current version, it is assumed the user has run SeasonalityTest.R code first to output the seasonal and not seasonal tables of the time-series
+#then ChronoClustR.R is run with each of this output files. (User can used the same environmental file for all the runs)
 
-#####Reformat the monthly RPKM table so we can start from there (non splitting seasonal / non seasonal)
+#####Reformat the monthly RPKM table
 
 monthly_RPKM_sort_trim_int_cl$Date_wavelet<-as.Date(monthly_RPKM_sort_trim_int_cl$Date_wavelet,"%d%m/%Y")
 monthly_RPKM_sort_trim_int_cl_merged<-merge(monthly_RPKM_sort_trim_int_cl,VIR_cl_envdate, by='Date_wavelet', all=TRUE)
@@ -214,20 +221,14 @@ monthly_all_rpkms.normz.forplot.melt<-melt(monthly_all_rpkms.normz.forplot, id.v
 
 
 ############# STEP 2 Run the function to extract the centroids of multiple 100 contigs subsets##########
-#I created a function that subsets 100 contig time-series, analyze them, cluster them, and output the centroids of the unsupervised clustering as a list of names. 
+#I created a function that subsets X (user input) contig time-series, analyze them, cluster them, and output the centroids of the unsupervised clustering as a list of names. 
 #In a further step we will cluster them to see whether we can reach a saturation of centroids representation.
-#I will use this function independently for each dataset (seasonal - not seasonal), subseting 100 each (for now), and bootstrapping to see the frequency of centroids we retrieve. 
-#Unsupervised clustering will be sensitive to the data composition. That's why we need to iterate many times to retrieve a representative collection of patterns.
-#Otherwise, unsupervised clustering will try to fit potentially different patterns into 1 to fulffil the parameters imposed (minimize distance within cluster and maximize it between clusters). 
+#Unsupervised clustering will be sensitive to the data composition. That's why the program iterates multiple times (user input) to retrieve a distribution of co-ocurrences. 
 
-#DEFAULT for:
-#b) size_subsample = 74
 datasets100 = as.integer(nrow(monthly_all_rpkms.normz)/size_subsample)
 
 #declare an output list
 FINAL_list <- list()
-
-#num_iterations <- 10 #this can be inputted by the user
 
 #####################
 #Bootsrapping starts#
@@ -235,24 +236,23 @@ FINAL_list <- list()
 
 for (i in 1:num_iterations) {
 
-#In the centroid generator function read the variable from std input
-seasonal_centroids_10reps<-centroid_generator(monthly_all_rpkms.normz,datasets100,"Euclidean","pam",size_subsample) #After getting this, ask how do these centroids relate to each other?
+#In the centroid generator function read the normalized dataframe and the value of the subset size 
+seasonal_centroids_10reps<-centroid_generator(monthly_all_rpkms.normz,datasets100,"Euclidean","pam",size_subsample) #Generate centroids
 
-#add name SubsetX to each element of the list to keep track of the 
+#add name SubsetX to each element of the list to keep track of which is its representative centroid
 NAME <- paste0("subset", 1:length(seasonal_centroids_10reps))
 names(seasonal_centroids_10reps) <- NAME
 
 #Extend the list saving its clustering representation. 
 df_seasonal_centroids_10reps_tmp_tobesplited<-data.frame(ID = rep(names(seasonal_centroids_10reps), sapply(seasonal_centroids_10reps, length)), Obs = unlist(seasonal_centroids_10reps))
 
-#Split the above data frame into representative centroids and full subsetted n groups of 100
+#Split the above data frame into representative centroids and full subsetted n groups of size_subset
 df_seasonal_centroids_10reps<-subset(df_seasonal_centroids_10reps_tmp_tobesplited, !grepl('_cluster_', Obs)) #This set might not have pam.centroids. I need to unique here so the program don't crash
 
 #select unique rows of df_seasonal_centroids_10reps
 df_seasonal_centroids_10reps_uniq<-df_seasonal_centroids_10reps[!duplicated(df_seasonal_centroids_10reps$Obs),]
 
-#######The object below will be used generate a potential training dataset: to be used in a following section [CHECK down below continuation]
-df_seasonal_subsets_10reps<-subset(df_seasonal_centroids_10reps_tmp_tobesplited, grepl('_cluster_', Obs)) #this will includ the representative centroids with the subset number in one column and its cluster belongin embedded within the name in this form _cluster_X
+df_seasonal_subsets_10reps<-subset(df_seasonal_centroids_10reps_tmp_tobesplited, grepl('_cluster_', Obs)) #this will include the representative centroids with the subset number in one column and its cluster belongin embedded within the name in this form _cluster_X
 
 #Subset, add the column of the subset number, melt and plot
 df_seasonal_centroids_10reps_subset<-monthly_all_rpkms.normz[rownames(monthly_all_rpkms.normz) %in% df_seasonal_centroids_10reps_uniq$Obs, ] #centroids found total 124, but only 77 unique.
@@ -260,14 +260,13 @@ df_seasonal_centroids_10reps_subset$Obs<-rownames(df_seasonal_centroids_10reps_s
 
 merged10reps<-merge(df_seasonal_centroids_10reps_subset, df_seasonal_centroids_10reps_uniq, by='Obs', all=TRUE)
 
-##PENDING: EVALUATE WHY WE GET SO MANY REPETITIVE CENTROIDS FROM 10 SUBSETS.
-
 merged10reps_melt<-melt(merged10reps, id.vars=c("Obs","ID")) #Table was collapsed from here, check this stuff in the next round of tests
 
 #Change the names of merged10reps_melt
 merged10reps_melt$Obs<- gsub(".viral.fraction__viral.spades.short__as.yet.unknown__", "", merged10reps_melt$Obs)
 merged10reps_melt$Obs<- gsub("..full", "", merged10reps_melt$Obs)
 
+#First plot report, user can add a line to print it if needed. 
 first_clustrds<-ggplot(merged10reps_melt,aes(x = variable, y = value, group=Obs)) +
 geom_line(size=1,aes( x=variable,y=value, color=ID)) +
 scale_x_discrete(expand = c(0.01,0))+
@@ -278,13 +277,9 @@ labs(x ="date", y = "z-score normalized RPKM")+
 guides(color=FALSE)+theme(axis.text.x = element_blank())
 
 ############# STEP 3 cluster the centroids ##########
-#Evaluate 3 methods of clustering the centroids#
-#based on the first derivative and the approximation to lower the within distances of the clusters, generate an "optimal" Number of centroids representing the random subsetted 
-
-#Cluster the centroids and evaluate
-#merged10reps_melt<-readRDS("/Users/lb808/Documents/MyDrafts/InProgress/WEC_Viromes_ShortReads/ModelDesign/merged10reps_melt.rds")
-#reshape if reading from RDS
-#merged10reps = dcast(merged10reps_melt,  Obs~variable)
+#Evaluate 3 methods of clustering the centroids
+#based on the first derivative and the approximation to lower the within distances of the clusters, 
+#generate an "optimal" Number of centroids representing the random subsetted 
 
 ####Cluster the centroids of the multiple subsamplings
 
@@ -292,8 +287,8 @@ guides(color=FALSE)+theme(axis.text.x = element_blank())
 rownames(merged10reps)<-merged10reps$Obs
 merged10reps_toinput = merged10reps[,!(names(merged10reps)== c("Obs","ID"))] #drop off the contig name and the ID columns
 
-#Evaluate stats generated from clustering 3 to 32 #I need to atomatize this from 3 to X (how to determine X). I mean, it does not really matter if we are going to iterate over what subsets we do this
-merged10reps.pam <- tsclust(merged10reps_toinput , type="partitional", k=3L:(nrow(merged10reps_toinput)-1), distance="Euclidean", centroid="pam") #si cambias este rango (k:) se afecta
+#Evaluate stats generated from clustering 3 to n
+merged10reps.pam <- tsclust(merged10reps_toinput , type="partitional", k=3L:(nrow(merged10reps_toinput)-1), distance="Euclidean", centroid="pam")
 
 #evaluate the clusters depending on their number. cvi for each cluster
 merged10reps.pam_clust_stats100<-sapply(merged10reps.pam, cvi, type = "internal")
@@ -302,20 +297,18 @@ merged10reps.pam_clust_stats100<-sapply(merged10reps.pam, cvi, type = "internal"
 maxSil_merged10reps<-max(merged10reps.pam_clust_stats100[1,])
 
 #Exctract the k kluster that maximizes the Silhoute
-K_centroids<-(which(merged10reps.pam_clust_stats100==maxSil_merged10reps,arr.ind=TRUE)[,2])+2 #exctract the col number where the max value is located this equals at the cluster-2 (we started the eval at 3)
+K_centroids<-(which(merged10reps.pam_clust_stats100==maxSil_merged10reps,arr.ind=TRUE)[,2])+2 #exctract the col number where the max value is located. This is cluster-2 as we started the eval at 3.
 
-#cluster the non seasonal into K_seasonl value 
-#This gets way better if we use the hierarchical / elbow methods down below. I don't really care to use the best point in the elbow. But to really minimize distance within the cluster
+#cluster centroids (second clustering)
 clust.seasonal.pam <- tsclust(merged10reps_toinput, type="partitional", k=K_centroids, distance="Euclidean", clustering="pam") #Pass the variable of the number of clusters that maximize Silhoute (above)
 
-#PLOT clustering of centroids (12 clusters)
+#PLOT clustering of centroids
 centroids.ctg_clusters<-cbind(merged10reps_toinput[,0], cluster = clust.seasonal.pam@cluster)
 merged10reps_cls<-merged10reps_toinput
 merged10reps_cls$cluster<-centroids.ctg_clusters[rownames(merged10reps_toinput),]
 merged10reps_cls$cluster<- gsub(" ","",c(paste("cluster",merged10reps_cls$cluster)))
 merged10reps_cls$contig<-rownames(merged10reps_cls)
 merged10reps_cls_melt<-melt(merged10reps_cls, id.vars=c("contig","cluster"))
-
 
 centroids10_clustered<- merged10reps_cls_melt %>% ggplot(aes(x = variable, y = value,group=contig, label=contig)) +
 geom_line(linewidth=.6,aes( x=variable,y=value, color=cluster)) +
@@ -330,22 +323,16 @@ facet_wrap(~cluster, ncol = 6, strip.position="left") +
 labs(x ="date", y = "z-score normalized RPKM")+
 guides(color=FALSE)+theme(axis.text.x = element_blank())
 
-#svg("/Users/lb808/Documents/MyDrafts/InProgress/WEC_Viromes_ShortReads/ModelDesign/merged10reps_centroids_cls.svg", width=19,height=14)
-#centroids10_clustered
-#dev.off()
-
 ##### STEP 3.1 HeatMap and dendrogrom of the centroids #####
 
-#This clustering is not bad at all, but I want it to identify slight "monthly" variation dynamics. 
-#In this case I don't care about maximizing the distance between group distance, but make sure that representative clusters of centroids are tightly clustered. 
-#Therefore I need to identify a threshold that minimizes the distance as much as I can between clusters
+#Identify a threshold that minimizes the distance as much as I can between clusters
 
 dist_ts <- TSclust::diss(SERIES = as.matrix(merged10reps_toinput), METHOD = "EUCL") #convert to matrix so it considers the centroids not the "samples/dates"
 #print(dist_ts)
 
 euc_dist <- function(x){TSclust::diss(SERIES = (x), METHOD = "EUCL")}
 
-#This is not saving the heatmap image
+#Second Plot reported in the R.plots (HeatMap and dendrogram of the centroid clustering 
 heatmap_centroids<-merged10reps_toinput %>%
   t() %>% as.matrix() %>%
   gplots::heatmap.2 (
@@ -368,24 +355,22 @@ heatmap_centroids<-merged10reps_toinput %>%
 #Corroborate this by two methods 
 
 #######Dendrogram#######
-# the ward.D method tries to minimize the within cluster variance
+# the ward.D method minimizes the within cluster variance
 dendrogram = hclust(d = dist(merged10reps_toinput, method = 'euclidean'), method = 'ward.D')
 
-#Create a function that cuts the tree in different distances and then claculate the avarage distance within the cluster select the ona that maximizes 
+#Create a function that cuts the tree in different distances and then claculate the avarage distance within the cluster. Select the one that maximizes it
 #k-means, with several starting values, and the gap statistic (mirror) to determine the number of clusters that minimize the within-SS (Sum of squares)
 
 coph_dists_dendro<-cophenetic(dendrogram) #extract cophenetic distances
-max_coph_dists_dendro<-max(coph_dists_dendro) #in this case 66.10528, cutting here will output 1 cluster
-min_coph_dists_dendro<-min(coph_dists_dendro) #in this case 0.6750531, cutting here will output n-1 clusters. 
-
-#Below at some point: For loop to find the distance in the dendrogram that splits it in the closest number of clusters revelead by the derivative analysis
+max_coph_dists_dendro<-max(coph_dists_dendro) #cutting here will output 1 cluster
+min_coph_dists_dendro<-min(coph_dists_dendro) #cutting here will output n-1 clusters. 
 
 ##### STEP 3.2 Kmeans of the centroids #####
 set.seed(123)
 
 #function to compute total within-cluster sum of square 
 wss <- function(k) {
-  kmeans(merged10reps_toinput, k, nstart = 10, iter.max = 30)$tot.withinss #I want to minimize ALL the withinss not the total. But first we need to compute the total so we can remove the clusters that optimize what i don;t want
+  kmeans(merged10reps_toinput, k, nstart = 10, iter.max = 30)$tot.withinss #Minimize ALL the withinss.
 }
 
 # Compute and plot wss for k = 1 to k = n-1
@@ -394,36 +379,32 @@ k.values <- 1:(nrow(merged10reps_toinput)-1)
 # extract wss k.values
 wss_values <- map_dbl(k.values, wss)
 
-#svg("/Users/lb808/Documents/MyDrafts/InProgress/WEC_Viromes_ShortReads/ModelDesign/kvalues_wssvalues.svg", width=12)
+#Third Plot result
 kvalues_wssvalues<-plot(k.values, wss_values,
        type="b", pch = 19, frame = FALSE, 
        xlab="Number of clusters K",
-       ylab="Total within-clusters sum of squares") #I don't want the total, I'd like to minimize the within cluster distance of all clusters. -> evaluate distributions of clusters after the elbow change
-#dev.off()
+       ylab="Total within-clusters sum of squares")
 
 ####1st derivative (slope of the tangent line) cutoff: "This method finds the point along the curve where the slope is a given fraction of the maximum"
 
 #1)PLOT and get the smooth curve
-#geom_smooth() predicts for a internal sequence generated for the entire range of x, while loess in the example predicts only for the unique x values existing in the dataset (they have different results)
-  
+
 #Generate the smooth curve
 
-#lw1 <- loess(wss_values ~ k.values) #is not a lineal curve
-#plot(k.values, wss_values,type="l") CONTROL ONLY
-lw2 <- loess(wss_values~ log(k.values)) #the k-means clusters vs distances almost all time follow a log curve, better use log to fit the model 
+lw2 <- loess(wss_values~ log(k.values)) #the k-means clusters vs distances almost all time follow a log curve, that's why the program uses a log to fit the model 
 xl <- seq(min(k.values),max(k.values), (max(k.values) - min(k.values))/1000) #generate 1k datapoints to feed the formula
-out = predict(lw2,log(xl)) #generate the wss_values that smooths the line under the loess formula! 
+out = predict(lw2,log(xl)) #generate the wss_values that smooths the line under the loess formula.
 #lines(xl, out, col='red', lwd=2)
 
-#retrieve the point at which the slope of tangent line (1st derivative) is 1/10 of its maximum value. Good way to get the elbow!
+#retrieve the point at which the slope of tangent line (1st derivative) is 1/10 of its maximum value. Best way to get the elbow.
 cutoff.point <- findCutoff(xl, out, method="first", 0.1)
 
 #retrieve the closest integer on the x axis which is the number of clusters that "maximize distance between clusters and minimize distance within". 
-#I want to evaluate the distance distribution of clusters below this point where the sum of the distances don't change a lot. Basically find the cluster configuration that minimizes the distancs of its clusters, regardles of the between cluster distance. 
+#Find the cluster configuration that minimizes the distancs of its clusters, regardles of the between cluster distance. 
 
 rounded.cutoff.point<-round(cutoff.point$x) #round to the closest integer in X (number of clusters variable)
 
-#Plot our cutoff point in the smooth version. CONTROL ONLY
+#Plot the cutoff point in the smooth version. CONTROL ONLY
 #plot(xl, out, pch=20, col="gray")
 #points(cutoff.point, col="red", cex=3, pch=20)
 
@@ -434,7 +415,7 @@ wss_all <- function(k) {
 
 k.values.aboverounded<-rounded.cutoff.point:(nrow(merged10reps_toinput)-1)
 
-withinss.list<-sapply(k.values.aboverounded, wss_all) #we lost the minimim value here and it reseets, because we removed everything above the first derivative.
+withinss.list<-sapply(k.values.aboverounded, wss_all) #program resets the min value because it removes everything above the first derivative.
 
 #Function to generate a dataframe with all the withinss values from the k-means clusters greater than the rounded cutoff (1/10th of the max first derivate)
 summarystat<- function(x) {
@@ -446,10 +427,10 @@ summarystat<- function(x) {
 
 list.stats<-lapply(withinss.list,summarystat)
 
-#FIRST FILTER: median can not be 0 #We don't want a bunch of singletons.
+#FIRST FILTER: median can not be 0 to avoid singleton-only clustering be the optimize configuration
 list.stats.medianfilt<-Filter(function(x) x$median !=0, list.stats)
 
-#SECOND FILTER, check the knee of the curve (1st derivative of the means) but get the one with the lowest standard deviation.
+#SECOND FILTER, check the 1st derivative of the means and get the one with the lowest standard deviation.
 df.stats.medianfilt<-data.frame(matrix(unlist(list.stats.medianfilt), nrow=length(list.stats.medianfilt), byrow=TRUE))
 colnames(df.stats.medianfilt) <- c("mean", "median", "sd")
 
@@ -466,7 +447,7 @@ cutoff.point_means <- findCutoff(xl_klusters.means, out_means, method="first", 0
 plot(xl_klusters.means, out_means, pch=20, col="gray")
 points(cutoff.point_means, col="red", cex=3, pch=20)
 
-best_number_of_clusters<-round(cutoff.point_means$x) #13, therofore 21 clusters
+best_number_of_clusters<-round(cutoff.point_means$x)
 
 #THIRD FILTER: Once we have a rounded integer indicating the cluster which better fits the knee of the means curve. Explore 1/4 of the total of clusters looking for the smallest sd
 
@@ -480,43 +461,32 @@ best_number_of_clusters<-round(cutoff.point_means$x) #13, therofore 21 clusters
 
 #best_number_of_clusters<-(as.integer(rownames(df.stats.medianfilt.subset[which.min(df.stats.medianfilt.subset$sd),])))+rounded.cutoff.point #we hhave been evaluating number of clusters w/o the first fraction above the ctoff point so we need to add this value to select the exacto No of kluster
 
-#I need to benchmark this by repeating multiple times this function to get a relationship of number of subsets of 100 contigs vs best number of clusters
-
 ##### STEP 3.3 put together the classification results using the optimal solution we found in best clusters number #####
-#Once we determined the best number of clusters, sse Kmeans, tsclust and hierarchical clustering and compare the clustering. This is a sanity check step
-#dataframe should be available to the user, this is not something I'll evaluate exhastively. 
+#Once we determined the best number of clusters, redo the clustering using it with Kmeans, tsclust and hierarchical clustering and compare the clustering. This is a sanity check step
+#We recommned to use TSclust, despite providing the user with the other two alternatives. 
 
 ##(A)##
 #Kmeans with best_number_of_clusters
-kmeans_best_numberk<-kmeans(merged10reps_toinput, best_number_of_clusters, nstart = 10 ,iter.max = 30) #caluclate kmeans with 26 clusters
+kmeans_best_numberk<-kmeans(merged10reps_toinput, best_number_of_clusters, nstart = 10 ,iter.max = 30) #caluclate kmeans
 kmeans_best_number_contigcluster<-kmeans_best_numberk$cluster #extract the relationship of contigId to cluster membership
 kmeans_best_number_contigcluster_df<-data.frame(kmeans_best_number_contigcluster) #as df
 colnames(kmeans_best_number_contigcluster_df)<-"kmeans" #change the name of the column with the cluster membership
 
-#get the pam centroids, z-scores and cluster membership and write it in a table. This will be the training dataset
+#This step gets the pam centroids, z-scores and cluster membership and write it in a table.
 kmeans_best_number_contigcluster_df$kmeans<-paste0("cluster_",kmeans_best_number_contigcluster_df$kmeans)
 training_dataset<-rownames(kmeans_best_number_contigcluster_df)
 training_dataset_zscore<-merged10reps_toinput[rownames(merged10reps_toinput) %in% training_dataset, ]
-
 training_dataset_final<-merge(kmeans_best_number_contigcluster_df, training_dataset_zscore, by='row.names', all=TRUE)
 
 ##(B)##
 #Dendrogram
 ####find the distance needed to cut the closest integer to best_number_of_clusters in the dendrogram
-
 #Generate a sequence of integers from the min distance to the max distance
 dists_to_evaluate<-seq(min(min_coph_dists_dendro),max(min_coph_dists_dendro:max_coph_dists_dendro),.01)
-
-#for loop to find the distance that is closer to generate the best number of clusters variable
-#for (val in dists_to_evaluate) {
-#  klusters_tree<-length(unique(cutree(dendrogram, h=val)))
-#  if(round(klusters_tree) == best_number_of_clusters) klusters_tree_list<- cutree(dendrogram, h=val)} #we will take the last "decimal value" that fulffills the integer match
-#print(klusters_tree_list)
-
 klusters_tree_list<-cutree(dendrogram, k=best_number_of_clusters)
 dendro_best_number_contigcluster_df<-data.frame(klusters_tree_list)
 
-##(C)##
+##(C)## Best Option
 #TSCLUST unsupervised PAM - EUCL
 clust.best_number_contig.pam <- tsclust(merged10reps_toinput, type="partitional", k=best_number_of_clusters, distance="Euclidean", clustering="pam") 
 unsup_best_number_contigcluster_df<-cbind(merged10reps_toinput[,0], unsup_cluster =clust.best_number_contig.pam@cluster)
@@ -533,8 +503,8 @@ tmp2_merged_klusters<-merge(tmp_merged_klusters,unsup_best_number_contigcluster_
 #merged_klusters<-tmp2_merged_klusters[,2:length(tmp2_merged_klusters)] #remove the duplicated rownames column
 
 #Final clustering step: Extract the K-means centroids from the kmeans solution for the best number of clusters
-#This can be printed at the end so the usr can check how many of the contigs were assigned to the same cluster using this different methods.
-#All methods will give a different solution (due to inherent features), however these should be comparable and closely related centroids should be placed together reardless of the method
+#This can be printed at the end so the user can check how many of the contigs were assigned to the same cluster using this different methods.
+#All methods will give a different solution/configuration (due to inherent features), however these should be comparable and closely related centroids should be placed together reardless of the method
 
 kmeans_best_numberk_centers<-data.frame(kmeans_best_numberk$centers)
 #plot: visualize the optimal solution = kmeans centroids
@@ -554,25 +524,13 @@ facet_wrap(~centers, ncol = 6, strip.position="left") +
 labs(x ="date", y = "z-score normalized RPKM")+
 guides(color=FALSE)+theme(axis.text.x = element_blank())
 
-#Report for benchamrking (one line that will be concatenated with the other runs)
+#Report for benchamrking (one line that will be concatenated with the other runs, legacy instruction)
 df_report_benchmarck <- setNames(data.frame(t(c(datasets100, nrow(kmeans_best_numberk_centers)))),c("datasets_sampled", "optimal_no_clusters"))
-
 now <- Sys.time() #time stamp used as row name 
 rownames(df_report_benchmarck) <- now
-#df_report_benchmarck
-
-#first unsupervised clustering of centroids
-#svg("unsup_centroids_cls.svg", width=19,height=14)
-#centroids10_clustered
-#dev.off()
-
-#Final collection of k-means centroids
-#svg("merged_reps_centroids_cls.svg", width=19,height=14)
-#kmeans_best_numberk_centers_melt_plot
-#dev.off()
 
 ###CONTINUATION full subsets to link with the centroid clustering
-df_seasonal_subsets_10reps$cluster<- sub(".*cluster_", "", df_seasonal_subsets_10reps$Obs) #cluster memebership in a new column ###NOTA tengo que corregir esto no puede ser full
+df_seasonal_subsets_10reps$cluster<- sub(".*cluster_", "", df_seasonal_subsets_10reps$Obs) #cluster memebership in a new column
 df_seasonal_subsets_10reps$Obs<- gsub("_cluster_([0-9]*)", "", df_seasonal_subsets_10reps$Obs) #remove the information of cluster from the name of the contig
 df_seasonal_subsets_10reps$Gral_ID<-paste(df_seasonal_subsets_10reps$ID,df_seasonal_subsets_10reps$cluster, sep="_") #Create a new column with a general ID
 #Finally we need to create a centroid column linking the contig (a.k.a observation) to its correspending centroid in the selected subset
@@ -580,13 +538,12 @@ centroids_final<-tmp2_merged_klusters$Row.names
 
 df_seasonal_subsets_10reps$centroid <- ifelse(df_seasonal_subsets_10reps$Obs %in% centroids_final, as.character(df_seasonal_subsets_10reps$Obs), "")
 
-df_ctg_uniq<-df_seasonal_subsets_10reps[,c(4,5)] #just a link between centroid and uniqu cluster identifier
+df_ctg_uniq<-df_seasonal_subsets_10reps[,c(4,5)] #link between centroid and unique cluster identifier
 #remove columns without a centroid, this will leave only a dataframe with the centroid value and its unique id
 df_ctg_uniq_NA<-mutate_all(df_ctg_uniq, list(~na_if(.,"")))
 df_ctg_uniq_reduced<-na.omit(df_ctg_uniq_NA)
 
-#######ARREGLAR ESTO Y YA HACER el run de prueba
-#substitute centroid column with the corresponding centroid for the unique identifier #Quizas esto no esta funcionando
+#substitute centroid column with the corresponding centroid for the unique identifier
 merged_df <- merge(df_seasonal_subsets_10reps, df_ctg_uniq_reduced, by = "Gral_ID", all.x = TRUE)
 
 #remove the column ("centroid.x") that helped us to link the tables
@@ -600,9 +557,13 @@ Table_all_observations_clusters <- merge(final_repr_merged_df, tmp2_merged_klust
  FINAL_list[[i]] <- list(iteration = i, output_df = Table_all_observations_clusters)
 }
 
-##########Iteration ends
+##########End of Iterations#########
 
-#Unfold the list -> necesitaria Table_all_observations_clusters mas una columna indicando la replica
+####################################
+#Collapse the iterations to generate
+#a co-courrance matrix
+
+#Unfold the list
 bootstrap_df<-do.call(rbind, lapply(FINAL_list, function(x) {
   x$output_df$iteration <- x$iteration
   return(x$output_df)
@@ -623,7 +584,8 @@ unique_ids2 <- unique(data2$ID)
 unique_ids3 <- unique(data3$ID)
 
 #generate a coocurrence table in which the values are the total counts after running the machine learning step multiple times
-#This value represents the number of times that 2 contigs cooccur in the same cluster after replicating the subsampling X times (in this case 50)
+#This value represents the number of times that 2 contigs co-occur in the same cluster after replicating the subsampling X times (above number of iterations)
+#HC
 co_occurrence_matrix <- data %>%
   # Self-join to get all pairwise combinations of IDs
   full_join(data, by = "Cluster") %>%
@@ -636,7 +598,7 @@ co_occurrence_matrix <- data %>%
   column_to_rownames(var = "ID.x") %>%
   as.matrix()
 
-#The data2 is giving an error: vector memory exhausted (limit reached?) I don't know why. 
+#k-means
 co_occurrence_matrix2 <- data2 %>%
   # Self-join to get all pairwise combinations of IDs
   full_join(data2, by = "Cluster") %>%
@@ -649,6 +611,7 @@ co_occurrence_matrix2 <- data2 %>%
   column_to_rownames(var = "ID.x") %>%
   as.matrix()
 
+#TSclust
 co_occurrence_matrix3 <- data3 %>%
   # Self-join to get all pairwise combinations of IDs
   full_join(data3, by = "Cluster") %>%
@@ -673,7 +636,7 @@ dendrogram = hclust(d = dist(co_occurrence_matrix_rel, method = 'euclidean'), me
 dendrogram2 = hclust(d = dist(co_occurrence_matrix_rel2, method = 'euclidean'), method = 'ward.D')
 dendrogram3 = hclust(d = dist(co_occurrence_matrix_rel3, method = 'euclidean'), method = 'ward.D')
 
-#Cut the dendrogram using the highest number of optimal clusters estimated from all the iterations -> 57
+#Cut the dendrogram using the highest number of optimal clusters estimated from all the iterations
 highest_cl<-tail(sort(unique(data$Cluster)),1)
 
 klusters_tree_list<-cutree(dendrogram, k=highest_cl)
@@ -699,8 +662,8 @@ write.table(dendro_best_number_contigcluster_df_merged, file=output_file, quote=
 #Check how many elements does each cluster have, this is just a sanity check step / uncomment if needed
 #as.data.frame(table(dendro_best_number_contigcluster_df$klusters_tree_list))
 
-#######Generate the BIG PLOT #########
-######with panels=No of clusters######
+#######Generate the final plots##########
+######No of Panles = No of clusters######
 
 #declare a list 
 plot_list <- list()
@@ -752,3 +715,5 @@ dev.off()
 
 #Write a table with the final report with all the observations clustered by the three differetn methods, and the centroid used to classify them.
 #write.table(Table_all_observations_clusters,"observations_clusters_3methods.txt", quote = F, sep = "\t")
+
+#END
