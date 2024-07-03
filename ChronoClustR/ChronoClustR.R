@@ -285,7 +285,7 @@ guides(color=FALSE)+theme(axis.text.x = element_blank())
 
 #generate a data frame to be inputted to an unsupervised clustering
 rownames(merged10reps)<-merged10reps$Obs
-merged10reps_toinput = merged10reps[,!(names(merged10reps)== c("Obs","ID"))] #drop off the contig name and the ID columns
+merged10reps_toinput = merged10reps[,!(names(merged10reps) %in% c("Obs","ID"))] #drop off the contig name and the ID columns
 
 #Evaluate stats generated from clustering 3 to n
 merged10reps.pam <- tsclust(merged10reps_toinput , type="partitional", k=3L:(nrow(merged10reps_toinput)-1), distance="Euclidean", centroid="pam")
