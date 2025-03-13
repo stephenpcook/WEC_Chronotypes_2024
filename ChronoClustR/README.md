@@ -12,7 +12,7 @@ ChronoClustR was benchmarked in R version 4.3.0 (2023-04-21)
 
 (3) User can decide to run a seasonality test using the script `SeasonalityTest.R`
 
-- User should specify the time-series data frame, environmntal data (formatted as in the example `virome_sr_environm_data_EQ_time.txt`)
+- User should specify the time-series data frame, environmental data (formatted as in the example `virome_sr_environm_data_EQ_time.txt`)
 - Time-series should be equidistant with no missing values, therefore if a time-series have missing values, these should have been interpolated before running the seasonality test.
 
 Command:
@@ -32,7 +32,7 @@ This script creates two files in the `Test_ChronoClustR/` dir:
 - `Non_seasonal_timeseries.txt`
 - `Seasonal_timeseries.txt`
 
-(4) If seasonality was tested, each of both tables (seasonal and non-seasonal) can be run seperately in `ChronoClustR.R`.
+(4) If seasonality was tested, each of both tables (seasonal and non-seasonal) can be run separately in `ChronoClustR.R`.
 
 Command:
 
@@ -68,9 +68,9 @@ obs	klusters_tree_list	klusters_tree_list2	klusters_tree_list3
 3	X2018.Dec.viral.fraction__viral.spades.short__as.yet.unknown__84964bp__000032..full	2	1	2
 ```
 
-`Rplots.pdf`: contains plots of the clusters-distance within cluster for each bootstrap iteration, heatmaps of the centroids dendrogram used to generate the final clustering, and the maximum number of K used in the collapsed co-occurence frequency can be derived from analyzing each of the K for each iteration in this report
+`Rplots.pdf`: contains plots of the clusters-distance within cluster for each bootstrap iteration, heatmaps of the centroids dendrogram used to generate the final clustering, and the maximum number of K used in the collapsed co-occurrence frequency can be derived from analyzing each of the K for each iteration in this report
 
-Plots of individual time-series clustered in different panels depending their membership estimated by the thre different methods described above
+Plots of individual time-series clustered in different panels depending their membership estimated by the three different methods described above
 
 - `ChronoClustR_treelist_HC.pdf`
 - `ChronoClustR_treelist_kmeans.pdf`
